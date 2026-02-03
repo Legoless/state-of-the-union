@@ -31,6 +31,18 @@ export const initialNodes: AINode[] = [
     position: { x: 400, y: 400 },
     data: { label: 'Google DeepMind', category: 'provider', description: 'Google AI Division', releaseDate: '2010' },
   },
+  {
+    id: 'provider-deepseek',
+    type: 'tool',
+    position: { x: 0, y: 550 },
+    data: { label: 'DeepSeek', category: 'provider', description: 'Open Source AI Lab', releaseDate: '2023' },
+  },
+  {
+    id: 'provider-moonshot',
+    type: 'tool',
+    position: { x: -300, y: 700 },
+    data: { label: 'Moonshot AI', category: 'provider', description: 'Chinese AI Startup', releaseDate: '2023' },
+  },
 
   // --- Categories (Central) ---
   {
@@ -206,6 +218,9 @@ export const initialEdges: Edge[] = [
   { id: 'e-google-gemini3flash', source: 'provider-google', target: 'model-gemini-3-flash', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-google-veo3', source: 'provider-google', target: 'model-veo-3', style: { stroke: '#eab308', strokeWidth: 2 } },
   { id: 'e-google-nanobanana', source: 'provider-google', target: 'model-nano-banana', style: { stroke: '#22c55e', strokeWidth: 2 } },
+
+  { id: 'e-deepseek-v3', source: 'provider-deepseek', target: 'model-deepseek-v3', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-moonshot-kimi', source: 'provider-moonshot', target: 'model-kimi-2-5', style: { stroke: '#22c55e', strokeWidth: 2 } },
 
   // Category -> LLM Connections (Green)
   { id: 'e-cat-llm-gpt5', source: 'category-llm-all', target: 'model-gpt5', style: { stroke: '#17C964', strokeWidth: 2 } },
