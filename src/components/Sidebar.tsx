@@ -18,9 +18,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
   }
 
   return (
-    <div className="absolute right-4 top-4 w-80 z-50 h-[calc(100vh-2rem)] flex flex-col pointer-events-auto">
-      <Card className="h-full shadow-2xl bg-zinc-900/95 backdrop-blur-md border border-zinc-700 text-white">
-        <CardHeader className="flex flex-col items-start gap-1 pb-2 border-b border-zinc-700">
+    <div className="absolute right-4 top-4 w-80 z-50 max-h-[calc(100vh-250px)] flex flex-col pointer-events-auto">
+      <Card className="h-auto max-h-full shadow-2xl bg-zinc-900/95 backdrop-blur-md border border-zinc-700 text-white">
+        <CardHeader className="flex flex-col items-start gap-1 pb-2 border-b border-zinc-700 shrink-0">
           <div className="flex justify-between w-full items-center">
             <h2 className="text-xl font-bold text-white">{selectedNode.label}</h2>
             <button onClick={onClose} className="text-zinc-400 hover:text-white">✕</button>
@@ -30,7 +30,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
           </span>
         </CardHeader>
         <Divider className="bg-zinc-700" />
-        <CardBody className="gap-4">
+        <CardBody className="gap-4 overflow-y-auto">
           <p className="text-zinc-300">{selectedNode.description}</p>
           
           {selectedNode.provider && (
