@@ -19,7 +19,10 @@ import { Chip } from "@heroui/react";
 const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
   const categoryColor = useMemo(() => {
     switch (data.category) {
-      case 'tool': return 'primary';
+      case 'ai-ide': return 'primary';
+      case 'cli-agent': return 'danger';
+      case 'ide-extension': return 'secondary';
+      case 'ai-terminal': return 'primary';
       case 'llm': return 'success';
       case 'video': return 'warning';
       case 'image': return 'secondary';
@@ -30,7 +33,10 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
 
   const nodeStyles = useMemo(() => {
     switch (data.category) {
-      case 'tool': return { bg: '#006FEE', border: '#006FEE', text: '#ffffff', subtext: '#E0E7FF' }; // Primary Blue
+      case 'ai-ide': return { bg: '#006FEE', border: '#006FEE', text: '#ffffff', subtext: '#E0E7FF' }; // Primary Blue
+      case 'cli-agent': return { bg: '#F31260', border: '#F31260', text: '#ffffff', subtext: '#FFE4E6' }; // Danger Red
+      case 'ide-extension': return { bg: '#9333EA', border: '#9333EA', text: '#ffffff', subtext: '#F3E8FF' }; // Purple
+      case 'ai-terminal': return { bg: '#06B6D4', border: '#06B6D4', text: '#ffffff', subtext: '#CFFAFE' }; // Cyan
       case 'llm': return { bg: '#17C964', border: '#17C964', text: '#000000', subtext: '#1F2937' }; // Success Green
       case 'video': return { bg: '#F5A524', border: '#F5A524', text: '#000000', subtext: '#431407' }; // Warning Orange
       case 'image': return { bg: '#7828C8', border: '#7828C8', text: '#ffffff', subtext: '#F3E8FF' }; // Secondary Purple
@@ -90,9 +96,13 @@ interface AIGraphProps {
 }
 
 const nodeTypes = {
-  tool: CustomAINode,
-  model: CustomAINode, // We can reuse or specialize
-  llm: CustomAINode,   // just in case type matches category
+  'ai-ide': CustomAINode,
+  'cli-agent': CustomAINode,
+  'ide-extension': CustomAINode,
+  'ai-terminal': CustomAINode,
+  tool: CustomAINode, // Keeping for backward compatibility or generic use
+  model: CustomAINode,
+  llm: CustomAINode,
   video: CustomAINode,
   image: CustomAINode,
 };
@@ -129,7 +139,10 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
             nodeStrokeColor={(n) => {
               const cat = (n.data as AINodeData)?.category;
               switch (cat) {
-                case 'tool': return '#006FEE';
+                case 'ai-ide': return '#006FEE';
+                case 'cli-agent': return '#F31260';
+                case 'ide-extension': return '#9333EA';
+                case 'ai-terminal': return '#06B6D4';
                 case 'llm': return '#17C964';
                 case 'video': return '#F5A524';
                 case 'image': return '#7828C8';
@@ -140,7 +153,10 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
             nodeColor={(n) => {
               const cat = (n.data as AINodeData)?.category;
               switch (cat) {
-                case 'tool': return '#006FEE';
+                case 'ai-ide': return '#006FEE';
+                case 'cli-agent': return '#F31260';
+                case 'ide-extension': return '#9333EA';
+                case 'ai-terminal': return '#06B6D4';
                 case 'llm': return '#17C964';
                 case 'video': return '#F5A524';
                 case 'image': return '#7828C8';

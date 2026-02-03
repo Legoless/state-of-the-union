@@ -2,7 +2,7 @@ import type { Node, Edge } from '@xyflow/react';
 
 export type AINodeData = {
   label: string;
-  category: 'tool' | 'llm' | 'image' | 'video' | 'provider';
+  category: 'ai-ide' | 'cli-agent' | 'ide-extension' | 'ai-terminal' | 'llm' | 'image' | 'video' | 'provider';
   description?: string;
   provider?: string;
   releaseDate?: string;
@@ -150,60 +150,174 @@ export const initialNodes: AINode[] = [
     data: { label: 'Flux', category: 'image', provider: 'Black Forest Labs', description: 'State-of-the-art open image model.', releaseDate: '2024' },
   },
 
-  // --- Tools (Far Left & Top) ---
+  // --- Tool Categories (Left) ---
+  {
+    id: 'category-ai-ide',
+    type: 'ai-ide',
+    position: { x: -1000, y: -200 },
+    data: { label: 'AI Native IDEs', category: 'ai-ide', description: 'Standalone Editors' },
+  },
+  {
+    id: 'category-cli-agent',
+    type: 'cli-agent',
+    position: { x: -1000, y: 300 },
+    data: { label: 'CLI Agents', category: 'cli-agent', description: 'Terminal-based Agents' },
+  },
+  {
+    id: 'category-ide-extension',
+    type: 'ide-extension',
+    position: { x: -1000, y: 800 },
+    data: { label: 'IDE Extensions', category: 'ide-extension', description: 'VS Code Extensions' },
+  },
+  {
+    id: 'category-ai-terminal',
+    type: 'ai-terminal',
+    position: { x: -1000, y: 1200 },
+    data: { label: 'AI Terminals', category: 'ai-terminal', description: 'AI-Enhanced Terminals' },
+  },
+
+  // --- AI Native IDEs ---
   {
     id: 'tool-cursor',
     type: 'tool',
-    position: { x: -1200, y: -200 },
-    data: { label: 'Cursor', category: 'tool', description: 'AI Code Editor based on VS Code.', releaseDate: '2023' },
+    position: { x: -1400, y: -400 },
+    data: { label: 'Cursor', category: 'ai-ide', description: 'AI Code Editor based on VS Code.', releaseDate: '2023' },
   },
   {
     id: 'tool-windsurf',
     type: 'tool',
-    position: { x: -1200, y: 100 },
-    data: { label: 'Windsurf', category: 'tool', description: 'Agentic IDE by Codeium.', releaseDate: '2024' },
-  },
-  {
-    id: 'tool-warp',
-    type: 'tool',
-    position: { x: -1200, y: 400 },
-    data: { label: 'Warp', category: 'tool', description: 'AI-powered Terminal.', releaseDate: '2021' },
+    position: { x: -1400, y: -200 },
+    data: { label: 'Windsurf', category: 'ai-ide', description: 'Agentic IDE by Codeium.', releaseDate: '2024' },
   },
   {
     id: 'tool-zed',
     type: 'tool',
-    position: { x: -1200, y: 700 },
-    data: { label: 'Zed', category: 'tool', description: 'High-performance multiplayer code editor.', releaseDate: '2024' },
+    position: { x: -1400, y: 0 },
+    data: { label: 'Zed', category: 'ai-ide', description: 'High-performance multiplayer code editor.', releaseDate: '2024' },
   },
+  {
+    id: 'tool-antigravity',
+    type: 'tool',
+    position: { x: -1400, y: 200 },
+    data: { label: 'Antigravity', category: 'ai-ide', description: 'Google\'s AI-native IDE.', releaseDate: '2025' },
+  },
+  {
+    id: 'tool-codex-app',
+    type: 'tool',
+    position: { x: -1400, y: 400 },
+    data: { label: 'Codex App', category: 'ai-ide', description: 'OpenAI\'s coding environment.', releaseDate: '2025' },
+  },
+
+  // --- CLI Agents ---
   {
     id: 'tool-opencode',
     type: 'tool',
-    position: { x: -1200, y: 1000 },
-    data: { label: 'OpenCode', category: 'tool', description: 'Open Source AI Coding Agent CLI.', releaseDate: '2025' },
+    position: { x: -1400, y: 600 },
+    data: { label: 'OpenCode', category: 'cli-agent', description: 'Open Source AI Coding Agent CLI.', releaseDate: '2025' },
+  },
+  {
+    id: 'tool-aider',
+    type: 'tool',
+    position: { x: -1400, y: 750 },
+    data: { label: 'Aider', category: 'cli-agent', description: 'Terminal pair programmer.', releaseDate: '2023' },
+  },
+  {
+    id: 'tool-goose',
+    type: 'tool',
+    position: { x: -1400, y: 900 },
+    data: { label: 'Goose', category: 'cli-agent', description: 'Block\'s open source agent.', releaseDate: '2025' },
+  },
+  {
+    id: 'tool-gemini-cli',
+    type: 'tool',
+    position: { x: -1400, y: 1050 },
+    data: { label: 'Gemini CLI', category: 'cli-agent', description: 'Google\'s official terminal agent.', releaseDate: '2025' },
+  },
+  {
+    id: 'tool-codex-cli',
+    type: 'tool',
+    position: { x: -1400, y: 1200 },
+    data: { label: 'Codex CLI', category: 'cli-agent', description: 'OpenAI\'s official terminal agent.', releaseDate: '2025' },
+  },
+  {
+    id: 'tool-claude-code',
+    type: 'tool',
+    position: { x: -1400, y: 1350 },
+    data: { label: 'Claude Code', category: 'cli-agent', description: 'Anthropic\'s official terminal agent.', releaseDate: '2025' },
+  },
+
+  // --- IDE Extensions ---
+  {
+    id: 'tool-cline',
+    type: 'tool',
+    position: { x: -1400, y: 1500 },
+    data: { label: 'Cline', category: 'ide-extension', description: 'Autonomous coding agent extension.', releaseDate: '2024' },
+  },
+  {
+    id: 'tool-roo-code',
+    type: 'tool',
+    position: { x: -1400, y: 1650 },
+    data: { label: 'Roo Code', category: 'ide-extension', description: 'Community fork of Cline.', releaseDate: '2025' },
+  },
+
+  // --- AI Terminals ---
+  {
+    id: 'tool-warp',
+    type: 'tool',
+    position: { x: -1400, y: 1800 },
+    data: { label: 'Warp', category: 'ai-terminal', description: 'AI-powered Terminal.', releaseDate: '2021' },
   },
 ];
 
 export const initialEdges: Edge[] = [
-  // Cursor Connections
-  { id: 'e-cursor-gpt5', source: 'tool-cursor', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-cursor-gpt52', source: 'tool-cursor', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  // --- Category -> Tool Connections (Blue-ish) ---
+  // AI IDEs
+  { id: 'e-cat-ide-cursor', source: 'category-ai-ide', target: 'tool-cursor', style: { stroke: '#006FEE', strokeWidth: 2 } },
+  { id: 'e-cat-ide-windsurf', source: 'category-ai-ide', target: 'tool-windsurf', style: { stroke: '#006FEE', strokeWidth: 2 } },
+  { id: 'e-cat-ide-zed', source: 'category-ai-ide', target: 'tool-zed', style: { stroke: '#006FEE', strokeWidth: 2 } },
+  { id: 'e-cat-ide-antigravity', source: 'category-ai-ide', target: 'tool-antigravity', style: { stroke: '#006FEE', strokeWidth: 2 } },
+  { id: 'e-cat-ide-codexapp', source: 'category-ai-ide', target: 'tool-codex-app', style: { stroke: '#006FEE', strokeWidth: 2 } },
 
-  // Warp Connections
-  { id: 'e-warp-gpt5', source: 'tool-warp', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-warp-claude45', source: 'tool-warp', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  // CLI Agents
+  { id: 'e-cat-cli-opencode', source: 'category-cli-agent', target: 'tool-opencode', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-aider', source: 'category-cli-agent', target: 'tool-aider', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-goose', source: 'category-cli-agent', target: 'tool-goose', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-gemini', source: 'category-cli-agent', target: 'tool-gemini-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-codex', source: 'category-cli-agent', target: 'tool-codex-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-claude', source: 'category-cli-agent', target: 'tool-claude-code', style: { stroke: '#F31260', strokeWidth: 2 } },
 
-  // OpenCode Connections (Many)
-  { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-opencode-gpt52c', source: 'tool-opencode', target: 'model-gpt5-2-codex', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-opencode-claude45o', source: 'tool-opencode', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-opencode-gemini3p', source: 'tool-opencode', target: 'model-gemini-3-pro', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-opencode-kimi', source: 'tool-opencode', target: 'model-kimi-2-5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-opencode-deepseek', source: 'tool-opencode', target: 'model-deepseek-v3', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  // IDE Extensions
+  { id: 'e-cat-ext-cline', source: 'category-ide-extension', target: 'tool-cline', style: { stroke: '#9333EA', strokeWidth: 2 } },
+  { id: 'e-cat-ext-roo', source: 'category-ide-extension', target: 'tool-roo-code', style: { stroke: '#9333EA', strokeWidth: 2 } },
+
+  // AI Terminals
+  { id: 'e-cat-term-warp', source: 'category-ai-terminal', target: 'tool-warp', style: { stroke: '#06B6D4', strokeWidth: 2 } },
+
+  // --- Tool -> Model Connections ---
+  // Cursor
+  { id: 'e-cursor-gpt5', source: 'tool-cursor', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  
+  // Antigravity (Google) -> Gemini
+  { id: 'e-antigravity-gemini3', source: 'tool-antigravity', target: 'model-gemini-3-pro', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+
+  // Codex App -> GPT
+  { id: 'e-codexapp-gpt52c', source: 'tool-codex-app', target: 'model-gpt5-2-codex', style: { stroke: '#3b82f6', strokeWidth: 1 } },
 
   // Windsurf
-  { id: 'e-windsurf-gpt5', source: 'tool-windsurf', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
-  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-windsurf-gpt5', source: 'tool-windsurf', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+
+  // Official CLIs
+  { id: 'e-geminicli-gemini', source: 'tool-gemini-cli', target: 'model-gemini-3-pro', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-codexcli-gpt', source: 'tool-codex-cli', target: 'model-gpt5-2-codex', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+
+  // Open Agents (Connect to many)
+  { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
+  { id: 'e-aider-gpt5', source: 'tool-aider', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
+  { id: 'e-aider-claude', source: 'tool-aider', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
+  { id: 'e-goose-claude', source: 'tool-goose', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
 
   // Provider -> Model Connections (Green)
   { id: 'e-openai-gpt5', source: 'provider-openai', target: 'model-gpt5', style: { stroke: '#22c55e', strokeWidth: 2 } },
