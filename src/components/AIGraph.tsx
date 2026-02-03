@@ -23,7 +23,19 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
       case 'llm': return 'success';
       case 'video': return 'warning';
       case 'image': return 'secondary';
+      case 'provider': return 'default';
       default: return 'default';
+    }
+  }, [data.category]);
+
+  const nodeStyles = useMemo(() => {
+    switch (data.category) {
+      case 'tool': return { bg: '#006FEE', border: '#006FEE', text: '#ffffff', subtext: '#E0E7FF' }; // Primary Blue
+      case 'llm': return { bg: '#17C964', border: '#17C964', text: '#000000', subtext: '#1F2937' }; // Success Green
+      case 'video': return { bg: '#F5A524', border: '#F5A524', text: '#000000', subtext: '#431407' }; // Warning Orange
+      case 'image': return { bg: '#7828C8', border: '#7828C8', text: '#ffffff', subtext: '#F3E8FF' }; // Secondary Purple
+      case 'provider': return { bg: '#E4E4E7', border: '#E4E4E7', text: '#000000', subtext: '#52525B' }; // Zinc 200
+      default: return { bg: '#27272a', border: '#52525B', text: '#ffffff', subtext: '#a1a1aa' }; // Zinc 800
     }
   }, [data.category]);
 
@@ -31,35 +43,38 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="opacity-0" />
       <div
-        className={`min-w-[260px] p-6 border-2 transition-all duration-200 shadow-lg ${selected ? 'scale-105 shadow-xl' : ''}`}
+        className={`min-w-[260px] p-6 border-2 transition-all duration-200 ${selected ? 'scale-105' : ''}`}
         style={{
-          backgroundColor: '#09090b', // zinc-950
-          borderColor: selected ? '#3b82f6' : '#27272a', // blue-500 : zinc-800
-          color: '#ffffff',
+          backgroundColor: nodeStyles.bg,
+          borderColor: nodeStyles.border,
+          boxShadow: selected ? `0 0 40px ${nodeStyles.border}80` : `0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1)`,
+          color: nodeStyles.text,
           fontFamily: '"Source Sans 3", system-ui, sans-serif',
-          borderRadius: '32px', // Enforce rounded corners
+          borderRadius: '32px',
         }}
       >
         <div className="flex flex-col items-center justify-center gap-4">
-          <Chip  
+          <Chip 
             color={categoryColor} 
-            variant="flat" 
+            variant="solid" 
             size="sm" 
-            className="uppercase text-[10px] font-semibold tracking-widest"
+            className="uppercase text-[10px] font-bold tracking-widest border border-white/20 shadow-sm"
             style={{ 
-              color: '#ffffff',
+              color: nodeStyles.text === '#000000' ? '#000000' : '#ffffff',
+              backgroundColor: 'rgba(255, 255, 255, 0.2)', // Glassy chip
+              backdropFilter: 'blur(8px)',
               fontFamily: '"Source Sans 3", system-ui, sans-serif',
               letterSpacing: '0.1em'
             }}
           >
             {data.category}
           </Chip>
-          <div className="font-semibold text-center text-base leading-tight" style={{ 
-            color: '#fafafa',
+          <div className="font-bold text-center text-xl leading-tight tracking-tight" style={{ 
+            color: nodeStyles.text,
             fontFamily: '"Source Sans 3", system-ui, sans-serif',
           }}>{data.label}</div>
-          {data.provider && <div className="text-xs font-normal" style={{ 
-            color: '#a1a1aa',
+          {data.provider && <div className="text-sm font-medium opacity-90" style={{ 
+            color: nodeStyles.subtext,
             fontFamily: '"Source Sans 3", system-ui, sans-serif',
           }}>{data.provider}</div>}
         </div>
@@ -112,14 +127,26 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
         <Controls />
         <MiniMap 
             nodeStrokeColor={(n) => {
-                if (n.type === 'tool') return '#006FEE';
-                if (n.data.category === 'llm') return '#17C964';
-                if (n.data.category === 'video') return '#F5A524';
-                return '#eee';
+              const cat = (n.data as AINodeData)?.category;
+              switch (cat) {
+                case 'tool': return '#006FEE';
+                case 'llm': return '#17C964';
+                case 'video': return '#F5A524';
+                case 'image': return '#7828C8';
+                case 'provider': return '#E4E4E7';
+                default: return '#52525B';
+              }
             }}
             nodeColor={(n) => {
-                if (n.type === 'tool') return '#006FEE';
-                return '#fff';
+              const cat = (n.data as AINodeData)?.category;
+              switch (cat) {
+                case 'tool': return '#006FEE';
+                case 'llm': return '#17C964';
+                case 'video': return '#F5A524';
+                case 'image': return '#7828C8';
+                case 'provider': return '#E4E4E7';
+                default: return '#52525B';
+              }
             }}
         />
         <Background gap={12} size={1} />
