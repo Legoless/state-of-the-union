@@ -29,30 +29,42 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
 
   return (
     <div className="relative">
-      <Handle type="target" position={Position.Left} className="!bg-default-400" />
+      <Handle type="target" position={Position.Left} className="opacity-0" />
       <div
-        className={`min-w-[180px] p-3 rounded-xl border-2 transition-transform ${selected ? 'scale-105' : ''}`}
+        className={`min-w-[260px] p-6 border-2 transition-all duration-200 shadow-lg ${selected ? 'scale-105 shadow-xl' : ''}`}
         style={{
-          backgroundColor: '#18181b', // zinc-900
-          borderColor: selected ? '#3b82f6' : '#3f3f46', // blue-500 : zinc-700
+          backgroundColor: '#09090b', // zinc-950
+          borderColor: selected ? '#3b82f6' : '#27272a', // blue-500 : zinc-800
           color: '#ffffff',
+          fontFamily: '"Source Sans 3", system-ui, sans-serif',
+          borderRadius: '32px', // Enforce rounded corners
         }}
       >
-        <div className="flex flex-col items-center justify-center gap-2">
-          <Chip 
+        <div className="flex flex-col items-center justify-center gap-4">
+          <Chip  
             color={categoryColor} 
-            variant="solid" 
+            variant="flat" 
             size="sm" 
-            className="uppercase text-[10px] font-bold tracking-wider"
-            style={{ color: '#ffffff' }}
+            className="uppercase text-[10px] font-semibold tracking-widest"
+            style={{ 
+              color: '#ffffff',
+              fontFamily: '"Source Sans 3", system-ui, sans-serif',
+              letterSpacing: '0.1em'
+            }}
           >
             {data.category}
           </Chip>
-          <div className="font-bold text-center text-md" style={{ color: '#ffffff' }}>{data.label}</div>
-          {data.provider && <div className="text-[11px] font-medium" style={{ color: '#a1a1aa' }}>{data.provider}</div>}
+          <div className="font-semibold text-center text-base leading-tight" style={{ 
+            color: '#fafafa',
+            fontFamily: '"Source Sans 3", system-ui, sans-serif',
+          }}>{data.label}</div>
+          {data.provider && <div className="text-xs font-normal" style={{ 
+            color: '#a1a1aa',
+            fontFamily: '"Source Sans 3", system-ui, sans-serif',
+          }}>{data.provider}</div>}
         </div>
       </div>
-      <Handle type="source" position={Position.Right} className="!bg-default-400" />
+      <Handle type="source" position={Position.Right} className="opacity-0" />
     </div>
   );
 };
