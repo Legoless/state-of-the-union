@@ -80,12 +80,6 @@ export const initialNodes: AINode[] = [
 
   // --- Anthropic Models (Bottom Left Cluster) ---
   {
-    id: 'model-claude-4-5-sonnet',
-    type: 'model',
-    position: { x: -800, y: 300 },
-    data: { label: 'Claude 4.5 Sonnet', category: 'llm', provider: 'Anthropic', description: 'Balanced speed and intelligence.', releaseDate: '2025' },
-  },
-  {
     id: 'model-claude-4-5-opus',
     type: 'model',
     position: { x: -800, y: 600 },
@@ -278,7 +272,7 @@ export const initialEdges: Edge[] = [
   // --- Tool -> Model Connections ---
   // Cursor
   { id: 'e-cursor-gpt52', source: 'tool-cursor', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1 } },
-  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1 } },
   
   // Antigravity (Google) -> Gemini
   { id: 'e-antigravity-gemini3', source: 'tool-antigravity', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1 } },
@@ -288,24 +282,23 @@ export const initialEdges: Edge[] = [
 
   // Windsurf
   { id: 'e-windsurf-gpt52', source: 'tool-windsurf', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1 } },
-  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1 } },
 
   // Official CLIs
   { id: 'e-geminicli-gemini', source: 'tool-gemini-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1 } },
   { id: 'e-codexcli-gpt', source: 'tool-codex-cli', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1 } },
-  { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1 } },
 
   // Open Agents (Connect to many)
   { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
   { id: 'e-aider-gpt52', source: 'tool-aider', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'e-aider-claude', source: 'tool-aider', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'e-goose-claude', source: 'tool-goose', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
+  { id: 'e-aider-claude', source: 'tool-aider', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
+  { id: 'e-goose-claude', source: 'tool-goose', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
 
   // Provider -> Model Connections (Green)
   { id: 'e-openai-gpt5-2', source: 'provider-openai', target: 'model-gpt5-2', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-openai-sora2', source: 'provider-openai', target: 'model-sora-2', style: { stroke: '#eab308', strokeWidth: 2 } },
 
-  { id: 'e-anthropic-sonnet', source: 'provider-anthropic', target: 'model-claude-4-5-sonnet', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-anthropic-opus', source: 'provider-anthropic', target: 'model-claude-4-5-opus', style: { stroke: '#22c55e', strokeWidth: 2 } },
 
   { id: 'e-google-gemini3', source: 'provider-google', target: 'model-gemini-3', style: { stroke: '#22c55e', strokeWidth: 2 } },
@@ -317,7 +310,6 @@ export const initialEdges: Edge[] = [
 
   // Category -> LLM Connections (Green)
   { id: 'e-cat-llm-gpt52', source: 'category-llm-all', target: 'model-gpt5-2', style: { stroke: '#17C964', strokeWidth: 2 } },
-  { id: 'e-cat-llm-claude-sonnet', source: 'category-llm-all', target: 'model-claude-4-5-sonnet', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-claude-opus', source: 'category-llm-all', target: 'model-claude-4-5-opus', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-gemini3', source: 'category-llm-all', target: 'model-gemini-3', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v3', style: { stroke: '#17C964', strokeWidth: 2 } },
