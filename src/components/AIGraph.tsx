@@ -13,7 +13,7 @@ import {
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { initialNodes, initialEdges, type AINodeData } from '../data/ai-graph';
-import { Card, Chip } from "@heroui/react";
+import { Chip } from "@heroui/react";
 
 // --- Custom Node Component ---
 const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
@@ -30,18 +30,28 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
   return (
     <div className="relative">
       <Handle type="target" position={Position.Left} className="!bg-default-400" />
-      <Card
-        className={`min-w-[150px] p-2 border-2 transition-transform ${selected ? 'border-primary scale-105' : 'border-transparent hover:border-default-300'}`}
-        shadow="sm"
+      <div
+        className={`min-w-[180px] p-3 rounded-xl border-2 transition-transform ${selected ? 'scale-105' : ''}`}
+        style={{
+          backgroundColor: '#18181b', // zinc-900
+          borderColor: selected ? '#3b82f6' : '#3f3f46', // blue-500 : zinc-700
+          color: '#ffffff',
+        }}
       >
-        <div className="flex flex-col items-center justify-center gap-1">
-          <Chip color={categoryColor} variant="flat" size="sm" className="uppercase text-[10px]">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <Chip 
+            color={categoryColor} 
+            variant="solid" 
+            size="sm" 
+            className="uppercase text-[10px] font-bold tracking-wider"
+            style={{ color: '#ffffff' }}
+          >
             {data.category}
           </Chip>
-          <div className="font-bold text-center text-sm">{data.label}</div>
-          {data.provider && <div className="text-[10px] text-default-400">{data.provider}</div>}
+          <div className="font-bold text-center text-md" style={{ color: '#ffffff' }}>{data.label}</div>
+          {data.provider && <div className="text-[11px] font-medium" style={{ color: '#a1a1aa' }}>{data.provider}</div>}
         </div>
-      </Card>
+      </div>
       <Handle type="source" position={Position.Right} className="!bg-default-400" />
     </div>
   );
