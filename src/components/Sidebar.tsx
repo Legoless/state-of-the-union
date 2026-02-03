@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, Divider } from "@heroui/react";
+import { Card, CardHeader, CardBody, CardFooter, Divider, Chip, Button } from "@heroui/react";
+import { ExternalLink } from 'lucide-react';
 import type { AINodeData } from '../data/ai-graph';
 
 interface SidebarProps {
@@ -52,7 +53,40 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
               <p className="text-sm text-zinc-200">{selectedNode.specs}</p>
             </div>
           )}
+
+          {selectedNode.variants && selectedNode.variants.length > 0 && (
+            <div>
+              <h3 className="text-sm font-semibold text-zinc-500 uppercase tracking-wide mb-2">Variants</h3>
+              <div className="flex flex-wrap gap-2">
+                {selectedNode.variants.map((variant) => (
+                  <Chip key={variant} size="sm" variant="flat" className="bg-zinc-800 text-zinc-200">
+                    {variant}
+                  </Chip>
+                ))}
+              </div>
+            </div>
+          )}
         </CardBody>
+        
+        {selectedNode.link && (
+          <>
+            <Divider className="bg-zinc-700" />
+            <CardFooter>
+              <Button 
+                as="a" 
+                href={selectedNode.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                color="primary" 
+                variant="solid" 
+                className="w-full"
+                endContent={<ExternalLink size={16} />}
+              >
+                Visit Website
+              </Button>
+            </CardFooter>
+          </>
+        )}
       </Card>
     </div>
   );

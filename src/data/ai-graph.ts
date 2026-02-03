@@ -7,6 +7,8 @@ export type AINodeData = {
   provider?: string;
   releaseDate?: string;
   specs?: string;
+  variants?: string[];
+  link?: string;
 };
 
 export type AINode = Node<AINodeData>;
@@ -17,31 +19,61 @@ export const initialNodes: AINode[] = [
     id: 'provider-openai',
     type: 'tool', // Reuse existing styling
     position: { x: 0, y: -200 },
-    data: { label: 'OpenAI', category: 'provider', description: 'AI Research & Deployment Company', releaseDate: '2015' },
+    data: { 
+      label: 'OpenAI', 
+      category: 'provider', 
+      description: 'AI Research & Deployment Company', 
+      releaseDate: '2015',
+      link: 'https://openai.com'
+    },
   },
   {
     id: 'provider-anthropic',
     type: 'tool',
     position: { x: -400, y: 400 },
-    data: { label: 'Anthropic', category: 'provider', description: 'AI Safety & Research Company', releaseDate: '2021' },
+    data: { 
+      label: 'Anthropic', 
+      category: 'provider', 
+      description: 'AI Safety & Research Company', 
+      releaseDate: '2021',
+      link: 'https://www.anthropic.com'
+    },
   },
   {
     id: 'provider-google',
     type: 'tool',
     position: { x: 400, y: 400 },
-    data: { label: 'Google', category: 'provider', description: 'Google AI Division', releaseDate: '2010' },
+    data: { 
+      label: 'Google', 
+      category: 'provider', 
+      description: 'Google AI Division', 
+      releaseDate: '2010',
+      link: 'https://deepmind.google'
+    },
   },
   {
     id: 'provider-deepseek',
     type: 'tool',
     position: { x: 0, y: 550 },
-    data: { label: 'DeepSeek', category: 'provider', description: 'Open Source AI Lab', releaseDate: '2023' },
+    data: { 
+      label: 'DeepSeek', 
+      category: 'provider', 
+      description: 'Open Source AI Lab', 
+      releaseDate: '2023',
+      link: 'https://deepseekv3.org'
+    },
   },
   {
     id: 'provider-moonshot',
     type: 'tool',
     position: { x: -300, y: 700 },
-    data: { label: 'Moonshot AI', category: 'provider', description: 'Chinese AI Startup', releaseDate: '2023' },
+    data: { 
+      label: 'Moonshot AI', 
+      category: 'provider', 
+      description: 'Chinese AI Startup', 
+      releaseDate: '2023',
+      link: 'https://www.moonshot.cn'
+    },
   },
 
   // --- Categories (Central) ---
@@ -69,19 +101,43 @@ export const initialNodes: AINode[] = [
     id: 'model-gpt5-2',
     type: 'model',
     position: { x: 0, y: -600 },
-    data: { label: 'GPT-5.2', category: 'llm', provider: 'OpenAI', description: 'Flagship reasoning & coding model.', releaseDate: '2026' },
+    data: { 
+      label: 'GPT-5.2', 
+      category: 'llm', 
+      provider: 'OpenAI', 
+      description: 'Flagship reasoning & coding model.', 
+      releaseDate: '2026',
+      link: 'https://openai.com',
+      variants: ['GPT-5.2', 'GPT-5.2 Codex']
+    },
   },
   {
     id: 'model-sora-2',
     type: 'model',
     position: { x: 550, y: -400 },
-    data: { label: 'Sora 2', category: 'video', provider: 'OpenAI', description: 'Advanced video generation.', releaseDate: '2025' },
+    data: { 
+      label: 'Sora 2', 
+      category: 'video', 
+      provider: 'OpenAI', 
+      description: 'Advanced video generation.', 
+      releaseDate: '2025',
+      link: 'https://openai.com/sora',
+      variants: ['Sora 2', 'Sora 2 Turbo']
+    },
   },
   {
     id: 'model-gpt-image-1-5',
     type: 'model',
     position: { x: 550, y: -200 },
-    data: { label: 'GPT Image 1.5', category: 'image', provider: 'OpenAI', description: 'Next-gen photorealistic image generation.', releaseDate: '2025' },
+    data: { 
+      label: 'GPT Image 1.5', 
+      category: 'image', 
+      provider: 'OpenAI', 
+      description: 'Next-gen photorealistic image generation.', 
+      releaseDate: '2025',
+      link: 'https://openai.com',
+      variants: ['Standard', 'HD']
+    },
   },
 
   // --- Anthropic Models (Bottom Left Cluster) ---
@@ -89,7 +145,15 @@ export const initialNodes: AINode[] = [
     id: 'model-claude-4-5-opus',
     type: 'model',
     position: { x: -800, y: 600 },
-    data: { label: 'Claude 4.5 Opus', category: 'llm', provider: 'Anthropic', description: 'Most capable model for complex tasks.', releaseDate: '2025' },
+    data: { 
+      label: 'Claude 4.5 Opus', 
+      category: 'llm', 
+      provider: 'Anthropic', 
+      description: 'Most capable model for complex tasks.', 
+      releaseDate: '2025',
+      link: 'https://www.anthropic.com/claude',
+      variants: ['Claude 4.5 Opus', 'Claude 4.5 Sonnet', 'Claude 4.5 Haiku']
+    },
   },
 
   // --- Google Models (Bottom Right Cluster) ---
@@ -97,19 +161,43 @@ export const initialNodes: AINode[] = [
     id: 'model-gemini-3',
     type: 'model',
     position: { x: 800, y: 300 },
-    data: { label: 'Gemini 3', category: 'llm', provider: 'Google', description: 'Scalable multimodal family.', releaseDate: '2025' },
+    data: { 
+      label: 'Gemini 3', 
+      category: 'llm', 
+      provider: 'Google', 
+      description: 'Scalable multimodal family.', 
+      releaseDate: '2025',
+      link: 'https://deepmind.google/technologies/gemini/',
+      variants: ['Gemini 3 Pro', 'Gemini 3 Flash', 'Gemini 3 Ultra']
+    },
   },
   {
     id: 'model-veo-3',
     type: 'model',
     position: { x: 1100, y: 450 },
-    data: { label: 'Veo 3', category: 'video', provider: 'Google', description: 'High-definition video generation.', releaseDate: '2025' },
+    data: { 
+      label: 'Veo 3', 
+      category: 'video', 
+      provider: 'Google', 
+      description: 'High-definition video generation.', 
+      releaseDate: '2025',
+      link: 'https://deepmind.google/technologies/veo/',
+      variants: ['Veo 3', 'Veo 3 Pro']
+    },
   },
   {
     id: 'model-nano-banana',
     type: 'model',
     position: { x: 1100, y: 750 },
-    data: { label: 'Nano Banana Pro', category: 'image', provider: 'Google', description: 'Next-gen image generation.', releaseDate: '2025' },
+    data: { 
+      label: 'Nano Banana Pro', 
+      category: 'image', 
+      provider: 'Google', 
+      description: 'Next-gen image generation.', 
+      releaseDate: '2025',
+      link: 'https://deepmind.google',
+      variants: ['Nano', 'Banana']
+    },
   },
 
   // --- Independent Models (Bottom Center) ---
@@ -117,19 +205,43 @@ export const initialNodes: AINode[] = [
     id: 'model-deepseek-v3',
     type: 'model',
     position: { x: 0, y: 800 },
-    data: { label: 'DeepSeek-V3', category: 'llm', provider: 'DeepSeek', description: 'Open weights mixture-of-experts model.', releaseDate: '2024' },
+    data: { 
+      label: 'DeepSeek-V3', 
+      category: 'llm', 
+      provider: 'DeepSeek', 
+      description: 'Open weights mixture-of-experts model.', 
+      releaseDate: '2024',
+      link: 'https://deepseekv3.org',
+      variants: ['DeepSeek-V3-Base', 'DeepSeek-V3', 'DeepSeek-R1', 'DeepSeek-R1-Zero']
+    },
   },
   {
     id: 'model-kimi-2-5',
     type: 'model',
     position: { x: -300, y: 900 },
-    data: { label: 'Kimi 2.5', category: 'llm', provider: 'Moonshot AI', description: 'Long-context Chinese LLM.', releaseDate: '2025' },
+    data: { 
+      label: 'Kimi 2.5', 
+      category: 'llm', 
+      provider: 'Moonshot AI', 
+      description: 'Long-context Chinese LLM.', 
+      releaseDate: '2025',
+      link: 'https://kimi.moonshot.cn',
+      variants: ['Kimi 2.5', 'Kimi 2.5 Chat']
+    },
   },
   {
     id: 'model-flux-2',
     type: 'model',
     position: { x: 300, y: 900 },
-    data: { label: 'FLUX.2', category: 'image', provider: 'Black Forest Labs', description: 'State-of-the-art visual intelligence (Pro, Dev, Klein).', releaseDate: '2025' },
+    data: { 
+      label: 'FLUX.2', 
+      category: 'image', 
+      provider: 'Black Forest Labs', 
+      description: 'State-of-the-art visual intelligence (Pro, Dev, Klein).', 
+      releaseDate: '2025',
+      link: 'https://blackforestlabs.ai',
+      variants: ['FLUX.2 Pro', 'FLUX.2 Dev', 'FLUX.2 Schnell']
+    },
   },
 
   // --- Tool Categories (Left) ---
@@ -163,31 +275,66 @@ export const initialNodes: AINode[] = [
     id: 'tool-cursor',
     type: 'tool',
     position: { x: -1400, y: -400 },
-    data: { label: 'Cursor', category: 'ai-ide', description: 'AI Code Editor based on VS Code.', releaseDate: '2023' },
+    data: { 
+      label: 'Cursor', 
+      category: 'ai-ide', 
+      description: 'AI Code Editor based on VS Code.', 
+      releaseDate: '2023',
+      link: 'https://cursor.com',
+      variants: ['Claude 4.5 Opus', 'Claude 4.5 Sonnet', 'Composer 1', 'Gemini 3 Flash', 'Gemini 3 Pro', 'GPT-5.2', 'GPT-5.2 Codex', 'Grok Code']
+    },
   },
   {
     id: 'tool-windsurf',
     type: 'tool',
     position: { x: -1400, y: -200 },
-    data: { label: 'Windsurf', category: 'ai-ide', description: 'Agentic IDE by Codeium.', releaseDate: '2024' },
+    data: { 
+      label: 'Windsurf', 
+      category: 'ai-ide', 
+      description: 'Agentic IDE by Codeium.', 
+      releaseDate: '2024',
+      link: 'https://windsurf.com',
+      variants: ['Cascade', 'GPT-5.2-Codex']
+    },
   },
   {
     id: 'tool-zed',
     type: 'tool',
     position: { x: -1400, y: 0 },
-    data: { label: 'Zed', category: 'ai-ide', description: 'High-performance multiplayer code editor.', releaseDate: '2024' },
+    data: { 
+      label: 'Zed', 
+      category: 'ai-ide', 
+      description: 'High-performance multiplayer code editor.', 
+      releaseDate: '2024',
+      link: 'https://zed.dev',
+      variants: ['Zed AI', 'Claude 3.7 Sonnet']
+    },
   },
   {
     id: 'tool-antigravity',
     type: 'tool',
     position: { x: -1400, y: 200 },
-    data: { label: 'Antigravity', category: 'ai-ide', description: 'Google\'s AI-native IDE.', releaseDate: '2025' },
+    data: { 
+      label: 'Antigravity', 
+      category: 'ai-ide', 
+      description: "Google's AI-native IDE.",
+      releaseDate: '2025',
+      link: 'https://deepmind.google',
+      variants: ['Antigravity', 'Gemini Native']
+    },
   },
   {
     id: 'tool-codex-app',
     type: 'tool',
     position: { x: -1400, y: 400 },
-    data: { label: 'Codex App', category: 'ai-ide', description: 'OpenAI\'s coding environment.', releaseDate: '2025' },
+    data: { 
+      label: 'Codex App', 
+      category: 'ai-ide', 
+      description: "OpenAI's coding environment.",
+      releaseDate: '2025',
+      link: 'https://openai.com',
+      variants: ['Codex']
+    },
   },
 
   // --- CLI Agents ---
@@ -195,37 +342,79 @@ export const initialNodes: AINode[] = [
     id: 'tool-opencode',
     type: 'tool',
     position: { x: -1400, y: 600 },
-    data: { label: 'OpenCode', category: 'cli-agent', description: 'Open Source AI Coding Agent CLI.', releaseDate: '2025' },
+    data: { 
+      label: 'OpenCode', 
+      category: 'cli-agent', 
+      description: 'Open Source AI Coding Agent CLI.', 
+      releaseDate: '2025',
+      link: 'https://opencode.ai',
+      variants: ['OpenCode CLI']
+    },
   },
   {
     id: 'tool-aider',
     type: 'tool',
     position: { x: -1400, y: 750 },
-    data: { label: 'Aider', category: 'cli-agent', description: 'Terminal pair programmer.', releaseDate: '2023' },
+    data: { 
+      label: 'Aider', 
+      category: 'cli-agent', 
+      description: 'Terminal pair programmer.', 
+      releaseDate: '2023',
+      link: 'https://aider.chat',
+      variants: ['Aider']
+    },
   },
   {
     id: 'tool-goose',
     type: 'tool',
     position: { x: -1400, y: 900 },
-    data: { label: 'Goose', category: 'cli-agent', description: 'Block\'s open source agent.', releaseDate: '2025' },
+    data: { 
+      label: 'Goose', 
+      category: 'cli-agent', 
+      description: "Block's open source agent.",
+      releaseDate: '2025',
+      link: 'https://block.github.io/goose/',
+      variants: ['Goose']
+    },
   },
   {
     id: 'tool-gemini-cli',
     type: 'tool',
     position: { x: -1400, y: 1050 },
-    data: { label: 'Gemini CLI', category: 'cli-agent', description: 'Google\'s official terminal agent.', releaseDate: '2025' },
+    data: { 
+      label: 'Gemini CLI', 
+      category: 'cli-agent', 
+      description: "Google's official terminal agent.",
+      releaseDate: '2025',
+      link: 'https://deepmind.google',
+      variants: ['Gemini CLI']
+    },
   },
   {
     id: 'tool-codex-cli',
     type: 'tool',
     position: { x: -1400, y: 1200 },
-    data: { label: 'Codex CLI', category: 'cli-agent', description: 'OpenAI\'s official terminal agent.', releaseDate: '2025' },
+    data: { 
+      label: 'Codex CLI', 
+      category: 'cli-agent', 
+      description: "OpenAI's official terminal agent.",
+      releaseDate: '2025',
+      link: 'https://openai.com',
+      variants: ['Codex CLI']
+    },
   },
   {
     id: 'tool-claude-code',
     type: 'tool',
     position: { x: -1400, y: 1350 },
-    data: { label: 'Claude Code', category: 'cli-agent', description: 'Anthropic\'s official terminal agent.', releaseDate: '2025' },
+    data: { 
+      label: 'Claude Code', 
+      category: 'cli-agent', 
+      description: "Anthropic's official terminal agent.",
+      releaseDate: '2025',
+      link: 'https://www.anthropic.com',
+      variants: ['Claude Code']
+    },
   },
 
   // --- IDE Extensions ---
@@ -233,13 +422,27 @@ export const initialNodes: AINode[] = [
     id: 'tool-cline',
     type: 'tool',
     position: { x: -1400, y: 1500 },
-    data: { label: 'Cline', category: 'ide-extension', description: 'Autonomous coding agent extension.', releaseDate: '2024' },
+    data: { 
+      label: 'Cline', 
+      category: 'ide-extension', 
+      description: 'Autonomous coding agent extension.', 
+      releaseDate: '2024',
+      link: 'https://cline.bot',
+      variants: ['Cline']
+    },
   },
   {
     id: 'tool-roo-code',
     type: 'tool',
     position: { x: -1400, y: 1650 },
-    data: { label: 'Roo Code', category: 'ide-extension', description: 'Community fork of Cline.', releaseDate: '2025' },
+    data: { 
+      label: 'Roo Code', 
+      category: 'ide-extension', 
+      description: 'Community fork of Cline.', 
+      releaseDate: '2025',
+      link: 'https://github.com/RooVetGit/Roo-Cline',
+      variants: ['Roo Code']
+    },
   },
 
   // --- AI Terminals ---
@@ -247,7 +450,14 @@ export const initialNodes: AINode[] = [
     id: 'tool-warp',
     type: 'tool',
     position: { x: -1400, y: 1800 },
-    data: { label: 'Warp', category: 'ai-terminal', description: 'AI-powered Terminal.', releaseDate: '2021' },
+    data: { 
+      label: 'Warp', 
+      category: 'ai-terminal', 
+      description: 'AI-powered Terminal.', 
+      releaseDate: '2021',
+      link: 'https://www.warp.dev',
+      variants: ['Warp AI']
+    },
   },
 ];
 
