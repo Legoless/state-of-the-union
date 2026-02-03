@@ -32,6 +32,14 @@ export const initialNodes: AINode[] = [
     data: { label: 'Google DeepMind', category: 'provider', description: 'Google AI Division', releaseDate: '2010' },
   },
 
+  // --- Categories (Central) ---
+  {
+    id: 'category-llm-all',
+    type: 'llm',
+    position: { x: 0, y: 100 },
+    data: { label: 'LLMs', category: 'llm', description: 'All Large Language Models' },
+  },
+
   // --- OpenAI Models (Top Cluster) ---
   {
     id: 'model-gpt5',
@@ -153,26 +161,48 @@ export const initialNodes: AINode[] = [
 
 export const initialEdges: Edge[] = [
   // Cursor Connections
-  { id: 'e-cursor-gpt5', source: 'tool-cursor', target: 'model-gpt5' },
-  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-sonnet' },
-  { id: 'e-cursor-gpt52', source: 'tool-cursor', target: 'model-gpt5-2' },
+  { id: 'e-cursor-gpt5', source: 'tool-cursor', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-cursor-gpt52', source: 'tool-cursor', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 2 } },
 
   // Warp Connections
-  { id: 'e-warp-gpt5', source: 'tool-warp', target: 'model-gpt5' },
-  { id: 'e-warp-claude45', source: 'tool-warp', target: 'model-claude-4-5-sonnet' },
+  { id: 'e-warp-gpt5', source: 'tool-warp', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-warp-claude45', source: 'tool-warp', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 2 } },
 
   // OpenCode Connections (Many)
-  { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2' },
-  { id: 'e-opencode-gpt52c', source: 'tool-opencode', target: 'model-gpt5-2-codex' },
-  { id: 'e-opencode-claude45o', source: 'tool-opencode', target: 'model-claude-4-5-opus' },
-  { id: 'e-opencode-gemini3p', source: 'tool-opencode', target: 'model-gemini-3-pro' },
-  { id: 'e-opencode-kimi', source: 'tool-opencode', target: 'model-kimi-2-5' },
-  { id: 'e-opencode-deepseek', source: 'tool-opencode', target: 'model-deepseek-v3' },
+  { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-opencode-gpt52c', source: 'tool-opencode', target: 'model-gpt5-2-codex', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-opencode-claude45o', source: 'tool-opencode', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-opencode-gemini3p', source: 'tool-opencode', target: 'model-gemini-3-pro', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-opencode-kimi', source: 'tool-opencode', target: 'model-kimi-2-5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-opencode-deepseek', source: 'tool-opencode', target: 'model-deepseek-v3', style: { stroke: '#3b82f6', strokeWidth: 2 } },
 
   // Windsurf
-  { id: 'e-windsurf-gpt5', source: 'tool-windsurf', target: 'model-gpt5' },
-  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-sonnet' },
+  { id: 'e-windsurf-gpt5', source: 'tool-windsurf', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 2 } },
+  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 2 } },
 
-  // Relationships between models (e.g. Provider grouping could be implicit or explicit edges)
-  // For now, we leave them as independent nodes on the right side.
+  // Provider -> Model Connections (Green)
+  { id: 'e-openai-gpt5', source: 'provider-openai', target: 'model-gpt5', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-openai-gpt5-2', source: 'provider-openai', target: 'model-gpt5-2', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-openai-gpt5-2-codex', source: 'provider-openai', target: 'model-gpt5-2-codex', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-openai-sora2', source: 'provider-openai', target: 'model-sora-2', style: { stroke: '#eab308', strokeWidth: 2 } },
+
+  { id: 'e-anthropic-sonnet', source: 'provider-anthropic', target: 'model-claude-4-5-sonnet', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-anthropic-opus', source: 'provider-anthropic', target: 'model-claude-4-5-opus', style: { stroke: '#22c55e', strokeWidth: 2 } },
+
+  { id: 'e-google-gemini3pro', source: 'provider-google', target: 'model-gemini-3-pro', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-google-gemini3flash', source: 'provider-google', target: 'model-gemini-3-flash', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-google-veo3', source: 'provider-google', target: 'model-veo-3', style: { stroke: '#eab308', strokeWidth: 2 } },
+  { id: 'e-google-nanobanana', source: 'provider-google', target: 'model-nano-banana', style: { stroke: '#22c55e', strokeWidth: 2 } },
+
+  // Category -> LLM Connections (Green)
+  { id: 'e-cat-llm-gpt5', source: 'category-llm-all', target: 'model-gpt5', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-gpt52', source: 'category-llm-all', target: 'model-gpt5-2', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-gpt52c', source: 'category-llm-all', target: 'model-gpt5-2-codex', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-claude-sonnet', source: 'category-llm-all', target: 'model-claude-4-5-sonnet', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-claude-opus', source: 'category-llm-all', target: 'model-claude-4-5-opus', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-gemini-pro', source: 'category-llm-all', target: 'model-gemini-3-pro', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-gemini-flash', source: 'category-llm-all', target: 'model-gemini-3-flash', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v3', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-kimi', source: 'category-llm-all', target: 'model-kimi-2-5', style: { stroke: '#17C964', strokeWidth: 2 } },
 ];
