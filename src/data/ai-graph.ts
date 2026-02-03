@@ -66,22 +66,10 @@ export const initialNodes: AINode[] = [
 
   // --- OpenAI Models (Top Cluster) ---
   {
-    id: 'model-gpt5',
-    type: 'model',
-    position: { x: -250, y: -600 },
-    data: { label: 'GPT-5', category: 'llm', provider: 'OpenAI', description: 'Next-gen frontier model.', releaseDate: '2025' },
-  },
-  {
     id: 'model-gpt5-2',
     type: 'model',
-    position: { x: 250, y: -600 },
-    data: { label: 'GPT-5.2', category: 'llm', provider: 'OpenAI', description: 'Refined GPT-5 with enhanced reasoning.', releaseDate: '2026' },
-  },
-  {
-    id: 'model-gpt5-2-codex',
-    type: 'model',
-    position: { x: 0, y: -800 },
-    data: { label: 'GPT-5.2 Codex', category: 'llm', provider: 'OpenAI', description: 'Specialized coding model.', releaseDate: '2026' },
+    position: { x: 0, y: -600 },
+    data: { label: 'GPT-5.2', category: 'llm', provider: 'OpenAI', description: 'Flagship reasoning & coding model.', releaseDate: '2026' },
   },
   {
     id: 'model-sora-2',
@@ -106,16 +94,10 @@ export const initialNodes: AINode[] = [
 
   // --- Google Models (Bottom Right Cluster) ---
   {
-    id: 'model-gemini-3-pro',
+    id: 'model-gemini-3',
     type: 'model',
     position: { x: 800, y: 300 },
-    data: { label: 'Gemini 3 Pro', category: 'llm', provider: 'Google', description: 'Scalable multimodal model.', releaseDate: '2025' },
-  },
-  {
-    id: 'model-gemini-3-flash',
-    type: 'model',
-    position: { x: 800, y: 600 },
-    data: { label: 'Gemini 3 Flash', category: 'llm', provider: 'Google', description: 'High-efficiency, low-latency model.', releaseDate: '2025' },
+    data: { label: 'Gemini 3', category: 'llm', provider: 'Google', description: 'Scalable multimodal family.', releaseDate: '2025' },
   },
   {
     id: 'model-veo-3',
@@ -295,41 +277,38 @@ export const initialEdges: Edge[] = [
 
   // --- Tool -> Model Connections ---
   // Cursor
-  { id: 'e-cursor-gpt5', source: 'tool-cursor', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-cursor-gpt52', source: 'tool-cursor', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1 } },
   { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
   
   // Antigravity (Google) -> Gemini
-  { id: 'e-antigravity-gemini3', source: 'tool-antigravity', target: 'model-gemini-3-pro', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-antigravity-gemini3', source: 'tool-antigravity', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1 } },
 
   // Codex App -> GPT
-  { id: 'e-codexapp-gpt52c', source: 'tool-codex-app', target: 'model-gpt5-2-codex', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-codexapp-gpt52', source: 'tool-codex-app', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1 } },
 
   // Windsurf
-  { id: 'e-windsurf-gpt5', source: 'tool-windsurf', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-windsurf-gpt52', source: 'tool-windsurf', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1 } },
   { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
 
   // Official CLIs
-  { id: 'e-geminicli-gemini', source: 'tool-gemini-cli', target: 'model-gemini-3-pro', style: { stroke: '#3b82f6', strokeWidth: 1 } },
-  { id: 'e-codexcli-gpt', source: 'tool-codex-cli', target: 'model-gpt5-2-codex', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-geminicli-gemini', source: 'tool-gemini-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1 } },
+  { id: 'e-codexcli-gpt', source: 'tool-codex-cli', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1 } },
   { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1 } },
 
   // Open Agents (Connect to many)
   { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'e-aider-gpt5', source: 'tool-aider', target: 'model-gpt5', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
+  { id: 'e-aider-gpt52', source: 'tool-aider', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
   { id: 'e-aider-claude', source: 'tool-aider', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
   { id: 'e-goose-claude', source: 'tool-goose', target: 'model-claude-4-5-sonnet', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
 
   // Provider -> Model Connections (Green)
-  { id: 'e-openai-gpt5', source: 'provider-openai', target: 'model-gpt5', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-openai-gpt5-2', source: 'provider-openai', target: 'model-gpt5-2', style: { stroke: '#22c55e', strokeWidth: 2 } },
-  { id: 'e-openai-gpt5-2-codex', source: 'provider-openai', target: 'model-gpt5-2-codex', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-openai-sora2', source: 'provider-openai', target: 'model-sora-2', style: { stroke: '#eab308', strokeWidth: 2 } },
 
   { id: 'e-anthropic-sonnet', source: 'provider-anthropic', target: 'model-claude-4-5-sonnet', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-anthropic-opus', source: 'provider-anthropic', target: 'model-claude-4-5-opus', style: { stroke: '#22c55e', strokeWidth: 2 } },
 
-  { id: 'e-google-gemini3pro', source: 'provider-google', target: 'model-gemini-3-pro', style: { stroke: '#22c55e', strokeWidth: 2 } },
-  { id: 'e-google-gemini3flash', source: 'provider-google', target: 'model-gemini-3-flash', style: { stroke: '#22c55e', strokeWidth: 2 } },
+  { id: 'e-google-gemini3', source: 'provider-google', target: 'model-gemini-3', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-google-veo3', source: 'provider-google', target: 'model-veo-3', style: { stroke: '#eab308', strokeWidth: 2 } },
   { id: 'e-google-nanobanana', source: 'provider-google', target: 'model-nano-banana', style: { stroke: '#22c55e', strokeWidth: 2 } },
 
@@ -337,13 +316,10 @@ export const initialEdges: Edge[] = [
   { id: 'e-moonshot-kimi', source: 'provider-moonshot', target: 'model-kimi-2-5', style: { stroke: '#22c55e', strokeWidth: 2 } },
 
   // Category -> LLM Connections (Green)
-  { id: 'e-cat-llm-gpt5', source: 'category-llm-all', target: 'model-gpt5', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-gpt52', source: 'category-llm-all', target: 'model-gpt5-2', style: { stroke: '#17C964', strokeWidth: 2 } },
-  { id: 'e-cat-llm-gpt52c', source: 'category-llm-all', target: 'model-gpt5-2-codex', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-claude-sonnet', source: 'category-llm-all', target: 'model-claude-4-5-sonnet', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-claude-opus', source: 'category-llm-all', target: 'model-claude-4-5-opus', style: { stroke: '#17C964', strokeWidth: 2 } },
-  { id: 'e-cat-llm-gemini-pro', source: 'category-llm-all', target: 'model-gemini-3-pro', style: { stroke: '#17C964', strokeWidth: 2 } },
-  { id: 'e-cat-llm-gemini-flash', source: 'category-llm-all', target: 'model-gemini-3-flash', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-gemini3', source: 'category-llm-all', target: 'model-gemini-3', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v3', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-kimi', source: 'category-llm-all', target: 'model-kimi-2-5', style: { stroke: '#17C964', strokeWidth: 2 } },
 
