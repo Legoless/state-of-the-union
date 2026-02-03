@@ -29,7 +29,7 @@ export const initialNodes: AINode[] = [
     id: 'provider-google',
     type: 'tool',
     position: { x: 400, y: 400 },
-    data: { label: 'Google DeepMind', category: 'provider', description: 'Google AI Division', releaseDate: '2010' },
+    data: { label: 'Google', category: 'provider', description: 'Google AI Division', releaseDate: '2010' },
   },
   {
     id: 'provider-deepseek',
@@ -77,6 +77,12 @@ export const initialNodes: AINode[] = [
     position: { x: 550, y: -400 },
     data: { label: 'Sora 2', category: 'video', provider: 'OpenAI', description: 'Advanced video generation.', releaseDate: '2025' },
   },
+  {
+    id: 'model-gpt-image-1-5',
+    type: 'model',
+    position: { x: 550, y: -200 },
+    data: { label: 'GPT Image 1.5', category: 'image', provider: 'OpenAI', description: 'Next-gen photorealistic image generation.', releaseDate: '2025' },
+  },
 
   // --- Anthropic Models (Bottom Left Cluster) ---
   {
@@ -120,10 +126,10 @@ export const initialNodes: AINode[] = [
     data: { label: 'Kimi 2.5', category: 'llm', provider: 'Moonshot AI', description: 'Long-context Chinese LLM.', releaseDate: '2025' },
   },
   {
-    id: 'model-flux',
+    id: 'model-flux-2',
     type: 'model',
     position: { x: 300, y: 900 },
-    data: { label: 'Flux', category: 'image', provider: 'Black Forest Labs', description: 'State-of-the-art open image model.', releaseDate: '2024' },
+    data: { label: 'FLUX.2', category: 'image', provider: 'Black Forest Labs', description: 'State-of-the-art visual intelligence (Pro, Dev, Klein).', releaseDate: '2025' },
   },
 
   // --- Tool Categories (Left) ---
@@ -298,6 +304,7 @@ export const initialEdges: Edge[] = [
   // Provider -> Model Connections (Green)
   { id: 'e-openai-gpt5-2', source: 'provider-openai', target: 'model-gpt5-2', style: { stroke: '#22c55e', strokeWidth: 2 } },
   { id: 'e-openai-sora2', source: 'provider-openai', target: 'model-sora-2', style: { stroke: '#eab308', strokeWidth: 2 } },
+  { id: 'e-openai-gpt-image-1-5', source: 'provider-openai', target: 'model-gpt-image-1-5', style: { stroke: '#7828C8', strokeWidth: 2 } },
 
   { id: 'e-anthropic-opus', source: 'provider-anthropic', target: 'model-claude-4-5-opus', style: { stroke: '#22c55e', strokeWidth: 2 } },
 
@@ -317,7 +324,8 @@ export const initialEdges: Edge[] = [
 
   // Category -> Image Connections (Purple)
   { id: 'e-cat-image-nano', source: 'category-image-all', target: 'model-nano-banana', style: { stroke: '#7828C8', strokeWidth: 2 } },
-  { id: 'e-cat-image-flux', source: 'category-image-all', target: 'model-flux', style: { stroke: '#7828C8', strokeWidth: 2 } },
+  { id: 'e-cat-image-flux', source: 'category-image-all', target: 'model-flux-2', style: { stroke: '#7828C8', strokeWidth: 2 } },
+  { id: 'e-cat-image-gpt-image-1-5', source: 'category-image-all', target: 'model-gpt-image-1-5', style: { stroke: '#7828C8', strokeWidth: 2 } },
 
   // Category -> Video Connections (Orange)
   { id: 'e-cat-video-sora', source: 'category-video-all', target: 'model-sora-2', style: { stroke: '#F5A524', strokeWidth: 2 } },
