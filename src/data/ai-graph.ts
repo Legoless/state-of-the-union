@@ -39,6 +39,18 @@ export const initialNodes: AINode[] = [
     position: { x: 0, y: 100 },
     data: { label: 'LLMs', category: 'llm', description: 'All Large Language Models' },
   },
+  {
+    id: 'category-image-all',
+    type: 'image',
+    position: { x: -250, y: 100 },
+    data: { label: 'Image Models', category: 'image', description: 'Image Generation Models' },
+  },
+  {
+    id: 'category-video-all',
+    type: 'video',
+    position: { x: 250, y: 100 },
+    data: { label: 'Video Models', category: 'video', description: 'Video Generation Models' },
+  },
 
   // --- OpenAI Models (Top Cluster) ---
   {
@@ -205,4 +217,12 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-llm-gemini-flash', source: 'category-llm-all', target: 'model-gemini-3-flash', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v3', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-kimi', source: 'category-llm-all', target: 'model-kimi-2-5', style: { stroke: '#17C964', strokeWidth: 2 } },
+
+  // Category -> Image Connections (Purple)
+  { id: 'e-cat-image-nano', source: 'category-image-all', target: 'model-nano-banana', style: { stroke: '#7828C8', strokeWidth: 2 } },
+  { id: 'e-cat-image-flux', source: 'category-image-all', target: 'model-flux', style: { stroke: '#7828C8', strokeWidth: 2 } },
+
+  // Category -> Video Connections (Orange)
+  { id: 'e-cat-video-sora', source: 'category-video-all', target: 'model-sora-2', style: { stroke: '#F5A524', strokeWidth: 2 } },
+  { id: 'e-cat-video-veo', source: 'category-video-all', target: 'model-veo-3', style: { stroke: '#F5A524', strokeWidth: 2 } },
 ];
