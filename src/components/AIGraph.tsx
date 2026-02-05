@@ -97,6 +97,7 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
         }}
       >
         <div className="flex flex-col items-center justify-center gap-4">
+          {!isRoot && (
           <Chip 
             color={categoryColor} 
             variant="solid" 
@@ -112,6 +113,7 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
           >
             {data.category}
           </Chip>
+          )}
           <div className="font-bold text-center text-4xl leading-tight tracking-tight" style={{
             color: nodeStyles.text,
             fontFamily: '"Source Sans 3", system-ui, sans-serif',

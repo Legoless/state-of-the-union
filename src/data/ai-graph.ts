@@ -22,7 +22,7 @@ export const initialNodes: AINode[] = [
     id: 'root-ai',
     type: 'root',
     position: { x: 0, y: 0 },
-    data: { label: 'AI', category: 'root', description: 'Artificial Intelligence Ecosystem' },
+    data: { label: 'AI', category: 'root', description: 'Artificial Intelligence Ecosystem', provider: 'State of the Union' },
   },
 
   // --- Categories (Ring 1, Radius ~900) ---
