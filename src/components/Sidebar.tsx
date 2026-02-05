@@ -25,9 +25,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
             <h2 className="text-xl font-bold text-white">{selectedNode.label}</h2>
             <button onClick={onClose} className="text-zinc-400 hover:text-white">✕</button>
           </div>
-          <span className="text-small text-zinc-400 uppercase font-bold tracking-wider">
-            {selectedNode.category}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-small text-zinc-400 uppercase font-bold tracking-wider">
+              {selectedNode.category}
+            </span>
+            {!selectedNode.isDarker && (
+              <Chip size="sm" color="success" variant="flat" className="h-6">
+                In use
+              </Chip>
+            )}
+          </div>
         </CardHeader>
         <Divider className="bg-zinc-700" />
         <CardBody className="gap-4 overflow-y-auto">
