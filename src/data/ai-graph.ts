@@ -14,68 +14,6 @@ export type AINodeData = {
 export type AINode = Node<AINodeData>;
 
 export const initialNodes: AINode[] = [
-  // --- Providers (Center) ---
-  {
-    id: 'provider-openai',
-    type: 'tool', // Reuse existing styling
-    position: { x: 0, y: -200 },
-    data: { 
-      label: 'OpenAI', 
-      category: 'provider', 
-      description: 'AI Research & Deployment Company', 
-      releaseDate: '2015',
-      link: 'https://openai.com'
-    },
-  },
-  {
-    id: 'provider-anthropic',
-    type: 'tool',
-    position: { x: -400, y: 400 },
-    data: { 
-      label: 'Anthropic', 
-      category: 'provider', 
-      description: 'AI Safety & Research Company', 
-      releaseDate: '2021',
-      link: 'https://www.anthropic.com'
-    },
-  },
-  {
-    id: 'provider-google',
-    type: 'tool',
-    position: { x: 400, y: 400 },
-    data: { 
-      label: 'Google', 
-      category: 'provider', 
-      description: 'Google AI Division', 
-      releaseDate: '2010',
-      link: 'https://deepmind.google'
-    },
-  },
-  {
-    id: 'provider-deepseek',
-    type: 'tool',
-    position: { x: 0, y: 550 },
-    data: { 
-      label: 'DeepSeek', 
-      category: 'provider', 
-      description: 'Open Source AI Lab', 
-      releaseDate: '2023',
-      link: 'https://deepseekv3.org'
-    },
-  },
-  {
-    id: 'provider-moonshot',
-    type: 'tool',
-    position: { x: -300, y: 700 },
-    data: { 
-      label: 'Moonshot AI', 
-      category: 'provider', 
-      description: 'Chinese AI Startup', 
-      releaseDate: '2023',
-      link: 'https://www.moonshot.cn'
-    },
-  },
-
   // --- Categories (Central) ---
   {
     id: 'category-llm-all',
@@ -470,20 +408,6 @@ export const initialEdges: Edge[] = [
 
   // Open Agents (Connect to many)
   { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
-
-  // Provider -> Model Connections (Green)
-  { id: 'e-openai-gpt5-2', source: 'provider-openai', target: 'model-gpt5-2', style: { stroke: '#22c55e', strokeWidth: 2 } },
-  { id: 'e-openai-sora2', source: 'provider-openai', target: 'model-sora-2', style: { stroke: '#eab308', strokeWidth: 2 } },
-  { id: 'e-openai-gpt-image-1-5', source: 'provider-openai', target: 'model-gpt-image-1-5', style: { stroke: '#7828C8', strokeWidth: 2 } },
-
-  { id: 'e-anthropic-opus', source: 'provider-anthropic', target: 'model-claude-4-5-opus', style: { stroke: '#22c55e', strokeWidth: 2 } },
-
-  { id: 'e-google-gemini3', source: 'provider-google', target: 'model-gemini-3', style: { stroke: '#22c55e', strokeWidth: 2 } },
-  { id: 'e-google-veo3', source: 'provider-google', target: 'model-veo-3', style: { stroke: '#eab308', strokeWidth: 2 } },
-  { id: 'e-google-nanobanana', source: 'provider-google', target: 'model-nano-banana', style: { stroke: '#22c55e', strokeWidth: 2 } },
-
-  { id: 'e-deepseek-v3', source: 'provider-deepseek', target: 'model-deepseek-v3', style: { stroke: '#22c55e', strokeWidth: 2 } },
-  { id: 'e-moonshot-kimi', source: 'provider-moonshot', target: 'model-kimi-2-5', style: { stroke: '#22c55e', strokeWidth: 2 } },
 
   // Category -> LLM Connections (Green)
   { id: 'e-cat-llm-gpt52', source: 'category-llm-all', target: 'model-gpt5-2', style: { stroke: '#17C964', strokeWidth: 2 } },
