@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useEffect } from 'react';
 import {
   ReactFlow,
   MiniMap,
@@ -85,6 +85,17 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
         </>
       )}
 
+      {data.isNew && (
+        <Chip
+          color="danger"
+          variant="solid"
+          size="sm"
+          className="absolute -top-4 -right-4 z-50 shadow-lg border-2 border-white animate-pulse"
+        >
+          NEW
+        </Chip>
+      )}
+
       <div
         className={`min-w-[400px] p-10 border-2 transition-all duration-200 ${selected ? 'scale-105' : ''}`}
         style={{
@@ -147,13 +158,78 @@ const nodeTypes = {
   root: CustomAINode,
 };
 
+const STORAGE_KEY = 'ai_graph_node_state';
+
+interface StoredNode {
+  id: string;
+  label: string;
+}
+
 export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
-  const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  // Initialize nodes with "NEW" status check
+  const initialNodesWithNewStatus = useMemo(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const storedNodes: StoredNode[] = stored ? JSON.parse(stored) : [];
+      
+      // If no stored nodes, assume first visit/cleared cache, so don't mark anything as new
+      // unless we want to mark everything as new on first visit. 
+      // Plan said: "If storage is empty, assume first visit and show NO badges"
+      if (storedNodes.length === 0) {
+        return initialNodes;
+      }
+
+      const storedMap = new Map(storedNodes.map(n => [n.id, n.label]));
+
+      return initialNodes.map(node => {
+        const storedLabel = storedMap.get(node.id);
+        const isNew = !storedMap.has(node.id) || storedLabel !== node.data.label;
+        
+        if (isNew) {
+          return {
+            ...node,
+            data: { ...node.data, isNew: true }
+          };
+        }
+        return node;
+      });
+    } catch (e) {
+      console.error('Failed to parse stored nodes', e);
+      return initialNodes;
+    }
+  }, []);
+
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodesWithNewStatus);
+
   const [edges, , onEdgesChange] = useEdgesState(initialEdges);
 
+  // Save current state to localStorage on mount/update
+  useEffect(() => {
+    const currentSnapshot: StoredNode[] = initialNodes.map(n => ({
+      id: n.id,
+      label: n.data.label
+    }));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(currentSnapshot));
+  }, []);
+
   const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-    onNodeSelect(node.data as AINodeData);
-  }, [onNodeSelect]);
+    const nodeData = node.data as AINodeData;
+    
+    // Clear the NEW badge if it exists
+    if (nodeData.isNew) {
+      setNodes((nds) => nds.map((n) => {
+        if (n.id === node.id) {
+          return {
+            ...n,
+            data: { ...n.data, isNew: undefined }
+          };
+        }
+        return n;
+      }));
+    }
+
+    onNodeSelect(nodeData);
+  }, [onNodeSelect, setNodes]);
 
   const onPaneClick = useCallback(() => {
     onNodeSelect(null);

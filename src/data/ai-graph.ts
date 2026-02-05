@@ -12,6 +12,7 @@ export type AINodeData = {
   targetHandle?: 'top' | 'right' | 'bottom' | 'left';
   sourceHandle?: 'top' | 'right' | 'bottom' | 'left';
   isDarker?: boolean;
+  isNew?: boolean;
 };
 
 export type AINode = Node<AINodeData>;

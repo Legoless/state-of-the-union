@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter, Divider, Chip, Button } from "@heroui/react";
-import { ExternalLink } from 'lucide-react';
+import { Card, CardHeader, CardBody, Divider, Chip } from "@heroui/react";
 import type { AINodeData } from '../data/ai-graph';
 
 interface SidebarProps {
