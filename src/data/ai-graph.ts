@@ -96,7 +96,7 @@ export const initialNodes: AINode[] = [
       provider: 'DeepSeek', 
       description: 'Open weights mixture-of-experts model.', 
       releaseDate: '2024',
-      link: 'https://deepseekv3.org',
+      link: 'https://api-docs.deepseek.com/',
       variants: [
         { label: 'DeepSeek-V3.2', id: 'deepseek-v3.2' },
         { label: 'DeepSeek-R1', id: 'deepseek-r1' }
@@ -115,7 +115,7 @@ export const initialNodes: AINode[] = [
       provider: 'Anthropic', 
       description: 'Most capable model for complex tasks.', 
       releaseDate: '2025',
-      link: 'https://www.anthropic.com/claude',
+      link: 'https://docs.anthropic.com/en/api/overview',
       variants: [
         { label: 'Claude 4.5 Opus', id: 'claude-opus-4-5' },
         { label: 'Claude 4.5 Sonnet', id: 'claude-sonnet-4-5' },
@@ -134,7 +134,7 @@ export const initialNodes: AINode[] = [
       provider: 'OpenAI', 
       description: 'Flagship reasoning & coding model.', 
       releaseDate: '2026',
-      link: 'https://openai.com',
+      link: 'https://platform.openai.com/docs/models',
       variants: [
         { label: 'GPT-5.2', id: 'gpt-5.2' },
         { label: 'GPT-5.2 Codex', id: 'gpt-5.2-codex' }
@@ -152,7 +152,7 @@ export const initialNodes: AINode[] = [
       provider: 'Google', 
       description: 'Scalable multimodal family.', 
       releaseDate: '2025',
-      link: 'https://deepmind.google/technologies/gemini/',
+      link: 'https://ai.google.dev/gemini-api/docs/models',
       variants: [
         { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
         { label: 'Gemini 3 Flash', id: 'gemini-3-flash' },
@@ -171,7 +171,7 @@ export const initialNodes: AINode[] = [
       provider: 'Moonshot AI', 
       description: 'Long-context Chinese LLM.', 
       releaseDate: '2025',
-      link: 'https://kimi.moonshot.cn',
+      link: 'https://platform.moonshot.ai/docs',
       variants: [
         { label: 'Kimi K2.5', id: 'kimi-k2.5' }
       ],
@@ -191,7 +191,7 @@ export const initialNodes: AINode[] = [
       provider: 'OpenAI', 
       description: 'Next-gen photorealistic image generation.', 
       releaseDate: '2025',
-      link: 'https://openai.com',
+      link: 'https://platform.openai.com/docs/guides/image-generation',
       variants: [
         { label: 'GPT Image 1.5', id: 'gpt-image-1.5' }
       ],
@@ -208,7 +208,7 @@ export const initialNodes: AINode[] = [
       provider: 'Google', 
       description: 'Next-gen image generation.', 
       releaseDate: '2025',
-      link: 'https://deepmind.google',
+      link: 'https://ai.google.dev/gemini-api/docs/image-generation',
       variants: [
         { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' }
       ],
@@ -225,7 +225,7 @@ export const initialNodes: AINode[] = [
       provider: 'Black Forest Labs', 
       description: 'State-of-the-art visual intelligence (Pro, Dev, Klein).', 
       releaseDate: '2025',
-      link: 'https://blackforestlabs.ai',
+      link: 'https://docs.bfl.ai/flux_2/flux2_overview',
       variants: [
         { label: 'FLUX.2 [max]', id: 'flux-2-max' },
         { label: 'FLUX.2 [pro]', id: 'flux-2-pro' },
@@ -248,7 +248,7 @@ export const initialNodes: AINode[] = [
       provider: 'OpenAI', 
       description: 'Advanced video generation.', 
       releaseDate: '2025',
-      link: 'https://openai.com/sora',
+      link: 'https://platform.openai.com/docs/models/sora-2',
       variants: [
         { label: 'Sora 2', id: 'sora-2' },
         { label: 'Sora 2 Pro', id: 'sora-2-pro' }
@@ -266,7 +266,7 @@ export const initialNodes: AINode[] = [
       provider: 'Google', 
       description: 'High-definition video generation.', 
       releaseDate: '2025',
-      link: 'https://deepmind.google/technologies/veo/',
+      link: 'https://ai.google.dev/gemini-api/docs/video',
       variants: [
         { label: 'Veo 3.1', id: 'veo-3.1-generate-001' },
         { label: 'Veo 3.1 Fast', id: 'veo-3.1-fast-generate-001' }
@@ -285,7 +285,7 @@ export const initialNodes: AINode[] = [
       category: 'ai-ide', 
       description: 'AI Code Editor based on VS Code.', 
       releaseDate: '2023',
-      link: 'https://cursor.com',
+      link: 'https://docs.cursor.com/',
       variants: [
         { label: 'Claude 4.5 Opus', id: 'claude-opus-4-5' },
         { label: 'Claude 4.5 Sonnet', id: 'claude-sonnet-4-5' },
@@ -307,7 +307,7 @@ export const initialNodes: AINode[] = [
       category: 'ai-ide', 
       description: 'Agentic IDE by Codeium.', 
       releaseDate: '2024',
-      link: 'https://windsurf.com',
+      link: 'https://docs.windsurf.com/',
       variants: [
         { label: 'Cascade', id: 'cascade' },
         { label: 'GPT-5.2-Codex', id: 'gpt-5.2-codex' }
@@ -325,7 +325,7 @@ export const initialNodes: AINode[] = [
       category: 'ai-ide', 
       description: "Google's AI-native IDE.",
       releaseDate: '2025',
-      link: 'https://deepmind.google',
+      link: 'https://antigravity.google/',
       variants: [
         { label: 'Antigravity', id: 'antigravity' },
         { label: 'Gemini Native', id: 'gemini-native' }
@@ -342,7 +342,7 @@ export const initialNodes: AINode[] = [
       category: 'ai-ide', 
       description: "OpenAI's coding environment.",
       releaseDate: '2025',
-      link: 'https://openai.com',
+      link: 'https://developers.openai.com/codex/app',
       variants: [
         { label: 'Codex', id: 'codex' }
       ],
@@ -360,7 +360,7 @@ export const initialNodes: AINode[] = [
       category: 'cli-agent', 
       description: 'Open Source AI Coding Agent CLI.', 
       releaseDate: '2025',
-      link: 'https://opencode.ai',
+      link: 'https://opencode.ai/docs',
       variants: [
         { label: 'OpenCode CLI', id: 'opencode-cli' }
       ],
@@ -376,7 +376,7 @@ export const initialNodes: AINode[] = [
       category: 'cli-agent', 
       description: "Google's official terminal agent.",
       releaseDate: '2025',
-      link: 'https://deepmind.google',
+      link: 'https://ai.google.dev/gemini-api/docs/quickstart',
       variants: [
         { label: 'Gemini CLI', id: 'gemini-cli' }
       ],
@@ -393,7 +393,7 @@ export const initialNodes: AINode[] = [
       category: 'cli-agent', 
       description: "OpenAI's official terminal agent.",
       releaseDate: '2025',
-      link: 'https://openai.com',
+      link: 'https://developers.openai.com/codex/cli',
       variants: [
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
@@ -410,7 +410,7 @@ export const initialNodes: AINode[] = [
       category: 'cli-agent', 
       description: "Anthropic's official terminal agent.",
       releaseDate: '2025',
-      link: 'https://www.anthropic.com',
+      link: 'https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview',
       variants: [
         { label: 'Claude Code', id: 'claude-code' }
       ],
@@ -429,7 +429,7 @@ export const initialNodes: AINode[] = [
       category: 'ide-extension', 
       description: 'Autonomous coding agent extension.', 
       releaseDate: '2024',
-      link: 'https://cline.bot',
+      link: 'https://docs.cline.bot/',
       variants: [
         { label: 'Cline', id: 'cline' }
       ],
@@ -448,7 +448,7 @@ export const initialNodes: AINode[] = [
       category: 'ai-terminal', 
       description: 'AI-powered Terminal.', 
       releaseDate: '2021',
-      link: 'https://www.warp.dev',
+      link: 'https://docs.warp.dev/',
       variants: [
         { label: 'Warp AI', id: 'warp-ai' }
       ],
@@ -465,6 +465,7 @@ export const initialNodes: AINode[] = [
       label: 'OpenClaw bot', 
       category: 'assistant', 
       description: 'OpenClaw Automated Assistant.', 
+      link: 'https://docs.openclaw.ai/',
       releaseDate: '2025',
       targetHandle: 'right'
     },
