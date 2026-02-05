@@ -27,6 +27,7 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
       case 'video': return 'warning';
       case 'image': return 'secondary';
       case 'provider': return 'default';
+      case 'assistant': return 'secondary';
       default: return 'default';
     }
   }, [data.category]);
@@ -41,6 +42,7 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
       case 'video': return { bg: '#F5A524', border: '#F5A524', text: '#000000', subtext: '#431407' }; // Warning Orange
       case 'image': return { bg: '#7828C8', border: '#7828C8', text: '#ffffff', subtext: '#F3E8FF' }; // Secondary Purple
       case 'provider': return { bg: '#E4E4E7', border: '#E4E4E7', text: '#000000', subtext: '#52525B' }; // Zinc 200
+      case 'assistant': return { bg: '#EC4899', border: '#EC4899', text: '#ffffff', subtext: '#FCE7F3' }; // Pink 500
       default: return { bg: '#27272a', border: '#52525B', text: '#ffffff', subtext: '#a1a1aa' }; // Zinc 800
     }
   }, [data.category]);
@@ -105,6 +107,7 @@ const nodeTypes = {
   llm: CustomAINode,
   video: CustomAINode,
   image: CustomAINode,
+  assistant: CustomAINode,
 };
 
 export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
@@ -147,6 +150,7 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
                 case 'video': return '#F5A524';
                 case 'image': return '#7828C8';
                 case 'provider': return '#E4E4E7';
+                case 'assistant': return '#EC4899';
                 default: return '#52525B';
               }
             }}
@@ -161,6 +165,7 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
                 case 'video': return '#F5A524';
                 case 'image': return '#7828C8';
                 case 'provider': return '#E4E4E7';
+                case 'assistant': return '#EC4899';
                 default: return '#52525B';
               }
             }}

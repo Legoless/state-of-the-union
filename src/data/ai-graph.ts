@@ -2,7 +2,7 @@ import type { Node, Edge } from '@xyflow/react';
 
 export type AINodeData = {
   label: string;
-  category: 'ai-ide' | 'cli-agent' | 'ide-extension' | 'ai-terminal' | 'llm' | 'image' | 'video' | 'provider';
+  category: 'ai-ide' | 'cli-agent' | 'ide-extension' | 'ai-terminal' | 'assistant' | 'llm' | 'image' | 'video' | 'provider';
   description?: string;
   provider?: string;
   releaseDate?: string;
@@ -269,6 +269,12 @@ export const initialNodes: AINode[] = [
     position: { x: -1000, y: 1200 },
     data: { label: 'AI Terminals', category: 'ai-terminal', description: 'AI-Enhanced Terminals' },
   },
+  {
+    id: 'category-assistants',
+    type: 'assistant',
+    position: { x: -1000, y: 2200 },
+    data: { label: 'Assistants', category: 'assistant', description: 'AI Assistants' },
+  },
 
   // --- AI Native IDEs ---
   {
@@ -446,6 +452,19 @@ export const initialNodes: AINode[] = [
       variants: ['Warp AI']
     },
   },
+
+  // --- Assistants ---
+  {
+    id: 'tool-openclaw',
+    type: 'tool',
+    position: { x: -1400, y: 2200 },
+    data: { 
+      label: 'OpenClaw bot', 
+      category: 'assistant', 
+      description: 'OpenClaw Automated Assistant.', 
+      releaseDate: '2025',
+    },
+  },
 ];
 
 export const initialEdges: Edge[] = [
@@ -526,4 +545,7 @@ export const initialEdges: Edge[] = [
   // Category -> Video Connections (Orange)
   { id: 'e-cat-video-sora', source: 'category-video-all', target: 'model-sora-2', style: { stroke: '#F5A524', strokeWidth: 2 } },
   { id: 'e-cat-video-veo', source: 'category-video-all', target: 'model-veo-3', style: { stroke: '#F5A524', strokeWidth: 2 } },
+
+  // Assistants
+  { id: 'e-cat-assistants-openclaw', source: 'category-assistants', target: 'tool-openclaw', style: { stroke: '#EC4899', strokeWidth: 2 } },
 ];
