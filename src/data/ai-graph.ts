@@ -119,6 +119,7 @@ export const initialNodes: AINode[] = [
       category: 'llm', 
       provider: 'Anthropic', 
       description: 'Most capable model for complex tasks.', 
+      defaultNotes: 'Opus 4.5 is the smartest model for coding tasks, offering superior reasoning for complex development challenges.',
       releaseDate: '2025',
       link: 'https://docs.anthropic.com/en/api/overview',
       variants: [
@@ -259,6 +260,7 @@ export const initialNodes: AINode[] = [
       category: 'video', 
       provider: 'OpenAI', 
       description: 'Advanced video generation.', 
+      defaultNotes: 'Sora 2 creates more UGC style outputs, making it perfect for rapid content creation and social media trends.',
       releaseDate: '2025',
       link: 'https://platform.openai.com/docs/models/sora-2',
       variants: [
@@ -278,6 +280,7 @@ export const initialNodes: AINode[] = [
       category: 'video', 
       provider: 'Google', 
       description: 'High-definition video generation.', 
+      defaultNotes: 'Veo3 can create more generic advertising videos, delivering high-quality visuals for commercial use.',
       releaseDate: '2025',
       link: 'https://ai.google.dev/gemini-api/docs/video',
       variants: [
@@ -298,6 +301,7 @@ export const initialNodes: AINode[] = [
       label: 'Cursor', 
       category: 'ai-ide', 
       description: 'AI Code Editor based on VS Code.', 
+      defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities.',
       releaseDate: '2023',
       link: 'https://docs.cursor.com/',
       variants: [
@@ -340,6 +344,7 @@ export const initialNodes: AINode[] = [
       label: 'Antigravity', 
       category: 'ai-ide', 
       description: "Google's AI-native IDE.",
+      defaultNotes: 'Antigravity is cheap and is used with Gemini 3 for frontend tasks, providing a cost-effective solution for UI development.',
       releaseDate: '2025',
       link: 'https://antigravity.google/',
       variants: [
@@ -470,6 +475,7 @@ export const initialNodes: AINode[] = [
       label: 'Warp', 
       category: 'ai-terminal', 
       description: 'AI-powered Terminal.', 
+      defaultNotes: 'Warp is used for generic coding agent for anything in terminal, blending command-line power with AI assistance.',
       releaseDate: '2021',
       link: 'https://docs.warp.dev/',
       variants: [
@@ -489,6 +495,7 @@ export const initialNodes: AINode[] = [
       label: 'OpenClaw bot', 
       category: 'assistant', 
       description: 'OpenClaw Automated Assistant.', 
+      defaultNotes: 'Openclaw is used for automatization of many repeatable tasks, acting as a reliable assistant for routine operations.',
       link: 'https://docs.openclaw.ai/',
       releaseDate: '2025',
       targetHandle: 'right'
