@@ -49,9 +49,26 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
     }
   }, [data.category]);
 
+  const isRoot = data.category === 'root';
+  const targetPos = data.targetHandle ? Position[data.targetHandle.charAt(0).toUpperCase() + data.targetHandle.slice(1) as keyof typeof Position] : Position.Left;
+  const sourcePos = data.sourceHandle ? Position[data.sourceHandle.charAt(0).toUpperCase() + data.sourceHandle.slice(1) as keyof typeof Position] : (data.targetHandle ? targetPos : Position.Right);
+
   return (
     <div className="relative">
-      <Handle type="target" position={Position.Left} className="opacity-0" />
+      {isRoot ? (
+        <>
+          <Handle type="source" position={Position.Top} id="source-top" className="opacity-0" />
+          <Handle type="source" position={Position.Right} id="source-right" className="opacity-0" />
+          <Handle type="source" position={Position.Bottom} id="source-bottom" className="opacity-0" />
+          <Handle type="source" position={Position.Left} id="source-left" className="opacity-0" />
+        </>
+      ) : (
+        <>
+          <Handle type="target" position={targetPos} className="opacity-0" />
+          <Handle type="source" position={sourcePos} className="opacity-0" />
+        </>
+      )}
+
       <div
         className={`min-w-[260px] p-6 border-2 transition-all duration-200 ${selected ? 'scale-105' : ''}`}
         style={{
@@ -89,7 +106,6 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
           }}>{data.provider}</div>}
         </div>
       </div>
-      <Handle type="source" position={Position.Right} className="opacity-0" />
     </div>
   );
 };
