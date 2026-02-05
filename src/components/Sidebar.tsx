@@ -57,13 +57,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
           {selectedNode.variants && selectedNode.variants.length > 0 && (
             <div>
               <h3 className="text-sm font-semibold text-zinc-500 uppercase tracking-wide mb-2">Variants</h3>
-              <div className="flex flex-wrap gap-2">
-                {selectedNode.variants.map((variant) => (
-                  <Chip key={variant} size="sm" variant="flat" className="bg-zinc-800 text-zinc-200">
-                    {variant}
-                  </Chip>
-                ))}
-              </div>
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-zinc-700">
+                    <th className="py-2 text-xs font-semibold text-zinc-500 uppercase">Model</th>
+                    <th className="py-2 text-xs font-semibold text-zinc-500 uppercase">ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {selectedNode.variants.map((variant) => (
+                    <tr key={variant.id} className="border-b border-zinc-800 last:border-0">
+                      <td className="py-2 text-sm text-zinc-200">{variant.label}</td>
+                      <td className="py-2 text-xs text-zinc-400 font-mono">{variant.id}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </CardBody>
