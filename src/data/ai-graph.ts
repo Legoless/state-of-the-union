@@ -156,7 +156,7 @@ export const initialNodes: AINode[] = [
       variants: [
         { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
         { label: 'Gemini 3 Flash', id: 'gemini-3-flash' },
-        { label: 'Gemini 3 Ultra', id: 'gemini-3-ultra' }
+        { label: 'Gemini 3 Deep Think', id: 'gemini-3-deep-think' }
       ],
       targetHandle: 'bottom'
     },
