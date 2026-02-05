@@ -122,13 +122,13 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 0, y: -1600 }, // 0°
     data: { 
-      label: 'GPT-5.2', 
+      label: 'GPT-5.2 Codex', 
       category: 'llm', 
       provider: 'OpenAI', 
       description: 'Flagship reasoning & coding model.', 
       releaseDate: '2026',
       link: 'https://openai.com',
-      variants: ['GPT-5.2', 'GPT-5.2 Codex'],
+      variants: ['GPT-5.2 Codex'],
       targetHandle: 'bottom'
     },
   },
@@ -233,13 +233,13 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 1399, y: 776 }, // 119°
     data: { 
-      label: 'Veo 3', 
+      label: 'Veo 3.1', 
       category: 'video', 
       provider: 'Google', 
       description: 'High-definition video generation.', 
       releaseDate: '2025',
       link: 'https://deepmind.google/technologies/veo/',
-      variants: ['Veo 3', 'Veo 3 Pro'],
+      variants: ['Veo 3.1', 'Veo 3.1 Pro'],
       targetHandle: 'left'
     },
   },
@@ -255,7 +255,7 @@ export const initialNodes: AINode[] = [
       description: 'AI Code Editor based on VS Code.', 
       releaseDate: '2023',
       link: 'https://cursor.com',
-      variants: ['Claude 4.5 Opus', 'Claude 4.5 Sonnet', 'Composer 1', 'Gemini 3 Flash', 'Gemini 3 Pro', 'GPT-5.2', 'GPT-5.2 Codex', 'Grok Code'],
+      variants: ['Claude 4.5 Opus', 'Claude 4.5 Sonnet', 'Composer 1', 'Gemini 3 Flash', 'Gemini 3 Pro', 'GPT-5.2 Codex', 'Grok Code'],
       targetHandle: 'left'
     },
   },
