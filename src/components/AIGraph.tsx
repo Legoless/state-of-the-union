@@ -86,7 +86,7 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
       )}
 
       <div
-        className={`min-w-[260px] p-6 border-2 transition-all duration-200 ${selected ? 'scale-105' : ''}`}
+        className={`min-w-[300px] p-8 border-2 transition-all duration-200 ${selected ? 'scale-105' : ''}`}
         style={{
           backgroundColor: nodeStyles.bg,
           borderColor: nodeStyles.border,
@@ -101,7 +101,7 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
             color={categoryColor} 
             variant="solid" 
             size="sm" 
-            className="uppercase text-[10px] font-bold tracking-widest border border-white/20 shadow-sm"
+            className="uppercase text-sm font-bold tracking-widest border border-white/20 shadow-sm"
             style={{ 
               color: nodeStyles.text === '#000000' ? '#000000' : '#ffffff',
               backgroundColor: 'rgba(255, 255, 255, 0.2)', // Glassy chip
@@ -112,11 +112,11 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
           >
             {data.category}
           </Chip>
-          <div className="font-bold text-center text-xl leading-tight tracking-tight" style={{ 
+          <div className="font-bold text-center text-3xl leading-tight tracking-tight" style={{
             color: nodeStyles.text,
             fontFamily: '"Source Sans 3", system-ui, sans-serif',
           }}>{data.label}</div>
-          {data.provider && <div className="text-sm font-medium opacity-90" style={{ 
+          {data.provider && <div className="text-lg font-medium opacity-90" style={{
             color: nodeStyles.subtext,
             fontFamily: '"Source Sans 3", system-ui, sans-serif',
           }}>{data.provider}</div>}
