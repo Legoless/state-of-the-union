@@ -40,3 +40,9 @@ This project is a **React** application built with **Vite** and **TypeScript**, 
 ### Styling
 - **Tailwind CSS**: Used for layout and spacing. Global styles are defined in `src/index.css`.
 - **HeroUI**: Provides the base design system and components. `HeroUIProvider` wraps the app in `src/App.tsx`.
+
+### Graph Layout Rules
+- **Node Spacing**: When modifying the AI Graph, ensure nodes NEVER overlap.
+  - Calculate positions using a radial layout with sufficient angular separation.
+  - For the outer ring (Leaf Nodes, Radius ~1600), maintain a minimum angular separation of **17 degrees** between centers of adjacent nodes.
+  - For the inner ring (Categories, Radius ~900), align categories with the average angle of their child nodes.
