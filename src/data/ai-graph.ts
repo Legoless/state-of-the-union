@@ -315,8 +315,7 @@ export const initialNodes: AINode[] = [
       releaseDate: '2025',
       link: 'https://opencode.ai',
       variants: ['OpenCode CLI'],
-      targetHandle: 'top',
-      isDarker: true
+      targetHandle: 'top'
     },
   },
   {
