@@ -51,8 +51,8 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
       case 'ai-terminal': return { bg: '#06B6D4', border: '#06B6D4', text: '#ffffff', subtext: '#CFFAFE' }; // Cyan
       case 'llm': 
         return isDarker 
-          ? { bg: '#0B6130', border: '#0B6130', text: '#dcfce7', subtext: '#1F2937' } // Darker Green
-          : { bg: '#17C964', border: '#17C964', text: '#000000', subtext: '#1F2937' }; // Success Green
+          ? { bg: '#17C964', border: '#17C964', text: '#000000', subtext: '#1F2937' } // Darker (Standard Success Green)
+          : { bg: '#6EE7B7', border: '#6EE7B7', text: '#000000', subtext: '#1F2937' }; // Lighter Green (Emerald 300)
       case 'video': return { bg: '#F5A524', border: '#F5A524', text: '#000000', subtext: '#431407' }; // Warning Orange
       case 'image': 
         return isDarker 
@@ -185,7 +185,7 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
                 case 'cli-agent': return isDarker ? '#8F0A36' : '#F31260';
                 case 'ide-extension': return isDarker ? '#551A8B' : '#9333EA';
                 case 'ai-terminal': return '#06B6D4';
-                case 'llm': return isDarker ? '#0B6130' : '#17C964';
+                case 'llm': return isDarker ? '#17C964' : '#6EE7B7';
                 case 'video': return '#F5A524';
                 case 'image': return isDarker ? '#4A157F' : '#7828C8';
                 case 'provider': return '#E4E4E7';
@@ -203,7 +203,7 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
                 case 'cli-agent': return isDarker ? '#8F0A36' : '#F31260';
                 case 'ide-extension': return isDarker ? '#551A8B' : '#9333EA';
                 case 'ai-terminal': return '#06B6D4';
-                case 'llm': return isDarker ? '#0B6130' : '#17C964';
+                case 'llm': return isDarker ? '#17C964' : '#6EE7B7';
                 case 'video': return '#F5A524';
                 case 'image': return isDarker ? '#4A157F' : '#7828C8';
                 case 'provider': return '#E4E4E7';
