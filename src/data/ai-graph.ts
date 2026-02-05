@@ -11,6 +11,7 @@ export type AINodeData = {
   link?: string;
   targetHandle?: 'top' | 'right' | 'bottom' | 'left';
   sourceHandle?: 'top' | 'right' | 'bottom' | 'left';
+  isDarker?: boolean;
 };
 
 export type AINode = Node<AINodeData>;
@@ -97,7 +98,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2024',
       link: 'https://deepseekv3.org',
       variants: ['DeepSeek-V3-Base', 'DeepSeek-V3', 'DeepSeek-R1', 'DeepSeek-R1-Zero'],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isDarker: true
     },
   },
   {
@@ -157,7 +159,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2025',
       link: 'https://kimi.moonshot.cn',
       variants: ['Kimi 2.5', 'Kimi 2.5 Chat'],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isDarker: true
     },
   },
 
@@ -204,7 +207,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2025',
       link: 'https://blackforestlabs.ai',
       variants: ['FLUX.2 Pro', 'FLUX.2 Dev', 'FLUX.2 Schnell'],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isDarker: true
     },
   },
 
@@ -266,7 +270,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2024',
       link: 'https://windsurf.com',
       variants: ['Cascade', 'GPT-5.2-Codex'],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isDarker: true
     },
   },
   {
@@ -310,7 +315,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2025',
       link: 'https://opencode.ai',
       variants: ['OpenCode CLI'],
-      targetHandle: 'top'
+      targetHandle: 'top',
+      isDarker: true
     },
   },
   {
@@ -324,7 +330,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2025',
       link: 'https://deepmind.google',
       variants: ['Gemini CLI'],
-      targetHandle: 'right'
+      targetHandle: 'right',
+      isDarker: true
     },
   },
   {
@@ -338,7 +345,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2025',
       link: 'https://openai.com',
       variants: ['Codex CLI'],
-      targetHandle: 'right'
+      targetHandle: 'right',
+      isDarker: true
     },
   },
   {
@@ -352,7 +360,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2025',
       link: 'https://www.anthropic.com',
       variants: ['Claude Code'],
-      targetHandle: 'right'
+      targetHandle: 'right',
+      isDarker: true
     },
   },
 
@@ -368,7 +377,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2024',
       link: 'https://cline.bot',
       variants: ['Cline'],
-      targetHandle: 'right'
+      targetHandle: 'right',
+      isDarker: true
     },
   },
 

@@ -34,20 +34,36 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
   }, [data.category]);
 
   const nodeStyles = useMemo(() => {
+    const isDarker = data.isDarker;
     switch (data.category) {
-      case 'ai-ide': return { bg: '#006FEE', border: '#006FEE', text: '#ffffff', subtext: '#E0E7FF' }; // Primary Blue
-      case 'cli-agent': return { bg: '#F31260', border: '#F31260', text: '#ffffff', subtext: '#FFE4E6' }; // Danger Red
-      case 'ide-extension': return { bg: '#9333EA', border: '#9333EA', text: '#ffffff', subtext: '#F3E8FF' }; // Purple
+      case 'ai-ide': 
+        return isDarker 
+          ? { bg: '#003C8F', border: '#003C8F', text: '#ffffff', subtext: '#E0E7FF' } // Darker Blue
+          : { bg: '#006FEE', border: '#006FEE', text: '#ffffff', subtext: '#E0E7FF' }; // Primary Blue
+      case 'cli-agent': 
+        return isDarker 
+          ? { bg: '#8F0A36', border: '#8F0A36', text: '#ffffff', subtext: '#FFE4E6' } // Darker Red
+          : { bg: '#F31260', border: '#F31260', text: '#ffffff', subtext: '#FFE4E6' }; // Danger Red
+      case 'ide-extension': 
+        return isDarker 
+          ? { bg: '#551A8B', border: '#551A8B', text: '#ffffff', subtext: '#F3E8FF' } // Darker Purple
+          : { bg: '#9333EA', border: '#9333EA', text: '#ffffff', subtext: '#F3E8FF' }; // Purple
       case 'ai-terminal': return { bg: '#06B6D4', border: '#06B6D4', text: '#ffffff', subtext: '#CFFAFE' }; // Cyan
-      case 'llm': return { bg: '#17C964', border: '#17C964', text: '#000000', subtext: '#1F2937' }; // Success Green
+      case 'llm': 
+        return isDarker 
+          ? { bg: '#0B6130', border: '#0B6130', text: '#dcfce7', subtext: '#1F2937' } // Darker Green
+          : { bg: '#17C964', border: '#17C964', text: '#000000', subtext: '#1F2937' }; // Success Green
       case 'video': return { bg: '#F5A524', border: '#F5A524', text: '#000000', subtext: '#431407' }; // Warning Orange
-      case 'image': return { bg: '#7828C8', border: '#7828C8', text: '#ffffff', subtext: '#F3E8FF' }; // Secondary Purple
+      case 'image': 
+        return isDarker 
+          ? { bg: '#4A157F', border: '#4A157F', text: '#ffffff', subtext: '#F3E8FF' } // Darker Violet
+          : { bg: '#7828C8', border: '#7828C8', text: '#ffffff', subtext: '#F3E8FF' }; // Secondary Purple
       case 'provider': return { bg: '#E4E4E7', border: '#E4E4E7', text: '#000000', subtext: '#52525B' }; // Zinc 200
       case 'assistant': return { bg: '#EC4899', border: '#EC4899', text: '#ffffff', subtext: '#FCE7F3' }; // Pink 500
       case 'root': return { bg: '#FFFFFF', border: '#E4E4E7', text: '#000000', subtext: '#52525B' }; // White
       default: return { bg: '#27272a', border: '#52525B', text: '#ffffff', subtext: '#a1a1aa' }; // Zinc 800
     }
-  }, [data.category]);
+  }, [data.category, data.isDarker]);
 
   const isRoot = data.category === 'root';
   const targetPos = data.targetHandle ? Position[data.targetHandle.charAt(0).toUpperCase() + data.targetHandle.slice(1) as keyof typeof Position] : Position.Left;
@@ -159,15 +175,17 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
         <Controls />
         <MiniMap 
             nodeStrokeColor={(n) => {
-              const cat = (n.data as AINodeData)?.category;
+              const data = n.data as AINodeData;
+              const cat = data?.category;
+              const isDarker = data?.isDarker;
               switch (cat) {
-                case 'ai-ide': return '#006FEE';
-                case 'cli-agent': return '#F31260';
-                case 'ide-extension': return '#9333EA';
+                case 'ai-ide': return isDarker ? '#003C8F' : '#006FEE';
+                case 'cli-agent': return isDarker ? '#8F0A36' : '#F31260';
+                case 'ide-extension': return isDarker ? '#551A8B' : '#9333EA';
                 case 'ai-terminal': return '#06B6D4';
-                case 'llm': return '#17C964';
+                case 'llm': return isDarker ? '#0B6130' : '#17C964';
                 case 'video': return '#F5A524';
-                case 'image': return '#7828C8';
+                case 'image': return isDarker ? '#4A157F' : '#7828C8';
                 case 'provider': return '#E4E4E7';
                 case 'assistant': return '#EC4899';
                 case 'root': return '#FFFFFF';
@@ -175,15 +193,17 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
               }
             }}
             nodeColor={(n) => {
-              const cat = (n.data as AINodeData)?.category;
+              const data = n.data as AINodeData;
+              const cat = data?.category;
+              const isDarker = data?.isDarker;
               switch (cat) {
-                case 'ai-ide': return '#006FEE';
-                case 'cli-agent': return '#F31260';
-                case 'ide-extension': return '#9333EA';
+                case 'ai-ide': return isDarker ? '#003C8F' : '#006FEE';
+                case 'cli-agent': return isDarker ? '#8F0A36' : '#F31260';
+                case 'ide-extension': return isDarker ? '#551A8B' : '#9333EA';
                 case 'ai-terminal': return '#06B6D4';
-                case 'llm': return '#17C964';
+                case 'llm': return isDarker ? '#0B6130' : '#17C964';
                 case 'video': return '#F5A524';
-                case 'image': return '#7828C8';
+                case 'image': return isDarker ? '#4A157F' : '#7828C8';
                 case 'provider': return '#E4E4E7';
                 case 'assistant': return '#EC4899';
                 case 'root': return '#FFFFFF';
