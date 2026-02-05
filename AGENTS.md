@@ -46,3 +46,4 @@ This project is a **React** application built with **Vite** and **TypeScript**, 
   - Calculate positions using a radial layout with sufficient angular separation.
   - For the outer ring (Leaf Nodes, Radius ~1600), maintain a minimum angular separation of **17 degrees** between centers of adjacent nodes.
   - For the inner ring (Categories, Radius ~900), align categories with the average angle of their child nodes.
+- **Recalculation**: When adding or removing nodes, you MUST recalculate the positions of neighboring nodes (or the entire group) to maintain a uniform circular distribution. Do not just insert or delete a node leaving a gap or crowding others.
