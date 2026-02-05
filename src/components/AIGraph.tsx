@@ -89,8 +89,8 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
         <Chip
           color="danger"
           variant="solid"
-          size="sm"
-          className="absolute -top-4 -right-4 z-50 shadow-lg border-2 border-white animate-pulse"
+          size="lg"
+          className="absolute -top-6 -right-6 z-50 shadow-lg border-2 border-white animate-pulse"
         >
           NEW
         </Chip>

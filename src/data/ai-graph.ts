@@ -110,19 +110,20 @@ export const initialNodes: AINode[] = [
     },
   },
   {
-    id: 'model-claude-4-5-opus',
+    id: 'model-claude-4-6-opus',
     type: 'model',
     position: { x: -547, y: -1504 }, // 340°
     data: { 
-      id: 'model-claude-4-5-opus',
-      label: 'Claude 4.5 Opus', 
+      id: 'model-claude-4-6-opus',
+      label: 'Claude 4.6 Opus', 
       category: 'llm', 
       provider: 'Anthropic', 
       description: 'Most capable model for complex tasks.', 
-      defaultNotes: 'Opus 4.5 is the smartest model for coding tasks, offering superior reasoning for complex development challenges.',
+      defaultNotes: 'Opus 4.6 is the smartest model for coding tasks, offering superior reasoning for complex development challenges.',
       releaseDate: '2025',
       link: 'https://docs.anthropic.com/en/api/overview',
       variants: [
+        { label: 'Claude 4.6 Opus', id: 'claude-opus-4-6' },
         { label: 'Claude 4.5 Opus', id: 'claude-opus-4-5' },
         { label: 'Claude 4.5 Sonnet', id: 'claude-sonnet-4-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
@@ -305,6 +306,7 @@ export const initialNodes: AINode[] = [
       releaseDate: '2023',
       link: 'https://docs.cursor.com/',
       variants: [
+        { label: 'Claude 4.6 Opus', id: 'claude-opus-4-6' },
         { label: 'Claude 4.5 Opus', id: 'claude-opus-4-5' },
         { label: 'Claude 4.5 Sonnet', id: 'claude-sonnet-4-5' },
         { label: 'Composer 1', id: 'composer-1' },
@@ -538,7 +540,7 @@ export const initialEdges: Edge[] = [
 
   // LLMs
   { id: 'e-cat-llm-gpt52', source: 'category-llm-all', target: 'model-gpt5-2', style: { stroke: '#17C964', strokeWidth: 2 } },
-  { id: 'e-cat-llm-claude-opus', source: 'category-llm-all', target: 'model-claude-4-5-opus', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-claude-opus', source: 'category-llm-all', target: 'model-claude-4-6-opus', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-gemini3', source: 'category-llm-all', target: 'model-gemini-3', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v3', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-kimi', source: 'category-llm-all', target: 'model-kimi-2-5', style: { stroke: '#17C964', strokeWidth: 2 } },
@@ -555,7 +557,7 @@ export const initialEdges: Edge[] = [
   // --- Cross-Link Connections (Optional/Contextual) ---
   // Cursor
   { id: 'e-cursor-gpt52', source: 'tool-cursor', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
-  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-cursor-claude45', source: 'tool-cursor', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
   
   // Antigravity (Google) -> Gemini
   { id: 'e-antigravity-gemini3', source: 'tool-antigravity', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
@@ -565,12 +567,12 @@ export const initialEdges: Edge[] = [
 
   // Windsurf
   { id: 'e-windsurf-gpt52', source: 'tool-windsurf', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
-  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
   // Official CLIs
   { id: 'e-geminicli-gemini', source: 'tool-gemini-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
   { id: 'e-codexcli-gpt', source: 'tool-codex-cli', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
-  { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
   // Open Agents (Connect to many)
   { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
