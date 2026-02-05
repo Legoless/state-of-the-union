@@ -345,32 +345,6 @@ export const initialNodes: AINode[] = [
     },
   },
   {
-    id: 'tool-aider',
-    type: 'tool',
-    position: { x: -1400, y: 750 },
-    data: { 
-      label: 'Aider', 
-      category: 'cli-agent', 
-      description: 'Terminal pair programmer.', 
-      releaseDate: '2023',
-      link: 'https://aider.chat',
-      variants: ['Aider']
-    },
-  },
-  {
-    id: 'tool-goose',
-    type: 'tool',
-    position: { x: -1400, y: 900 },
-    data: { 
-      label: 'Goose', 
-      category: 'cli-agent', 
-      description: "Block's open source agent.",
-      releaseDate: '2025',
-      link: 'https://block.github.io/goose/',
-      variants: ['Goose']
-    },
-  },
-  {
     id: 'tool-gemini-cli',
     type: 'tool',
     position: { x: -1400, y: 1050 },
@@ -424,19 +398,6 @@ export const initialNodes: AINode[] = [
       variants: ['Cline']
     },
   },
-  {
-    id: 'tool-roo-code',
-    type: 'tool',
-    position: { x: -1400, y: 1650 },
-    data: { 
-      label: 'Roo Code', 
-      category: 'ide-extension', 
-      description: 'Community fork of Cline.', 
-      releaseDate: '2025',
-      link: 'https://github.com/RooVetGit/Roo-Cline',
-      variants: ['Roo Code']
-    },
-  },
 
   // --- AI Terminals ---
   {
@@ -477,15 +438,12 @@ export const initialEdges: Edge[] = [
 
   // CLI Agents
   { id: 'e-cat-cli-opencode', source: 'category-cli-agent', target: 'tool-opencode', style: { stroke: '#F31260', strokeWidth: 2 } },
-  { id: 'e-cat-cli-aider', source: 'category-cli-agent', target: 'tool-aider', style: { stroke: '#F31260', strokeWidth: 2 } },
-  { id: 'e-cat-cli-goose', source: 'category-cli-agent', target: 'tool-goose', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-gemini', source: 'category-cli-agent', target: 'tool-gemini-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-codex', source: 'category-cli-agent', target: 'tool-codex-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-claude', source: 'category-cli-agent', target: 'tool-claude-code', style: { stroke: '#F31260', strokeWidth: 2 } },
 
   // IDE Extensions
   { id: 'e-cat-ext-cline', source: 'category-ide-extension', target: 'tool-cline', style: { stroke: '#9333EA', strokeWidth: 2 } },
-  { id: 'e-cat-ext-roo', source: 'category-ide-extension', target: 'tool-roo-code', style: { stroke: '#9333EA', strokeWidth: 2 } },
 
   // AI Terminals
   { id: 'e-cat-term-warp', source: 'category-ai-terminal', target: 'tool-warp', style: { stroke: '#06B6D4', strokeWidth: 2 } },
@@ -512,9 +470,6 @@ export const initialEdges: Edge[] = [
 
   // Open Agents (Connect to many)
   { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'e-aider-gpt52', source: 'tool-aider', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'e-aider-claude', source: 'tool-aider', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
-  { id: 'e-goose-claude', source: 'tool-goose', target: 'model-claude-4-5-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5' } },
 
   // Provider -> Model Connections (Green)
   { id: 'e-openai-gpt5-2', source: 'provider-openai', target: 'model-gpt5-2', style: { stroke: '#22c55e', strokeWidth: 2 } },
