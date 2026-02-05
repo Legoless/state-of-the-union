@@ -298,19 +298,6 @@ export const initialNodes: AINode[] = [
     },
   },
   {
-    id: 'tool-zed',
-    type: 'tool',
-    position: { x: -1400, y: 0 },
-    data: { 
-      label: 'Zed', 
-      category: 'ai-ide', 
-      description: 'High-performance multiplayer code editor.', 
-      releaseDate: '2024',
-      link: 'https://zed.dev',
-      variants: ['Zed AI', 'Claude 3.7 Sonnet']
-    },
-  },
-  {
     id: 'tool-antigravity',
     type: 'tool',
     position: { x: -1400, y: 200 },
@@ -466,7 +453,6 @@ export const initialEdges: Edge[] = [
   // AI IDEs
   { id: 'e-cat-ide-cursor', source: 'category-ai-ide', target: 'tool-cursor', style: { stroke: '#006FEE', strokeWidth: 2 } },
   { id: 'e-cat-ide-windsurf', source: 'category-ai-ide', target: 'tool-windsurf', style: { stroke: '#006FEE', strokeWidth: 2 } },
-  { id: 'e-cat-ide-zed', source: 'category-ai-ide', target: 'tool-zed', style: { stroke: '#006FEE', strokeWidth: 2 } },
   { id: 'e-cat-ide-antigravity', source: 'category-ai-ide', target: 'tool-antigravity', style: { stroke: '#006FEE', strokeWidth: 2 } },
   { id: 'e-cat-ide-codexapp', source: 'category-ai-ide', target: 'tool-codex-app', style: { stroke: '#006FEE', strokeWidth: 2 } },
 
