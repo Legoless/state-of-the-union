@@ -1,9 +1,11 @@
 import type { Node, Edge } from '@xyflow/react';
 
 export type AINodeData = {
+  id: string;
   label: string;
   category: 'ai-ide' | 'cli-agent' | 'ide-extension' | 'ai-terminal' | 'assistant' | 'llm' | 'image' | 'video' | 'provider' | 'root';
   description?: string;
+  defaultNotes?: string;
   provider?: string;
   releaseDate?: string;
   specs?: string;
@@ -23,7 +25,7 @@ export const initialNodes: AINode[] = [
     id: 'root-ai',
     type: 'root',
     position: { x: 0, y: 0 },
-    data: { label: 'AI', category: 'root', description: 'Artificial Intelligence Ecosystem', provider: 'State of the Union' },
+    data: { id: 'root-ai', label: 'AI', category: 'root', description: 'Artificial Intelligence Ecosystem', provider: 'State of the Union', defaultNotes: 'Central node representing the entire ecosystem.' },
   },
 
   // --- Categories (Ring 1, Radius ~900) ---
@@ -32,56 +34,56 @@ export const initialNodes: AINode[] = [
     id: 'category-llm-all',
     type: 'llm',
     position: { x: 0, y: -900 },
-    data: { label: 'LLMs', category: 'llm', description: 'All Large Language Models', targetHandle: 'bottom', sourceHandle: 'top' },
+    data: { id: 'category-llm-all', label: 'LLMs', category: 'llm', description: 'All Large Language Models', targetHandle: 'bottom', sourceHandle: 'top' },
   },
   // 2. Image Models (Top-Right, 68°)
   {
     id: 'category-image-all',
     type: 'image',
     position: { x: 834, y: -337 },
-    data: { label: 'Image Models', category: 'image', description: 'Image Generation Models', targetHandle: 'left', sourceHandle: 'right' },
+    data: { id: 'category-image-all', label: 'Image Models', category: 'image', description: 'Image Generation Models', targetHandle: 'left', sourceHandle: 'right' },
   },
   // 3. Video Models (Bottom-Right, 110.5°)
   {
     id: 'category-video-all',
     type: 'video',
     position: { x: 843, y: 315 },
-    data: { label: 'Video Models', category: 'video', description: 'Video Generation Models', targetHandle: 'left', sourceHandle: 'right' },
+    data: { id: 'category-video-all', label: 'Video Models', category: 'video', description: 'Video Generation Models', targetHandle: 'left', sourceHandle: 'right' },
   },
   // 4. AI Native IDEs (Bottom-Right, 161.5°)
   {
     id: 'category-ai-ide',
     type: 'ai-ide',
     position: { x: 286, y: 853 },
-    data: { label: 'AI Native IDEs', category: 'ai-ide', description: 'Standalone Editors', targetHandle: 'top', sourceHandle: 'bottom' },
+    data: { id: 'category-ai-ide', label: 'AI Native IDEs', category: 'ai-ide', description: 'Standalone Editors', targetHandle: 'top', sourceHandle: 'bottom' },
   },
   // 5. CLI Agents (Bottom-Left, 229.5°)
   {
     id: 'category-cli-agent',
     type: 'cli-agent',
     position: { x: -684, y: 585 },
-    data: { label: 'CLI Agents', category: 'cli-agent', description: 'Terminal-based Agents', targetHandle: 'right', sourceHandle: 'left' },
+    data: { id: 'category-cli-agent', label: 'CLI Agents', category: 'cli-agent', description: 'Terminal-based Agents', targetHandle: 'right', sourceHandle: 'left' },
   },
   // 6. IDE Extensions (Left, 272°)
   {
     id: 'category-ide-extension',
     type: 'ide-extension',
     position: { x: -899, y: -31 },
-    data: { label: 'IDE Extensions', category: 'ide-extension', description: 'VS Code Extensions', targetHandle: 'right', sourceHandle: 'left' },
+    data: { id: 'category-ide-extension', label: 'IDE Extensions', category: 'ide-extension', description: 'VS Code Extensions', targetHandle: 'right', sourceHandle: 'left' },
   },
   // 7. AI Terminals (Top-Left, 289°)
   {
     id: 'category-ai-terminal',
     type: 'ai-terminal',
     position: { x: -851, y: -293 },
-    data: { label: 'AI Terminals', category: 'ai-terminal', description: 'AI-Enhanced Terminals', targetHandle: 'right', sourceHandle: 'left' },
+    data: { id: 'category-ai-terminal', label: 'AI Terminals', category: 'ai-terminal', description: 'AI-Enhanced Terminals', targetHandle: 'right', sourceHandle: 'left' },
   },
   // 8. Assistants (Top-Left, 306°)
   {
     id: 'category-assistants',
     type: 'assistant',
     position: { x: -728, y: -529 },
-    data: { label: 'Assistants', category: 'assistant', description: 'AI Assistants', targetHandle: 'right', sourceHandle: 'left' },
+    data: { id: 'category-assistants', label: 'Assistants', category: 'assistant', description: 'AI Assistants', targetHandle: 'right', sourceHandle: 'left' },
   },
 
   // --- Leaf Nodes (Ring 2, Radius ~1600) ---
@@ -92,6 +94,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: -963, y: -1278 }, // 323°
     data: { 
+      id: 'model-deepseek-v3',
       label: 'DeepSeek-V3', 
       category: 'llm', 
       provider: 'DeepSeek', 
@@ -111,6 +114,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: -547, y: -1504 }, // 340°
     data: { 
+      id: 'model-claude-4-5-opus',
       label: 'Claude 4.5 Opus', 
       category: 'llm', 
       provider: 'Anthropic', 
@@ -130,6 +134,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 0, y: -1600 }, // 0°
     data: { 
+      id: 'model-gpt5-2',
       label: 'GPT-5.2 Codex', 
       category: 'llm', 
       provider: 'OpenAI', 
@@ -148,6 +153,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 468, y: -1530 }, // 17°
     data: { 
+      id: 'model-gemini-3',
       label: 'Gemini 3', 
       category: 'llm', 
       provider: 'Google', 
@@ -167,6 +173,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 895, y: -1326 }, // 34°
     data: { 
+      id: 'model-kimi-2-5',
       label: 'Kimi 2.5', 
       category: 'llm', 
       provider: 'Moonshot AI', 
@@ -187,6 +194,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 1243, y: -1007 }, // 51°
     data: { 
+      id: 'model-gpt-image-1-5',
       label: 'GPT Image 1.5', 
       category: 'image', 
       provider: 'OpenAI', 
@@ -204,6 +212,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 1483, y: -599 }, // 68°
     data: { 
+      id: 'model-nano-banana',
       label: 'Nano Banana Pro', 
       category: 'image', 
       provider: 'Google', 
@@ -221,6 +230,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 1594, y: -139 }, // 85°
     data: { 
+      id: 'model-flux-2',
       label: 'FLUX.2', 
       category: 'image', 
       provider: 'Black Forest Labs', 
@@ -244,6 +254,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 1565, y: 333 }, // 102°
     data: { 
+      id: 'model-sora-2',
       label: 'Sora 2', 
       category: 'video', 
       provider: 'OpenAI', 
@@ -262,6 +273,7 @@ export const initialNodes: AINode[] = [
     type: 'model',
     position: { x: 1399, y: 776 }, // 119°
     data: { 
+      id: 'model-veo-3',
       label: 'Veo 3.1', 
       category: 'video', 
       provider: 'Google', 
@@ -282,6 +294,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: 1111, y: 1151 }, // 136°
     data: { 
+      id: 'tool-cursor',
       label: 'Cursor', 
       category: 'ai-ide', 
       description: 'AI Code Editor based on VS Code.', 
@@ -304,6 +317,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: 726, y: 1426 }, // 153°
     data: { 
+      id: 'tool-windsurf',
       label: 'Windsurf', 
       category: 'ai-ide', 
       description: 'Agentic IDE by Codeium.', 
@@ -322,6 +336,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: 278, y: 1576 }, // 170°
     data: { 
+      id: 'tool-antigravity',
       label: 'Antigravity', 
       category: 'ai-ide', 
       description: "Google's AI-native IDE.",
@@ -339,6 +354,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -195, y: 1588 }, // 187°
     data: { 
+      id: 'tool-codex-app',
       label: 'Codex App', 
       category: 'ai-ide', 
       description: "OpenAI's coding environment.",
@@ -357,6 +373,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -651, y: 1462 }, // 204°
     data: { 
+      id: 'tool-opencode',
       label: 'OpenCode', 
       category: 'cli-agent', 
       description: 'Open Source AI Coding Agent CLI.', 
@@ -373,6 +390,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -1050, y: 1208 }, // 221°
     data: { 
+      id: 'tool-gemini-cli',
       label: 'Gemini CLI', 
       category: 'cli-agent', 
       description: "Google's official terminal agent.",
@@ -390,6 +408,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -1357, y: 848 }, // 238°
     data: { 
+      id: 'tool-codex-cli',
       label: 'Codex CLI', 
       category: 'cli-agent', 
       description: "OpenAI's official terminal agent.",
@@ -407,6 +426,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -1545, y: 414 }, // 255°
     data: { 
+      id: 'tool-claude-code',
       label: 'Claude Code', 
       category: 'cli-agent', 
       description: "Anthropic's official terminal agent.",
@@ -426,6 +446,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -1599, y: -56 }, // 272°
     data: { 
+      id: 'tool-cline',
       label: 'Cline', 
       category: 'ide-extension', 
       description: 'Autonomous coding agent extension.', 
@@ -445,6 +466,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -1513, y: -521 }, // 289°
     data: { 
+      id: 'tool-warp',
       label: 'Warp', 
       category: 'ai-terminal', 
       description: 'AI-powered Terminal.', 
@@ -463,6 +485,7 @@ export const initialNodes: AINode[] = [
     type: 'tool',
     position: { x: -1294, y: -940 }, // 306°
     data: { 
+      id: 'tool-openclaw',
       label: 'OpenClaw bot', 
       category: 'assistant', 
       description: 'OpenClaw Automated Assistant.', 

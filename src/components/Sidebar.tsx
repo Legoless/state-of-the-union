@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardHeader, CardBody, Divider, Chip } from "@heroui/react";
+import React, { useState } from 'react';
+import { Card, CardHeader, CardBody, Divider, Chip, Textarea } from "@heroui/react";
 import type { AINodeData } from '../data/ai-graph';
 
 interface SidebarProps {
@@ -8,6 +8,29 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
+  const [note, setNote] = useState(() => {
+    if (selectedNode) {
+      const savedNote = localStorage.getItem(`node_note_${selectedNode.id}`);
+      if (savedNote !== null) {
+        return savedNote;
+      }
+      return selectedNode.defaultNotes || '';
+    }
+    return '';
+  });
+
+  const handleNoteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newNote = e.target.value;
+    setNote(newNote);
+    if (selectedNode) {
+      if (newNote) {
+        localStorage.setItem(`node_note_${selectedNode.id}`, newNote);
+      } else {
+        localStorage.removeItem(`node_note_${selectedNode.id}`);
+      }
+    }
+  };
+
   if (!selectedNode) {
     return (
       <div className="absolute right-4 top-4 w-80 z-10 pointer-events-none">
@@ -81,6 +104,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
               </table>
             </div>
           )}
+
+          <div className="pt-2">
+            <h3 className="text-sm font-semibold text-zinc-500 uppercase tracking-wide mb-2">Notes</h3>
+            <Textarea
+              minRows={2}
+              maxRows={8}
+              value={note}
+              onChange={handleNoteChange}
+              placeholder="Add your notes here..."
+              variant="bordered"
+              classNames={{
+                input: "text-zinc-200",
+                inputWrapper: "border-zinc-700 hover:border-zinc-500 bg-zinc-800/30"
+              }}
+            />
+          </div>
         </CardBody>
         
         {selectedNode.link && (

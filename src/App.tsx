@@ -11,7 +11,7 @@ function App() {
     <HeroUIProvider>
       <main className="dark text-foreground bg-background w-screen h-screen flex relative overflow-hidden">
         <AIGraph onNodeSelect={setSelectedNode} />
-        <Sidebar selectedNode={selectedNode} onClose={() => setSelectedNode(null)} />
+        <Sidebar key={selectedNode?.id} selectedNode={selectedNode} onClose={() => setSelectedNode(null)} />
       </main>
     </HeroUIProvider>
   );
