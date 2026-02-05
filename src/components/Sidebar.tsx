@@ -30,8 +30,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
               {selectedNode.category}
             </span>
             {!selectedNode.isDarker && (
-              <Chip size="sm" color="success" variant="flat" className="h-6">
-                In use
+              <Chip size="sm" color="success" variant="flat" className="h-6 px-2 text-xs font-bold">
+                IN USE
               </Chip>
             )}
           </div>
