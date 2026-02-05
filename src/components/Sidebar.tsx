@@ -85,23 +85,16 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
         </CardBody>
         
         {selectedNode.link && (
-          <>
-            <Divider className="bg-zinc-700" />
-            <CardFooter>
-              <Button 
-                as="a" 
-                href={selectedNode.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                color="primary" 
-                variant="solid" 
-                className="w-full"
-                endContent={<ExternalLink size={16} />}
-              >
-                Visit Website
-              </Button>
-            </CardFooter>
-          </>
+          <div className="mt-auto border-t border-zinc-700 p-4">
+            <a 
+              href={selectedNode.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-lg text-primary-400 hover:text-primary-300 break-all transition-colors font-medium"
+            >
+              {selectedNode.link}
+            </a>
+          </div>
         )}
       </Card>
     </div>
