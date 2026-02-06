@@ -426,8 +426,7 @@ export const initialNodes: AINode[] = [
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
-        { label: 'Codex CLI', id: 'codex-cli' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
+        { label: 'Codex CLI', id: 'codex-cli' }
       ],
       targetHandle: 'right',
       isDarker: true
