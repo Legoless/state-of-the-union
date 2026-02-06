@@ -145,7 +145,8 @@ export const initialNodes: AINode[] = [
       link: 'https://platform.openai.com/docs/models',
       variants: [
         { label: 'GPT-5.2', id: 'gpt-5.2' },
-        { label: 'GPT-5.2 Codex', id: 'gpt-5.2-codex' }
+        { label: 'GPT-5.2 Codex', id: 'gpt-5.2-codex' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
       ],
       targetHandle: 'bottom'
     },
@@ -313,6 +314,7 @@ export const initialNodes: AINode[] = [
         { label: 'Gemini 3 Flash', id: 'gemini-3-flash' },
         { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
         { label: 'GPT-5.2 Codex', id: 'gpt-5.2-codex' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'Grok Code', id: 'grok-code' }
       ],
       targetHandle: 'left'
@@ -331,7 +333,8 @@ export const initialNodes: AINode[] = [
       link: 'https://docs.windsurf.com/',
       variants: [
         { label: 'Cascade', id: 'cascade' },
-        { label: 'GPT-5.2-Codex', id: 'gpt-5.2-codex' }
+        { label: 'GPT-5.2-Codex', id: 'gpt-5.2-codex' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
       ],
       targetHandle: 'left',
       isDarker: true
@@ -364,11 +367,12 @@ export const initialNodes: AINode[] = [
       id: 'tool-codex-app',
       label: 'Codex App', 
       category: 'ai-ide', 
-      description: "OpenAI's coding environment.",
-      releaseDate: '2025',
+      description: "OpenAI's coding environment. Supports GPT-5.3-Codex (Feb 2026): most capable agentic coding model, 25% faster, stronger reasoning.",
+      releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
       variants: [
-        { label: 'Codex', id: 'codex' }
+        { label: 'Codex', id: 'codex' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
       ],
       targetHandle: 'top'
     },
@@ -418,11 +422,12 @@ export const initialNodes: AINode[] = [
       id: 'tool-codex-cli',
       label: 'Codex CLI', 
       category: 'cli-agent', 
-      description: "OpenAI's official terminal agent.",
-      releaseDate: '2025',
+      description: "OpenAI's official terminal agent. Supports GPT-5.3-Codex (Feb 2026): most capable agentic coding model, 25% faster, stronger reasoning.",
+      releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
-        { label: 'Codex CLI', id: 'codex-cli' }
+        { label: 'Codex CLI', id: 'codex-cli' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
       ],
       targetHandle: 'right',
       isDarker: true
