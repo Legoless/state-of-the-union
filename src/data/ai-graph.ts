@@ -90,23 +90,64 @@ export const initialNodes: AINode[] = [
   
   // 1. LLMs
   {
-    id: 'model-deepseek-v3',
+    id: 'model-gemma-4',
     type: 'model',
-    position: { x: -963, y: -1278 }, // 323°
-    data: { 
-      id: 'model-deepseek-v3',
-      label: 'DeepSeek-V3', 
-      category: 'llm', 
-      provider: 'DeepSeek', 
-      description: 'Open weights mixture-of-experts model.', 
-      releaseDate: '2024',
-      link: 'https://api-docs.deepseek.com/',
+    position: { x: -1112, y: -1151 }, // 316°
+    data: {
+      id: 'model-gemma-4',
+      label: 'Gemma 4',
+      category: 'llm',
+      provider: 'Google',
+      description: 'Open-weights lightweight model family.',
+      releaseDate: '2026',
+      link: 'https://ai.google.dev/gemma',
       variants: [
-        { label: 'DeepSeek-V3.2', id: 'deepseek-v3.2' },
-        { label: 'DeepSeek-R1', id: 'deepseek-r1' }
+        { label: 'Gemma 4 27B', id: 'gemma-4-27b' },
+        { label: 'Gemma 4 9B', id: 'gemma-4-9b' },
+        { label: 'Gemma 4 2B', id: 'gemma-4-2b' }
       ],
       targetHandle: 'bottom',
-      isDarker: true
+      isNew: true
+    },
+  },
+  {
+    id: 'model-qwen-3-6',
+    type: 'model',
+    position: { x: -941, y: -1294 }, // 324°
+    data: {
+      id: 'model-qwen-3-6',
+      label: 'Qwen 3.6',
+      category: 'llm',
+      provider: 'Alibaba',
+      description: 'Frontier open-weights model with strong coding + reasoning.',
+      releaseDate: '2026',
+      link: 'https://qwen.ai/',
+      variants: [
+        { label: 'Qwen3.6-Max', id: 'qwen3.6-max' },
+        { label: 'Qwen3.6-Coder', id: 'qwen3.6-coder' },
+        { label: 'Qwen3.6-VL', id: 'qwen3.6-vl' }
+      ],
+      targetHandle: 'bottom',
+      isNew: true
+    },
+  },
+  {
+    id: 'model-minimax',
+    type: 'model',
+    position: { x: -751, y: -1413 }, // 332°
+    data: {
+      id: 'model-minimax',
+      label: 'MiniMax M2',
+      category: 'llm',
+      provider: 'MiniMax',
+      description: 'Efficient MoE model optimized for agentic coding.',
+      releaseDate: '2026',
+      link: 'https://www.minimax.io/platform',
+      variants: [
+        { label: 'MiniMax-M2', id: 'minimax-m2' }
+      ],
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -129,6 +170,27 @@ export const initialNodes: AINode[] = [
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
       targetHandle: 'bottom'
+    },
+  },
+  {
+    id: 'model-glm',
+    type: 'model',
+    position: { x: -278, y: -1575 }, // 350°
+    data: {
+      id: 'model-glm',
+      label: 'GLM 5',
+      category: 'llm',
+      provider: 'Zhipu AI',
+      description: 'Open bilingual flagship with strong tool-use.',
+      releaseDate: '2026',
+      link: 'https://docs.z.ai/',
+      variants: [
+        { label: 'GLM-5', id: 'glm-5' },
+        { label: 'GLM-5-Air', id: 'glm-5-air' },
+        { label: 'GLM-5-Flash', id: 'glm-5-flash' }
+      ],
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -218,18 +280,20 @@ export const initialNodes: AINode[] = [
     id: 'model-nano-banana',
     type: 'model',
     position: { x: 1483, y: -599 }, // 68°
-    data: { 
+    data: {
       id: 'model-nano-banana',
-      label: 'Nano Banana Pro', 
-      category: 'image', 
-      provider: 'Google', 
-      description: 'Next-gen image generation.', 
-      releaseDate: '2025',
+      label: 'Nano Banana 2',
+      category: 'image',
+      provider: 'Google',
+      description: 'Next-gen image generation with sharper text + editing.',
+      releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/image-generation',
       variants: [
+        { label: 'Nano Banana 2', id: 'gemini-3-2-pro-image' },
         { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -257,23 +321,23 @@ export const initialNodes: AINode[] = [
 
   // 3. Video
   {
-    id: 'model-sora-2',
+    id: 'model-kling-3',
     type: 'model',
-    position: { x: 1565, y: 333 }, // 102°
-    data: { 
-      id: 'model-sora-2',
-      label: 'Sora 2', 
-      category: 'video', 
-      provider: 'OpenAI', 
-      description: 'Advanced video generation.', 
-      defaultNotes: 'Sora 2 creates more UGC style outputs, making it perfect for rapid content creation and social media trends.',
-      releaseDate: '2025',
-      link: 'https://platform.openai.com/docs/models/sora-2',
+    position: { x: 1575, y: 278 }, // 100°
+    data: {
+      id: 'model-kling-3',
+      label: 'Kling 3.0',
+      category: 'video',
+      provider: 'Kuaishou',
+      description: 'Cinematic video generation with strong motion coherence.',
+      releaseDate: '2026',
+      link: 'https://app.klingai.com/',
       variants: [
-        { label: 'Sora 2', id: 'sora-2' },
-        { label: 'Sora 2 Pro', id: 'sora-2-pro' }
+        { label: 'Kling 3.0 Master', id: 'kling-3-master' },
+        { label: 'Kling 3.0 Standard', id: 'kling-3-standard' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -295,6 +359,26 @@ export const initialNodes: AINode[] = [
         { label: 'Veo 3.1 Lite', id: 'veo-3.1-lite-generate-001' }
       ],
       targetHandle: 'left'
+    },
+  },
+  {
+    id: 'model-seedance-2',
+    type: 'model',
+    position: { x: 1278, y: 963 }, // 127°
+    data: {
+      id: 'model-seedance-2',
+      label: 'Seedance 2.0',
+      category: 'video',
+      provider: 'ByteDance',
+      description: 'Fast, high-fidelity text/image-to-video generation.',
+      releaseDate: '2026',
+      link: 'https://seed.bytedance.com/seedance',
+      variants: [
+        { label: 'Seedance 2.0 Pro', id: 'seedance-2-pro' },
+        { label: 'Seedance 2.0 Lite', id: 'seedance-2-lite' }
+      ],
+      targetHandle: 'left',
+      isNew: true
     },
   },
 
@@ -327,25 +411,23 @@ export const initialNodes: AINode[] = [
     },
   },
   {
-    id: 'tool-windsurf',
+    id: 'tool-claude-app',
     type: 'tool',
     position: { x: 726, y: 1426 }, // 153°
-    data: { 
-      id: 'tool-windsurf',
-      label: 'Windsurf', 
-      category: 'ai-ide', 
-      description: 'Agentic IDE by Codeium.', 
-      releaseDate: '2024',
-      link: 'https://docs.windsurf.com/',
+    data: {
+      id: 'tool-claude-app',
+      label: 'Claude app',
+      category: 'ai-ide',
+      description: "Anthropic's desktop coding environment powered by Claude.",
+      releaseDate: '2026',
+      link: 'https://claude.com/product/claude-code',
       variants: [
-        { label: 'Cascade', id: 'cascade' },
-        { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
-        { label: 'GPT-5.2-Codex', id: 'gpt-5.2-codex' }
+        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
+        { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
       targetHandle: 'left',
-      isDarker: true
+      isNew: true
     },
   },
   {
@@ -468,24 +550,7 @@ export const initialNodes: AINode[] = [
   },
 
   // 6. IDE Extensions
-  {
-    id: 'tool-cline',
-    type: 'tool',
-    position: { x: -1599, y: -56 }, // 272°
-    data: { 
-      id: 'tool-cline',
-      label: 'Cline', 
-      category: 'ide-extension', 
-      description: 'Autonomous coding agent extension.', 
-      releaseDate: '2024',
-      link: 'https://docs.cline.bot/',
-      variants: [
-        { label: 'Cline', id: 'cline' }
-      ],
-      targetHandle: 'right',
-      isDarker: true
-    },
-  },
+  // (no entries currently)
 
   // 7. AI Terminals
   {
@@ -508,6 +573,24 @@ export const initialNodes: AINode[] = [
   },
 
   // 8. Assistants
+  {
+    id: 'tool-hermes',
+    type: 'tool',
+    position: { x: -1386, y: -800 }, // 300°
+    data: {
+      id: 'tool-hermes',
+      label: 'Hermes',
+      category: 'assistant',
+      description: 'Autonomous agent for messenger-style task delegation.',
+      releaseDate: '2026',
+      link: 'https://hermes.ai/',
+      variants: [
+        { label: 'Hermes Agent', id: 'hermes-agent' }
+      ],
+      targetHandle: 'right',
+      isNew: true
+    },
+  },
   {
     id: 'tool-openclaw',
     type: 'tool',
@@ -539,7 +622,7 @@ export const initialEdges: Edge[] = [
   // --- Category -> Tool/Model Connections ---
   // AI IDEs
   { id: 'e-cat-ide-cursor', source: 'category-ai-ide', target: 'tool-cursor', style: { stroke: '#006FEE', strokeWidth: 2 } },
-  { id: 'e-cat-ide-windsurf', source: 'category-ai-ide', target: 'tool-windsurf', style: { stroke: '#006FEE', strokeWidth: 2 } },
+  { id: 'e-cat-ide-claudeapp', source: 'category-ai-ide', target: 'tool-claude-app', style: { stroke: '#006FEE', strokeWidth: 2 } },
   { id: 'e-cat-ide-antigravity', source: 'category-ai-ide', target: 'tool-antigravity', style: { stroke: '#006FEE', strokeWidth: 2 } },
   { id: 'e-cat-ide-codexapp', source: 'category-ai-ide', target: 'tool-codex-app', style: { stroke: '#006FEE', strokeWidth: 2 } },
 
@@ -550,19 +633,23 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-cli-claude', source: 'category-cli-agent', target: 'tool-claude-code', style: { stroke: '#F31260', strokeWidth: 2 } },
 
   // IDE Extensions
-  { id: 'e-cat-ext-cline', source: 'category-ide-extension', target: 'tool-cline', style: { stroke: '#9333EA', strokeWidth: 2 } },
+  // (no entries currently)
 
   // AI Terminals
   { id: 'e-cat-term-warp', source: 'category-ai-terminal', target: 'tool-warp', style: { stroke: '#06B6D4', strokeWidth: 2 } },
 
   // Assistants
+  { id: 'e-cat-assistants-hermes', source: 'category-assistants', target: 'tool-hermes', style: { stroke: '#EC4899', strokeWidth: 2 } },
   { id: 'e-cat-assistants-openclaw', source: 'category-assistants', target: 'tool-openclaw', style: { stroke: '#EC4899', strokeWidth: 2 } },
 
   // LLMs
   { id: 'e-cat-llm-gpt52', source: 'category-llm-all', target: 'model-gpt5-2', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-claude-opus', source: 'category-llm-all', target: 'model-claude-4-6-opus', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-gemini3', source: 'category-llm-all', target: 'model-gemini-3', style: { stroke: '#17C964', strokeWidth: 2 } },
-  { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v3', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-gemma', source: 'category-llm-all', target: 'model-gemma-4', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-qwen', source: 'category-llm-all', target: 'model-qwen-3-6', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-minimax', source: 'category-llm-all', target: 'model-minimax', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-glm', source: 'category-llm-all', target: 'model-glm', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-kimi', source: 'category-llm-all', target: 'model-kimi-2-5', style: { stroke: '#17C964', strokeWidth: 2 } },
 
   // Image Models
@@ -571,8 +658,9 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-image-gpt-image-1-5', source: 'category-image-all', target: 'model-gpt-image-1-5', style: { stroke: '#7828C8', strokeWidth: 2 } },
 
   // Video Models
-  { id: 'e-cat-video-sora', source: 'category-video-all', target: 'model-sora-2', style: { stroke: '#F5A524', strokeWidth: 2 } },
+  { id: 'e-cat-video-kling', source: 'category-video-all', target: 'model-kling-3', style: { stroke: '#F5A524', strokeWidth: 2 } },
   { id: 'e-cat-video-veo', source: 'category-video-all', target: 'model-veo-3', style: { stroke: '#F5A524', strokeWidth: 2 } },
+  { id: 'e-cat-video-seedance', source: 'category-video-all', target: 'model-seedance-2', style: { stroke: '#F5A524', strokeWidth: 2 } },
 
   // --- Cross-Link Connections (Optional/Contextual) ---
   // Cursor
@@ -585,9 +673,8 @@ export const initialEdges: Edge[] = [
   // Codex App -> GPT
   { id: 'e-codexapp-gpt52', source: 'tool-codex-app', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
-  // Windsurf
-  { id: 'e-windsurf-gpt52', source: 'tool-windsurf', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
-  { id: 'e-windsurf-claude45', source: 'tool-windsurf', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  // Claude app
+  { id: 'e-claudeapp-claude', source: 'tool-claude-app', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
   // Official CLIs
   { id: 'e-geminicli-gemini', source: 'tool-gemini-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
