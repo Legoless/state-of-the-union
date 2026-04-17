@@ -113,19 +113,19 @@ export const initialNodes: AINode[] = [
     id: 'model-claude-4-6-opus',
     type: 'model',
     position: { x: -547, y: -1504 }, // 340°
-    data: { 
+    data: {
       id: 'model-claude-4-6-opus',
-      label: 'Claude 4.6 Opus', 
-      category: 'llm', 
-      provider: 'Anthropic', 
-      description: 'Most capable model for complex tasks.', 
-      defaultNotes: 'Opus 4.6 is the smartest model for coding tasks, offering superior reasoning for complex development challenges.',
-      releaseDate: '2025',
+      label: 'Claude 4.7 Opus',
+      category: 'llm',
+      provider: 'Anthropic',
+      description: 'Flagship model with xhigh effort & 1M context.',
+      defaultNotes: 'Opus 4.7 is the smartest model for coding tasks, with 1M context and the new xhigh effort level for the hardest problems.',
+      releaseDate: '2026',
       link: 'https://docs.anthropic.com/en/api/overview',
       variants: [
+        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
         { label: 'Claude 4.6 Opus', id: 'claude-opus-4-6' },
-        { label: 'Claude 4.5 Opus', id: 'claude-opus-4-5' },
-        { label: 'Claude 4.5 Sonnet', id: 'claude-sonnet-4-5' },
+        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
       targetHandle: 'bottom'
@@ -135,18 +135,20 @@ export const initialNodes: AINode[] = [
     id: 'model-gpt5-2',
     type: 'model',
     position: { x: 0, y: -1600 }, // 0°
-    data: { 
+    data: {
       id: 'model-gpt5-2',
-      label: 'GPT-5.2 Codex', 
-      category: 'llm', 
-      provider: 'OpenAI', 
-      description: 'Flagship reasoning & coding model.', 
+      label: 'GPT-5.4',
+      category: 'llm',
+      provider: 'OpenAI',
+      description: 'Frontier reasoning + native computer-use, 1M context.',
+      defaultNotes: 'GPT-5.4 (Mar 2026) is the first mainline model with native computer-use and absorbs GPT-5.3-Codex coding capabilities.',
       releaseDate: '2026',
       link: 'https://platform.openai.com/docs/models',
       variants: [
-        { label: 'GPT-5.2', id: 'gpt-5.2' },
+        { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'GPT-5.2 Codex', id: 'gpt-5.2-codex' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
+        { label: 'GPT-5.2', id: 'gpt-5.2' }
       ],
       targetHandle: 'bottom'
     },
@@ -155,15 +157,17 @@ export const initialNodes: AINode[] = [
     id: 'model-gemini-3',
     type: 'model',
     position: { x: 468, y: -1530 }, // 17°
-    data: { 
+    data: {
       id: 'model-gemini-3',
-      label: 'Gemini 3', 
-      category: 'llm', 
-      provider: 'Google', 
-      description: 'Scalable multimodal family.', 
-      releaseDate: '2025',
+      label: 'Gemini 3.1',
+      category: 'llm',
+      provider: 'Google',
+      description: 'Multimodal flagship leading SWE-bench & ARC-AGI-2.',
+      releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/models',
       variants: [
+        { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
+        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
         { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
         { label: 'Gemini 3 Flash', id: 'gemini-3-flash' },
         { label: 'Gemini 3 Deep Think', id: 'gemini-3-deep-think' }
@@ -278,16 +282,17 @@ export const initialNodes: AINode[] = [
     position: { x: 1399, y: 776 }, // 119°
     data: { 
       id: 'model-veo-3',
-      label: 'Veo 3.1', 
-      category: 'video', 
-      provider: 'Google', 
-      description: 'High-definition video generation.', 
+      label: 'Veo 3.1',
+      category: 'video',
+      provider: 'Google',
+      description: 'High-definition 4K video generation. Lite variant launched Apr 2026.',
       defaultNotes: 'Veo3 can create more generic advertising videos, delivering high-quality visuals for commercial use.',
-      releaseDate: '2025',
+      releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/video',
       variants: [
         { label: 'Veo 3.1', id: 'veo-3.1-generate-001' },
-        { label: 'Veo 3.1 Fast', id: 'veo-3.1-fast-generate-001' }
+        { label: 'Veo 3.1 Fast', id: 'veo-3.1-fast-generate-001' },
+        { label: 'Veo 3.1 Lite', id: 'veo-3.1-lite-generate-001' }
       ],
       targetHandle: 'left'
     },
@@ -307,13 +312,14 @@ export const initialNodes: AINode[] = [
       releaseDate: '2023',
       link: 'https://docs.cursor.com/',
       variants: [
+        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
+        { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
+        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
         { label: 'Claude 4.6 Opus', id: 'claude-opus-4-6' },
-        { label: 'Claude 4.5 Opus', id: 'claude-opus-4-5' },
-        { label: 'Claude 4.5 Sonnet', id: 'claude-sonnet-4-5' },
+        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
         { label: 'Composer 1', id: 'composer-1' },
-        { label: 'Gemini 3 Flash', id: 'gemini-3-flash' },
         { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
-        { label: 'GPT-5.2 Codex', id: 'gpt-5.2-codex' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'Grok Code', id: 'grok-code' }
       ],
@@ -333,8 +339,10 @@ export const initialNodes: AINode[] = [
       link: 'https://docs.windsurf.com/',
       variants: [
         { label: 'Cascade', id: 'cascade' },
-        { label: 'GPT-5.2-Codex', id: 'gpt-5.2-codex' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
+        { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
+        { label: 'GPT-5.2-Codex', id: 'gpt-5.2-codex' }
       ],
       targetHandle: 'left',
       isDarker: true
@@ -365,14 +373,15 @@ export const initialNodes: AINode[] = [
     position: { x: -195, y: 1588 }, // 187°
     data: { 
       id: 'tool-codex-app',
-      label: 'Codex App', 
-      category: 'ai-ide', 
-      description: "OpenAI's coding environment. Supports GPT-5.3-Codex (Feb 2026): most capable agentic coding model, 25% faster, stronger reasoning.",
+      label: 'Codex App',
+      category: 'ai-ide',
+      description: "OpenAI's coding environment. Now powered by GPT-5.4 (Mar 2026) with native computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
       variants: [
-        { label: 'Codex', id: 'codex' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' }
+        { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
+        { label: 'Codex', id: 'codex' }
       ],
       targetHandle: 'top'
     },
@@ -402,12 +411,14 @@ export const initialNodes: AINode[] = [
     position: { x: -1050, y: 1208 }, // 221°
     data: { 
       id: 'tool-gemini-cli',
-      label: 'Gemini CLI', 
-      category: 'cli-agent', 
+      label: 'Gemini CLI',
+      category: 'cli-agent',
       description: "Google's official terminal agent.",
       releaseDate: '2025',
       link: 'https://ai.google.dev/gemini-api/docs/quickstart',
       variants: [
+        { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
+        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
         { label: 'Gemini CLI', id: 'gemini-cli' }
       ],
       targetHandle: 'right',
@@ -420,12 +431,14 @@ export const initialNodes: AINode[] = [
     position: { x: -1357, y: 848 }, // 238°
     data: { 
       id: 'tool-codex-cli',
-      label: 'Codex CLI', 
-      category: 'cli-agent', 
-      description: "OpenAI's official terminal agent. Supports GPT-5.3-Codex (Feb 2026): most capable agentic coding model, 25% faster, stronger reasoning.",
+      label: 'Codex CLI',
+      category: 'cli-agent',
+      description: "OpenAI's official terminal agent. Now powered by GPT-5.4 (Mar 2026) with native computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
+        { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
       targetHandle: 'right',
@@ -438,12 +451,15 @@ export const initialNodes: AINode[] = [
     position: { x: -1545, y: 414 }, // 255°
     data: { 
       id: 'tool-claude-code',
-      label: 'Claude Code', 
-      category: 'cli-agent', 
+      label: 'Claude Code',
+      category: 'cli-agent',
       description: "Anthropic's official terminal agent.",
       releaseDate: '2025',
       link: 'https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview',
       variants: [
+        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
+        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
+        { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'Claude Code', id: 'claude-code' }
       ],
       targetHandle: 'right',
