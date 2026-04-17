@@ -178,16 +178,16 @@ export const initialNodes: AINode[] = [
     position: { x: -278, y: -1575 }, // 350°
     data: {
       id: 'model-glm',
-      label: 'GLM 5',
+      label: 'GLM 5.1',
       category: 'llm',
       provider: 'Zhipu AI',
       description: 'Open bilingual flagship with strong tool-use.',
       releaseDate: '2026',
       link: 'https://docs.z.ai/',
       variants: [
-        { label: 'GLM-5', id: 'glm-5' },
-        { label: 'GLM-5-Air', id: 'glm-5-air' },
-        { label: 'GLM-5-Flash', id: 'glm-5-flash' }
+        { label: 'GLM-5.1', id: 'glm-5.1' },
+        { label: 'GLM-5.1-Air', id: 'glm-5.1-air' },
+        { label: 'GLM-5.1-Flash', id: 'glm-5.1-flash' }
       ],
       targetHandle: 'bottom',
       isNew: true
