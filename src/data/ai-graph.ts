@@ -95,9 +95,10 @@ export const initialNodes: AINode[] = [
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemma',
       variants: [
-        { label: 'Gemma 4 27B', id: 'gemma-4-27b' },
-        { label: 'Gemma 4 9B', id: 'gemma-4-9b' },
-        { label: 'Gemma 4 2B', id: 'gemma-4-2b' }
+        { label: 'Gemma 4 31B', id: 'gemma-4-31b' },
+        { label: 'Gemma 4 26B MoE', id: 'gemma-4-26b-moe' },
+        { label: 'Gemma 4 E4B', id: 'gemma-4-e4b' },
+        { label: 'Gemma 4 E2B', id: 'gemma-4-e2b' }
       ],
       targetHandle: 'bottom',
       isNew: true
@@ -116,9 +117,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2026',
       link: 'https://qwen.ai/',
       variants: [
-        { label: 'Qwen3.6-Max', id: 'qwen3.6-max' },
-        { label: 'Qwen3.6-Coder', id: 'qwen3.6-coder' },
-        { label: 'Qwen3.6-VL', id: 'qwen3.6-vl' }
+        { label: 'Qwen3.6-Plus', id: 'qwen3.6-plus' },
+        { label: 'Qwen3.6-35B-A3B', id: 'qwen3.6-35b-a3b' }
       ],
       targetHandle: 'bottom',
       isNew: true
@@ -234,19 +234,18 @@ export const initialNodes: AINode[] = [
     id: 'model-kimi-2-5',
     type: 'model',
     position: { x: 895, y: -1326 }, // 34°
-    data: { 
+    data: {
       id: 'model-kimi-2-5',
-      label: 'Kimi 2.5', 
-      category: 'llm', 
-      provider: 'Moonshot AI', 
-      description: 'Long-context Chinese LLM.', 
-      releaseDate: '2025',
+      label: 'Kimi 2.5',
+      category: 'llm',
+      provider: 'Moonshot AI',
+      description: 'Open-source multimodal agentic model with 1T MoE params.',
+      releaseDate: '2026',
       link: 'https://platform.moonshot.ai/docs',
       variants: [
         { label: 'Kimi K2.5', id: 'kimi-k2.5' }
       ],
-      targetHandle: 'bottom',
-      isDarker: true
+      targetHandle: 'bottom'
     },
   },
 
@@ -282,7 +281,7 @@ export const initialNodes: AINode[] = [
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/image-generation',
       variants: [
-        { label: 'Nano Banana 2', id: 'gemini-3-2-pro-image' },
+        { label: 'Nano Banana 2', id: 'gemini-3-1-flash-image' },
         { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' }
       ],
       targetHandle: 'left',
@@ -326,8 +325,10 @@ export const initialNodes: AINode[] = [
       releaseDate: '2026',
       link: 'https://app.klingai.com/',
       variants: [
-        { label: 'Kling 3.0 Master', id: 'kling-3-master' },
-        { label: 'Kling 3.0 Standard', id: 'kling-3-standard' }
+        { label: 'Kling V3 Pro', id: 'kling-v3-pro' },
+        { label: 'Kling V3 Standard', id: 'kling-v3-standard' },
+        { label: 'Kling O3 Pro', id: 'kling-o3-pro' },
+        { label: 'Kling O3 Standard', id: 'kling-o3-standard' }
       ],
       targetHandle: 'left',
       isNew: true
@@ -367,8 +368,8 @@ export const initialNodes: AINode[] = [
       releaseDate: '2026',
       link: 'https://seed.bytedance.com/seedance',
       variants: [
-        { label: 'Seedance 2.0 Pro', id: 'seedance-2-pro' },
-        { label: 'Seedance 2.0 Lite', id: 'seedance-2-lite' }
+        { label: 'Seedance 2.0', id: 'seedance-2-0' },
+        { label: 'Seedance 2.0 Fast', id: 'seedance-2-0-fast' }
       ],
       targetHandle: 'left',
       isNew: true
@@ -551,7 +552,7 @@ export const initialNodes: AINode[] = [
       category: 'ai-terminal', 
       description: 'AI-powered Terminal.', 
       defaultNotes: 'Warp is used for generic coding agent for anything in terminal, blending command-line power with AI assistance.',
-      releaseDate: '2021',
+      releaseDate: '2022',
       link: 'https://docs.warp.dev/',
       variants: [
         { label: 'Warp AI', id: 'warp-ai' }
