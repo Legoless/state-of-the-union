@@ -21,7 +21,6 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
     switch (data.category) {
       case 'ai-ide': return 'primary';
       case 'cli-agent': return 'danger';
-      case 'ide-extension': return 'secondary';
       case 'ai-terminal': return 'primary';
       case 'llm': return 'success';
       case 'video': return 'warning';
@@ -44,10 +43,6 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
         return isDarker 
           ? { bg: '#8F0A36', border: '#8F0A36', text: '#ffffff', subtext: '#FFE4E6' } // Darker Red
           : { bg: '#F31260', border: '#F31260', text: '#ffffff', subtext: '#FFE4E6' }; // Danger Red
-      case 'ide-extension': 
-        return isDarker 
-          ? { bg: '#551A8B', border: '#551A8B', text: '#ffffff', subtext: '#F3E8FF' } // Darker Purple
-          : { bg: '#9333EA', border: '#9333EA', text: '#ffffff', subtext: '#F3E8FF' }; // Purple
       case 'ai-terminal': return { bg: '#06B6D4', border: '#06B6D4', text: '#ffffff', subtext: '#CFFAFE' }; // Cyan
       case 'llm': 
         return isDarker 
@@ -147,7 +142,6 @@ interface AIGraphProps {
 const nodeTypes = {
   'ai-ide': CustomAINode,
   'cli-agent': CustomAINode,
-  'ide-extension': CustomAINode,
   'ai-terminal': CustomAINode,
   tool: CustomAINode, // Keeping for backward compatibility or generic use
   model: CustomAINode,
@@ -259,7 +253,6 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
               switch (cat) {
                 case 'ai-ide': return isDarker ? '#003C8F' : '#006FEE';
                 case 'cli-agent': return isDarker ? '#8F0A36' : '#F31260';
-                case 'ide-extension': return isDarker ? '#551A8B' : '#9333EA';
                 case 'ai-terminal': return '#06B6D4';
                 case 'llm': return isDarker ? '#17C964' : '#6EE7B7';
                 case 'video': return '#F5A524';
@@ -277,7 +270,6 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
               switch (cat) {
                 case 'ai-ide': return isDarker ? '#003C8F' : '#006FEE';
                 case 'cli-agent': return isDarker ? '#8F0A36' : '#F31260';
-                case 'ide-extension': return isDarker ? '#551A8B' : '#9333EA';
                 case 'ai-terminal': return '#06B6D4';
                 case 'llm': return isDarker ? '#17C964' : '#6EE7B7';
                 case 'video': return '#F5A524';

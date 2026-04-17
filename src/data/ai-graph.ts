@@ -3,7 +3,7 @@ import type { Node, Edge } from '@xyflow/react';
 export type AINodeData = {
   id: string;
   label: string;
-  category: 'ai-ide' | 'cli-agent' | 'ide-extension' | 'ai-terminal' | 'assistant' | 'llm' | 'image' | 'video' | 'provider' | 'root';
+  category: 'ai-ide' | 'cli-agent' | 'ai-terminal' | 'assistant' | 'llm' | 'image' | 'video' | 'provider' | 'root';
   description?: string;
   defaultNotes?: string;
   provider?: string;
@@ -64,21 +64,14 @@ export const initialNodes: AINode[] = [
     position: { x: -684, y: 585 },
     data: { id: 'category-cli-agent', label: 'CLI Agents', category: 'cli-agent', description: 'Terminal-based Agents', targetHandle: 'right', sourceHandle: 'left' },
   },
-  // 6. IDE Extensions (Left, 272°)
-  {
-    id: 'category-ide-extension',
-    type: 'ide-extension',
-    position: { x: -899, y: -31 },
-    data: { id: 'category-ide-extension', label: 'IDE Extensions', category: 'ide-extension', description: 'VS Code Extensions', targetHandle: 'right', sourceHandle: 'left' },
-  },
-  // 7. AI Terminals (Top-Left, 289°)
+  // 6. AI Terminals (Top-Left, 289°)
   {
     id: 'category-ai-terminal',
     type: 'ai-terminal',
     position: { x: -851, y: -293 },
     data: { id: 'category-ai-terminal', label: 'AI Terminals', category: 'ai-terminal', description: 'AI-Enhanced Terminals', targetHandle: 'right', sourceHandle: 'left' },
   },
-  // 8. Assistants (Top-Left, 306°)
+  // 7. Assistants (Top-Left, 306°)
   {
     id: 'category-assistants',
     type: 'assistant',
@@ -547,10 +540,7 @@ export const initialNodes: AINode[] = [
     },
   },
 
-  // 6. IDE Extensions
-  // (no entries currently)
-
-  // 7. AI Terminals
+  // 6. AI Terminals
   {
     id: 'tool-warp',
     type: 'tool',
@@ -570,7 +560,7 @@ export const initialNodes: AINode[] = [
     },
   },
 
-  // 8. Assistants
+  // 7. Assistants
   {
     id: 'tool-hermes',
     type: 'tool',
@@ -613,7 +603,6 @@ export const initialEdges: Edge[] = [
   { id: 'e-root-video', source: 'root-ai', target: 'category-video-all', sourceHandle: 'source-right', style: { stroke: '#F5A524', strokeWidth: 3 } },
   { id: 'e-root-ide', source: 'root-ai', target: 'category-ai-ide', sourceHandle: 'source-right', style: { stroke: '#006FEE', strokeWidth: 3 } },
   { id: 'e-root-cli', source: 'root-ai', target: 'category-cli-agent', sourceHandle: 'source-bottom', style: { stroke: '#F31260', strokeWidth: 3 } },
-  { id: 'e-root-ext', source: 'root-ai', target: 'category-ide-extension', sourceHandle: 'source-left', style: { stroke: '#9333EA', strokeWidth: 3 } },
   { id: 'e-root-term', source: 'root-ai', target: 'category-ai-terminal', sourceHandle: 'source-left', style: { stroke: '#06B6D4', strokeWidth: 3 } },
   { id: 'e-root-assist', source: 'root-ai', target: 'category-assistants', sourceHandle: 'source-left', style: { stroke: '#EC4899', strokeWidth: 3 } },
 
@@ -629,9 +618,6 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-cli-gemini', source: 'category-cli-agent', target: 'tool-gemini-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-codex', source: 'category-cli-agent', target: 'tool-codex-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-claude', source: 'category-cli-agent', target: 'tool-claude-code', style: { stroke: '#F31260', strokeWidth: 2 } },
-
-  // IDE Extensions
-  // (no entries currently)
 
   // AI Terminals
   { id: 'e-cat-term-warp', source: 'category-ai-terminal', target: 'tool-warp', style: { stroke: '#06B6D4', strokeWidth: 2 } },
