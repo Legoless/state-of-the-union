@@ -92,7 +92,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-gemma-4',
     type: 'model',
-    position: { x: -1112, y: -1151 }, // 316°
+    position: { x: -1320, y: -1367 }, // 316°, r=1900
     data: {
       id: 'model-gemma-4',
       label: 'Gemma 4',
@@ -134,7 +134,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-minimax',
     type: 'model',
-    position: { x: -751, y: -1413 }, // 332°
+    position: { x: -892, y: -1678 }, // 332°, r=1900
     data: {
       id: 'model-minimax',
       label: 'MiniMax M2',
@@ -175,7 +175,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-glm',
     type: 'model',
-    position: { x: -278, y: -1575 }, // 350°
+    position: { x: -330, y: -1871 }, // 350°, r=1900
     data: {
       id: 'model-glm',
       label: 'GLM 5.1',
@@ -364,7 +364,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-seedance-2',
     type: 'model',
-    position: { x: 1278, y: 963 }, // 127°
+    position: { x: 1518, y: 1143 }, // 127°, r=1900
     data: {
       id: 'model-seedance-2',
       label: 'Seedance 2.0',
@@ -576,7 +576,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-hermes',
     type: 'tool',
-    position: { x: -1386, y: -800 }, // 300°
+    position: { x: -1648, y: -840 }, // 297°, r=1850
     data: {
       id: 'tool-hermes',
       label: 'Hermes',
