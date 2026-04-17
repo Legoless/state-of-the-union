@@ -523,8 +523,7 @@ export const initialNodes: AINode[] = [
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
-      targetHandle: 'right',
-      isDarker: true
+      targetHandle: 'right'
     },
   },
   {
@@ -544,8 +543,7 @@ export const initialNodes: AINode[] = [
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'Claude Code', id: 'claude-code' }
       ],
-      targetHandle: 'right',
-      isDarker: true
+      targetHandle: 'right'
     },
   },
 
