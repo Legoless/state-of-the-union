@@ -100,8 +100,7 @@ export const initialNodes: AINode[] = [
         { label: 'Gemma 4 E4B', id: 'gemma-4-e4b' },
         { label: 'Gemma 4 E2B', id: 'gemma-4-e2b' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -113,11 +112,12 @@ export const initialNodes: AINode[] = [
       label: 'Qwen 3.6',
       category: 'llm',
       provider: 'Alibaba',
-      description: 'Frontier open-weights model with strong coding + reasoning.',
+      description: 'Frontier open-weights model with strong coding + reasoning. New 27B dense weights (Apr 2026).',
       releaseDate: '2026',
       link: 'https://qwen.ai/',
       variants: [
         { label: 'Qwen3.6-Plus', id: 'qwen3.6-plus' },
+        { label: 'Qwen3.6-27B', id: 'qwen3.6-27b' },
         { label: 'Qwen3.6-35B-A3B', id: 'qwen3.6-35b-a3b' }
       ],
       targetHandle: 'bottom',
@@ -130,17 +130,17 @@ export const initialNodes: AINode[] = [
     position: { x: -892, y: -1678 }, // 332°, r=1900
     data: {
       id: 'model-minimax',
-      label: 'MiniMax M2',
+      label: 'MiniMax M2.7',
       category: 'llm',
       provider: 'MiniMax',
       description: 'Efficient MoE model optimized for agentic coding.',
       releaseDate: '2026',
       link: 'https://www.minimax.io/platform',
       variants: [
-        { label: 'MiniMax-M2', id: 'minimax-m2' }
+        { label: 'MiniMax-M2.7', id: 'minimax-m2.7' },
+        { label: 'MiniMax-M2.7-highspeed', id: 'minimax-m2.7-highspeed' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -182,8 +182,7 @@ export const initialNodes: AINode[] = [
         { label: 'GLM-5.1-Air', id: 'glm-5.1-air' },
         { label: 'GLM-5.1-Flash', id: 'glm-5.1-flash' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -192,20 +191,24 @@ export const initialNodes: AINode[] = [
     position: { x: 0, y: -1600 }, // 0°
     data: {
       id: 'model-gpt5-2',
-      label: 'GPT-5.4',
+      label: 'GPT-5.5',
       category: 'llm',
       provider: 'OpenAI',
-      description: 'Frontier reasoning + native computer-use, 1M context.',
-      defaultNotes: 'GPT-5.4 (Mar 2026) is the first mainline model with native computer-use and absorbs GPT-5.3-Codex coding capabilities.',
+      description: 'Frontier reasoning model for professional work, with computer-use and 1M context.',
+      defaultNotes: 'GPT-5.5 (Apr 2026) is the new frontier model. GPT-5.5 Instant (May 2026) is the fast ChatGPT default for everyday tasks.',
       releaseDate: '2026',
       link: 'https://platform.openai.com/docs/models',
       variants: [
+        { label: 'GPT-5.5', id: 'gpt-5.5' },
+        { label: 'GPT-5.5 Pro', id: 'gpt-5.5-pro' },
+        { label: 'GPT-5.5 Instant', id: 'gpt-5.5-instant' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
-        { label: 'GPT-5.2 Codex', id: 'gpt-5.2-codex' },
-        { label: 'GPT-5.2', id: 'gpt-5.2' }
+        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -217,12 +220,13 @@ export const initialNodes: AINode[] = [
       label: 'Gemini 3.1',
       category: 'llm',
       provider: 'Google',
-      description: 'Multimodal flagship leading SWE-bench & ARC-AGI-2.',
+      description: 'Multimodal flagship leading SWE-bench & ARC-AGI-2. Deep Research preview added Apr 2026.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/models',
       variants: [
         { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
         { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
+        { label: 'Gemini Deep Research', id: 'gemini-deep-research-preview' },
         { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
         { label: 'Gemini 3 Flash', id: 'gemini-3-flash' },
         { label: 'Gemini 3 Deep Think', id: 'gemini-3-deep-think' }
@@ -231,21 +235,46 @@ export const initialNodes: AINode[] = [
     },
   },
   {
+    id: 'model-deepseek-v4',
+    type: 'model',
+    position: { x: 803, y: -1722 }, // 25°, r=1900
+    data: {
+      id: 'model-deepseek-v4',
+      label: 'DeepSeek V4',
+      category: 'llm',
+      provider: 'DeepSeek',
+      description: 'Open-source frontier model with Pro + Flash variants.',
+      releaseDate: '2026',
+      link: 'https://api-docs.deepseek.com/',
+      variants: [
+        { label: 'DeepSeek-V4 Preview', id: 'deepseek-v4-preview' },
+        { label: 'DeepSeek-V4 Pro', id: 'deepseek-v4-pro' },
+        { label: 'DeepSeek-V4 Flash', id: 'deepseek-v4-flash' }
+      ],
+      targetHandle: 'bottom',
+      isNew: true
+    },
+  },
+  {
     id: 'model-kimi-2-5',
     type: 'model',
     position: { x: 895, y: -1326 }, // 34°
     data: {
       id: 'model-kimi-2-5',
-      label: 'Kimi 2.5',
+      label: 'Kimi K2.6',
       category: 'llm',
       provider: 'Moonshot AI',
-      description: 'Open-source multimodal agentic model with 1T MoE params.',
+      description: 'Open-source multimodal agentic model with Instant, Thinking, Agent and Agent Swarm modes.',
       releaseDate: '2026',
       link: 'https://platform.moonshot.ai/docs',
       variants: [
-        { label: 'Kimi K2.5', id: 'kimi-k2.5' }
+        { label: 'Kimi K2.6 Instant', id: 'kimi-k2.6-instant' },
+        { label: 'Kimi K2.6 Thinking', id: 'kimi-k2.6-thinking' },
+        { label: 'Kimi K2.6 Agent', id: 'kimi-k2.6-agent' },
+        { label: 'Kimi K2.6 Agent Swarm', id: 'kimi-k2.6-agent-swarm' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
 
@@ -254,18 +283,21 @@ export const initialNodes: AINode[] = [
     id: 'model-gpt-image-1-5',
     type: 'model',
     position: { x: 1243, y: -1007 }, // 51°
-    data: { 
+    data: {
       id: 'model-gpt-image-1-5',
-      label: 'GPT Image 1.5', 
-      category: 'image', 
-      provider: 'OpenAI', 
-      description: 'Next-gen photorealistic image generation.', 
-      releaseDate: '2025',
+      label: 'GPT Image 2',
+      category: 'image',
+      provider: 'OpenAI',
+      description: 'Next-gen photorealistic image generation with sharper text + editing.',
+      releaseDate: '2026',
       link: 'https://platform.openai.com/docs/guides/image-generation',
       variants: [
+        { label: 'GPT Image 2', id: 'gpt-image-2' },
+        { label: 'GPT Image 2 (snapshot)', id: 'gpt-image-2-2026-04-21' },
         { label: 'GPT Image 1.5', id: 'gpt-image-1.5' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -284,8 +316,7 @@ export const initialNodes: AINode[] = [
         { label: 'Nano Banana 2', id: 'gemini-3-1-flash-image' },
         { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -321,7 +352,7 @@ export const initialNodes: AINode[] = [
       label: 'Kling 3.0',
       category: 'video',
       provider: 'Kuaishou',
-      description: 'Cinematic video generation with strong motion coherence.',
+      description: 'Cinematic video generation with strong motion coherence. 1080p/720p, native audio modes.',
       releaseDate: '2026',
       link: 'https://app.klingai.com/',
       variants: [
@@ -330,8 +361,7 @@ export const initialNodes: AINode[] = [
         { label: 'Kling O3 Pro', id: 'kling-o3-pro' },
         { label: 'Kling O3 Standard', id: 'kling-o3-standard' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -371,8 +401,7 @@ export const initialNodes: AINode[] = [
         { label: 'Seedance 2.0', id: 'seedance-2-0' },
         { label: 'Seedance 2.0 Fast', id: 'seedance-2-0-fast' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
 
@@ -383,21 +412,22 @@ export const initialNodes: AINode[] = [
     position: { x: 1111, y: 1151 }, // 136°
     data: { 
       id: 'tool-cursor',
-      label: 'Cursor', 
-      category: 'ai-ide', 
-      description: 'AI Code Editor based on VS Code.', 
+      label: 'Cursor',
+      category: 'ai-ide',
+      description: 'AI Code Editor based on VS Code. Cursor 3.3 (May 2026) adds per-subagent model controls.',
       defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities.',
       releaseDate: '2023',
       link: 'https://docs.cursor.com/',
       variants: [
+        { label: 'Composer 2', id: 'composer-2' },
         { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
+        { label: 'GPT-5.5', id: 'gpt-5.5' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
         { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
-        { label: 'Claude 4.6 Opus', id: 'claude-opus-4-6' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
-        { label: 'Composer 1', id: 'composer-1' },
-        { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
+        { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'Grok Code', id: 'grok-code' }
       ],
@@ -451,12 +481,14 @@ export const initialNodes: AINode[] = [
       id: 'tool-codex-app',
       label: 'Codex App',
       category: 'ai-ide',
-      description: "OpenAI's coding environment. Now powered by GPT-5.4 (Mar 2026) with native computer-use and 1M context.",
+      description: "OpenAI's coding environment. Now powered by GPT-5.5 (Apr 2026) with native computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
       variants: [
+        { label: 'GPT-5.5', id: 'gpt-5.5' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
+        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' },
         { label: 'Codex', id: 'codex' }
       ],
       targetHandle: 'top'
@@ -470,9 +502,9 @@ export const initialNodes: AINode[] = [
     position: { x: -651, y: 1462 }, // 204°
     data: { 
       id: 'tool-opencode',
-      label: 'OpenCode', 
-      category: 'cli-agent', 
-      description: 'Open Source AI Coding Agent CLI.', 
+      label: 'OpenCode',
+      category: 'cli-agent',
+      description: 'Open Source AI Coding Agent CLI (v1.14, May 2026). 75+ model providers, BYO model.',
       releaseDate: '2025',
       link: 'https://opencode.ai/docs',
       variants: [
@@ -489,12 +521,13 @@ export const initialNodes: AINode[] = [
       id: 'tool-gemini-cli',
       label: 'Gemini CLI',
       category: 'cli-agent',
-      description: "Google's official terminal agent.",
+      description: "Google's official terminal agent (v0.41, May 2026). Adds experimental Gemma 4 local model support.",
       releaseDate: '2025',
       link: 'https://ai.google.dev/gemini-api/docs/quickstart',
       variants: [
         { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
         { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
+        { label: 'Gemma 4 (experimental)', id: 'gemma-4-experimental' },
         { label: 'Gemini CLI', id: 'gemini-cli' }
       ],
       targetHandle: 'right',
@@ -509,12 +542,15 @@ export const initialNodes: AINode[] = [
       id: 'tool-codex-cli',
       label: 'Codex CLI',
       category: 'cli-agent',
-      description: "OpenAI's official terminal agent. Now powered by GPT-5.4 (Mar 2026) with native computer-use and 1M context.",
+      description: "OpenAI's official terminal agent (v0.130, May 2026). Powered by GPT-5.5 with computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
+        { label: 'GPT-5.5', id: 'gpt-5.5' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
+        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
+        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' },
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
       targetHandle: 'right'
@@ -528,7 +564,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-claude-code',
       label: 'Claude Code',
       category: 'cli-agent',
-      description: "Anthropic's official terminal agent.",
+      description: "Anthropic's official terminal agent (v2.1, May 2026). Adds xhigh effort for Opus 4.7 + gateway model discovery.",
       releaseDate: '2025',
       link: 'https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview',
       variants: [
@@ -548,9 +584,9 @@ export const initialNodes: AINode[] = [
     position: { x: -1513, y: -521 }, // 289°
     data: { 
       id: 'tool-warp',
-      label: 'Warp', 
-      category: 'ai-terminal', 
-      description: 'AI-powered Terminal.', 
+      label: 'Warp',
+      category: 'ai-terminal',
+      description: 'AI-powered Terminal. Now open source (Apr 2026); supports Claude Code, Codex, Gemini CLI, OpenCode.',
       defaultNotes: 'Warp is used for generic coding agent for anything in terminal, blending command-line power with AI assistance.',
       releaseDate: '2022',
       link: 'https://docs.warp.dev/',
@@ -636,6 +672,7 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-llm-minimax', source: 'category-llm-all', target: 'model-minimax', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-glm', source: 'category-llm-all', target: 'model-glm', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-kimi', source: 'category-llm-all', target: 'model-kimi-2-5', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v4', style: { stroke: '#17C964', strokeWidth: 2 } },
 
   // Image Models
   { id: 'e-cat-image-nano', source: 'category-image-all', target: 'model-nano-banana', style: { stroke: '#7828C8', strokeWidth: 2 } },
