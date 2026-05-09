@@ -344,6 +344,29 @@ export const initialNodes: AINode[] = [
 
   // 3. Video
   {
+    id: 'model-higgsfield',
+    type: 'model',
+    position: { x: 1897, y: 99 }, // 93°, r=1900
+    data: {
+      id: 'model-higgsfield',
+      label: 'Higgsfield',
+      category: 'video',
+      provider: 'Higgsfield',
+      description: 'Cinematic AI video & image platform with proprietary engines (Soul, DOP, Cinema Studio) and 30+ integrated models.',
+      releaseDate: '2025',
+      link: 'https://higgsfield.ai/',
+      variants: [
+        { label: 'Soul 2.0', id: 'higgsfield-soul-2' },
+        { label: 'Soul Cinema', id: 'higgsfield-soul-cinema' },
+        { label: 'Higgsfield DOP', id: 'higgsfield-dop' },
+        { label: 'Cinema Studio', id: 'higgsfield-cinema-studio' },
+        { label: 'Keyframes', id: 'higgsfield-keyframes' }
+      ],
+      targetHandle: 'left',
+      isNew: true
+    },
+  },
+  {
     id: 'model-kling-3',
     type: 'model',
     position: { x: 1575, y: 278 }, // 100°
@@ -362,6 +385,30 @@ export const initialNodes: AINode[] = [
         { label: 'Kling O3 Standard', id: 'kling-o3-standard' }
       ],
       targetHandle: 'left'
+    },
+  },
+  {
+    id: 'model-kie',
+    type: 'model',
+    position: { x: 1785, y: 650 }, // 110°, r=1900
+    data: {
+      id: 'model-kie',
+      label: 'Kie',
+      category: 'video',
+      provider: 'Kie.ai',
+      description: 'Unified, credit-based API for top video, image, and music models — Veo 3.1, Runway Aleph, Kling 3.0, Sora 2.',
+      releaseDate: '2025',
+      link: 'https://kie.ai/',
+      variants: [
+        { label: 'Veo 3.1 API', id: 'kie-veo-3-1' },
+        { label: 'Veo 3.1 Fast API', id: 'kie-veo-3-1-fast' },
+        { label: 'Runway Aleph API', id: 'kie-runway-aleph' },
+        { label: 'Runway Gen-4 Turbo API', id: 'kie-runway-gen4-turbo' },
+        { label: 'Kling 3.0 API', id: 'kie-kling-3' },
+        { label: 'Sora 2 API', id: 'kie-sora-2' }
+      ],
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -680,7 +727,9 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-image-gpt-image-1-5', source: 'category-image-all', target: 'model-gpt-image-1-5', style: { stroke: '#7828C8', strokeWidth: 2 } },
 
   // Video Models
+  { id: 'e-cat-video-higgsfield', source: 'category-video-all', target: 'model-higgsfield', style: { stroke: '#F5A524', strokeWidth: 2 } },
   { id: 'e-cat-video-kling', source: 'category-video-all', target: 'model-kling-3', style: { stroke: '#F5A524', strokeWidth: 2 } },
+  { id: 'e-cat-video-kie', source: 'category-video-all', target: 'model-kie', style: { stroke: '#F5A524', strokeWidth: 2 } },
   { id: 'e-cat-video-veo', source: 'category-video-all', target: 'model-veo-3', style: { stroke: '#F5A524', strokeWidth: 2 } },
   { id: 'e-cat-video-seedance', source: 'category-video-all', target: 'model-seedance-2', style: { stroke: '#F5A524', strokeWidth: 2 } },
 
