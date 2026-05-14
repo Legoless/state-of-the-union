@@ -197,7 +197,7 @@ export const initialNodes: AINode[] = [
       description: 'Frontier reasoning model for professional work, with computer-use and 1M context.',
       defaultNotes: 'GPT-5.5 (Apr 2026) is the new frontier model. GPT-5.5 Instant (May 2026) is the fast ChatGPT default for everyday tasks.',
       releaseDate: '2026',
-      link: 'https://platform.openai.com/docs/models',
+      link: 'https://developers.openai.com/api/docs/models',
       variants: [
         { label: 'GPT-5.5', id: 'gpt-5.5' },
         { label: 'GPT-5.5 Pro', id: 'gpt-5.5-pro' },
@@ -290,7 +290,7 @@ export const initialNodes: AINode[] = [
       provider: 'OpenAI',
       description: 'Next-gen photorealistic image generation with sharper text + editing.',
       releaseDate: '2026',
-      link: 'https://platform.openai.com/docs/guides/image-generation',
+      link: 'https://developers.openai.com/api/docs/guides/image-generation',
       variants: [
         { label: 'GPT Image 2', id: 'gpt-image-2' },
         { label: 'GPT Image 2 (snapshot)', id: 'gpt-image-2-2026-04-21' },
@@ -464,7 +464,7 @@ export const initialNodes: AINode[] = [
       description: 'AI Code Editor based on VS Code. Cursor 3.3 (May 2026) adds per-subagent model controls.',
       defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities.',
       releaseDate: '2023',
-      link: 'https://docs.cursor.com/',
+      link: 'https://cursor.com/docs',
       variants: [
         { label: 'Composer 2', id: 'composer-2' },
         { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
@@ -491,7 +491,7 @@ export const initialNodes: AINode[] = [
       category: 'ai-ide',
       description: "Anthropic's desktop coding environment powered by Claude.",
       releaseDate: '2026',
-      link: 'https://claude.com/product/claude-code',
+      link: 'https://code.claude.com/docs/en/desktop',
       variants: [
         { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
@@ -570,7 +570,7 @@ export const initialNodes: AINode[] = [
       category: 'cli-agent',
       description: "Google's official terminal agent (v0.41, May 2026). Adds experimental Gemma 4 local model support.",
       releaseDate: '2025',
-      link: 'https://ai.google.dev/gemini-api/docs/quickstart',
+      link: 'https://google-gemini.github.io/gemini-cli/docs/',
       variants: [
         { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
         { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
@@ -613,7 +613,7 @@ export const initialNodes: AINode[] = [
       category: 'cli-agent',
       description: "Anthropic's official terminal agent (v2.1, May 2026). Adds xhigh effort for Opus 4.7 + gateway model discovery.",
       releaseDate: '2025',
-      link: 'https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview',
+      link: 'https://code.claude.com/docs',
       variants: [
         { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
@@ -655,7 +655,7 @@ export const initialNodes: AINode[] = [
       category: 'assistant',
       description: 'Autonomous agent for messenger-style task delegation.',
       releaseDate: '2026',
-      link: 'https://hermes.ai/',
+      link: 'https://hermes-agent.nousresearch.com/',
       variants: [
         { label: 'Hermes Agent', id: 'hermes-agent' }
       ],
