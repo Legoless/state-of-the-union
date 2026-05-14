@@ -14,6 +14,8 @@ import {
 import '@xyflow/react/dist/style.css';
 import { initialNodes, initialEdges, type AINodeData } from '../data/ai-graph';
 import { Chip } from "@heroui/react";
+import { BrandIcon } from './BrandIcon';
+import { getNodeIcon } from '../utils/node-icons';
 
 // --- Custom Node Component ---
 const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
@@ -61,6 +63,8 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
   }, [data.category, data.isDarker]);
 
   const isRoot = data.category === 'root';
+  const icon = getNodeIcon(data);
+  const iconTone = nodeStyles.text === '#000000' ? 'dark' : 'light';
   const targetPos = data.targetHandle ? Position[data.targetHandle.charAt(0).toUpperCase() + data.targetHandle.slice(1) as keyof typeof Position] : Position.Left;
   const sourcePos = data.sourceHandle ? Position[data.sourceHandle.charAt(0).toUpperCase() + data.sourceHandle.slice(1) as keyof typeof Position] : (data.targetHandle ? targetPos : Position.Right);
 
@@ -103,6 +107,9 @@ const CustomAINode = ({ data, selected }: NodeProps<Node<AINodeData>>) => {
         }}
       >
         <div className="flex flex-col items-center justify-center gap-4">
+          {icon && (
+            <BrandIcon icon={icon} label={data.label} tone={iconTone} size="node" />
+          )}
           {!isRoot && (
           <Chip 
             color={categoryColor} 
@@ -240,6 +247,7 @@ export const AIGraph: React.FC<AIGraphProps> = ({ onNodeSelect }) => {
         onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
         fitView
+        minZoom={0.15}
         attributionPosition="bottom-left"
         className="bg-background"
         colorMode="dark" // Force dark mode for cool AI look

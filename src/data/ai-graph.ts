@@ -4,6 +4,7 @@ export type AINodeData = {
   id: string;
   label: string;
   category: 'ai-ide' | 'cli-agent' | 'ai-terminal' | 'assistant' | 'llm' | 'image' | 'video' | 'provider' | 'root';
+  icon?: AINodeIcon;
   description?: string;
   defaultNotes?: string;
   provider?: string;
@@ -16,6 +17,10 @@ export type AINodeData = {
   isDarker?: boolean;
   isNew?: boolean;
 };
+
+export type AINodeIcon =
+  | { type: 'simple'; slug: string }
+  | { type: 'url'; src: string; monochrome?: boolean };
 
 export type AINode = Node<AINodeData>;
 
@@ -461,6 +466,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-cursor',
       label: 'Cursor',
       category: 'ai-ide',
+      icon: { type: 'simple', slug: 'cursor' },
       description: 'AI Code Editor based on VS Code. Cursor 3.3 (May 2026) adds per-subagent model controls.',
       defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities.',
       releaseDate: '2023',
@@ -489,6 +495,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-claude-app',
       label: 'Claude app',
       category: 'ai-ide',
+      icon: { type: 'simple', slug: 'claude' },
       description: "Anthropic's desktop coding environment powered by Claude.",
       releaseDate: '2026',
       link: 'https://code.claude.com/docs/en/desktop',
@@ -509,6 +516,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-antigravity',
       label: 'Antigravity', 
       category: 'ai-ide', 
+      icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
       description: "Google's AI-native IDE.",
       defaultNotes: 'Antigravity is cheap and is used with Gemini 3 for frontend tasks, providing a cost-effective solution for UI development.',
       releaseDate: '2025',
@@ -528,6 +536,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-codex-app',
       label: 'Codex App',
       category: 'ai-ide',
+      icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
       description: "OpenAI's coding environment. Now powered by GPT-5.5 (Apr 2026) with native computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
@@ -551,6 +560,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-opencode',
       label: 'OpenCode',
       category: 'cli-agent',
+      icon: { type: 'url', src: 'https://opencode.ai/favicon.svg' },
       description: 'Open Source AI Coding Agent CLI (v1.14, May 2026). 75+ model providers, BYO model.',
       releaseDate: '2025',
       link: 'https://opencode.ai/docs',
@@ -568,6 +578,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-gemini-cli',
       label: 'Gemini CLI',
       category: 'cli-agent',
+      icon: { type: 'simple', slug: 'googlegemini' },
       description: "Google's official terminal agent (v0.41, May 2026). Adds experimental Gemma 4 local model support.",
       releaseDate: '2025',
       link: 'https://google-gemini.github.io/gemini-cli/docs/',
@@ -589,6 +600,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-codex-cli',
       label: 'Codex CLI',
       category: 'cli-agent',
+      icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
       description: "OpenAI's official terminal agent (v0.130, May 2026). Powered by GPT-5.5 with computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
@@ -611,6 +623,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-claude-code',
       label: 'Claude Code',
       category: 'cli-agent',
+      icon: { type: 'simple', slug: 'claude' },
       description: "Anthropic's official terminal agent (v2.1, May 2026). Adds xhigh effort for Opus 4.7 + gateway model discovery.",
       releaseDate: '2025',
       link: 'https://code.claude.com/docs',
@@ -633,6 +646,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-warp',
       label: 'Warp',
       category: 'ai-terminal',
+      icon: { type: 'simple', slug: 'warp' },
       description: 'AI-powered Terminal. Now open source (Apr 2026); supports Claude Code, Codex, Gemini CLI, OpenCode.',
       defaultNotes: 'Warp is used for generic coding agent for anything in terminal, blending command-line power with AI assistance.',
       releaseDate: '2022',
@@ -653,6 +667,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-hermes',
       label: 'Hermes',
       category: 'assistant',
+      icon: { type: 'url', src: 'https://hermes-agent.nousresearch.com/favicon.ico' },
       description: 'Autonomous agent for messenger-style task delegation.',
       releaseDate: '2026',
       link: 'https://hermes-agent.nousresearch.com/',
@@ -671,6 +686,7 @@ export const initialNodes: AINode[] = [
       id: 'tool-openclaw',
       label: 'OpenClaw bot', 
       category: 'assistant', 
+      icon: { type: 'url', src: 'https://openclaw.ai/favicon.svg', monochrome: true },
       description: 'OpenClaw Automated Assistant.', 
       defaultNotes: 'Openclaw is used for automatization of many repeatable tasks, acting as a reliable assistant for routine operations.',
       link: 'https://docs.openclaw.ai/',

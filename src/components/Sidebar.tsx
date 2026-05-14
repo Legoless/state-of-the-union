@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardBody, Divider, Chip, Textarea } from "@heroui/react";
 import type { AINodeData } from '../data/ai-graph';
+import { BrandIcon } from './BrandIcon';
+import { getNodeIcon } from '../utils/node-icons';
 
 interface SidebarProps {
   selectedNode: AINodeData | null;
@@ -39,23 +41,30 @@ export const Sidebar: React.FC<SidebarProps> = ({ selectedNode, onClose }) => {
     );
   }
 
+  const icon = getNodeIcon(selectedNode);
+
   return (
     <div className="absolute right-4 top-4 w-80 z-50 max-h-[calc(100vh-250px)] flex flex-col pointer-events-auto">
       <Card className="h-auto max-h-full shadow-2xl bg-zinc-900/95 backdrop-blur-md border border-zinc-700 text-white">
-        <CardHeader className="flex flex-col items-start gap-1 pb-2 border-b border-zinc-700 shrink-0">
-          <div className="flex justify-between w-full items-center">
-            <h2 className="text-xl font-bold text-white">{selectedNode.label}</h2>
-            <button onClick={onClose} className="text-zinc-400 hover:text-white">✕</button>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-small text-zinc-400 uppercase font-bold tracking-wider">
-              {selectedNode.category}
-            </span>
-            {!selectedNode.isDarker && (
-              <Chip size="sm" color="success" variant="flat" className="h-6 px-2 text-xs font-bold">
-                IN USE
-              </Chip>
-            )}
+        <CardHeader className="flex items-start gap-3 pb-2 border-b border-zinc-700 shrink-0">
+          {icon && (
+            <BrandIcon icon={icon} label={selectedNode.label} tone="light" size="panel" />
+          )}
+          <div className="min-w-0 flex-1">
+            <div className="flex justify-between w-full items-start gap-3">
+              <h2 className="text-xl font-bold text-white leading-tight break-words">{selectedNode.label}</h2>
+              <button onClick={onClose} className="shrink-0 text-zinc-400 hover:text-white">✕</button>
+            </div>
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <span className="text-small text-zinc-400 uppercase font-bold tracking-wider">
+                {selectedNode.category}
+              </span>
+              {!selectedNode.isDarker && (
+                <Chip size="sm" color="success" variant="flat" className="h-6 px-2 text-xs font-bold">
+                  IN USE
+                </Chip>
+              )}
+            </div>
           </div>
         </CardHeader>
         <Divider className="bg-zinc-700" />
