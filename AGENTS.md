@@ -11,6 +11,10 @@ This file provides guidance to AI agents when working with code in this reposito
 
 *Note: Ensure `npm install` has been run to install dependencies.*
 
+## Skills
+
+- **Update the AI ecosystem graph** — when refreshing model/tool versions or adding/removing nodes, follow `.claude/skills/update-ai-ecosystem/SKILL.md`. It documents the single source of truth (`src/data/ai-graph.ts`), the radial layout math (`x = R·sin θ`, `y = −R·cos θ`), the category-edge and brand-icon conventions, the NEW-badge rules, and the required `npm run lint && npm run build` verification. In Claude Code it runs as the `/update-ai-ecosystem` skill; other agents (e.g. Codex) should read that `SKILL.md` directly and follow it.
+
 ## Architecture & Structure
 
 This project is a **React** application built with **Vite** and **TypeScript**, designed to visualize the AI ecosystem as an interactive graph.
