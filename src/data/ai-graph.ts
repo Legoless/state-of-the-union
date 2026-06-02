@@ -117,7 +117,7 @@ export const initialNodes: AINode[] = [
       label: 'Qwen 3.6',
       category: 'llm',
       provider: 'Alibaba',
-      description: 'Frontier open-weights model with strong coding + reasoning. New 27B dense weights (Apr 2026).',
+      description: 'Frontier open-weights model with strong coding + reasoning.',
       releaseDate: '2026',
       link: 'https://qwen.ai/',
       variants: [
@@ -125,8 +125,7 @@ export const initialNodes: AINode[] = [
         { label: 'Qwen3.6-27B', id: 'qwen3.6-27b' },
         { label: 'Qwen3.6-35B-A3B', id: 'qwen3.6-35b-a3b' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -135,17 +134,19 @@ export const initialNodes: AINode[] = [
     position: { x: -892, y: -1678 }, // 332°, r=1900
     data: {
       id: 'model-minimax',
-      label: 'MiniMax M2.7',
+      label: 'MiniMax M3',
       category: 'llm',
       provider: 'MiniMax',
-      description: 'Efficient MoE model optimized for agentic coding.',
+      description: 'Natively multimodal MoE with Sparse Attention and 1M context; frontier coding/agentic. Open weights releasing mid-June 2026.',
       releaseDate: '2026',
       link: 'https://www.minimax.io/platform',
       variants: [
+        { label: 'MiniMax-M3', id: 'MiniMax-M3' },
         { label: 'MiniMax-M2.7', id: 'minimax-m2.7' },
         { label: 'MiniMax-M2.7-highspeed', id: 'minimax-m2.7-highspeed' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -154,20 +155,21 @@ export const initialNodes: AINode[] = [
     position: { x: -547, y: -1504 }, // 340°
     data: {
       id: 'model-claude-4-6-opus',
-      label: 'Claude 4.7 Opus',
+      label: 'Claude 4.8 Opus',
       category: 'llm',
       provider: 'Anthropic',
-      description: 'Flagship model with xhigh effort & 1M context.',
-      defaultNotes: 'Opus 4.7 is the smartest model for coding tasks, with 1M context and the new xhigh effort level for the hardest problems.',
+      description: 'Flagship coding & agentic model with 1M context; effort defaults to high.',
+      defaultNotes: 'Opus 4.8 (May 2026) is the smartest model for coding tasks, with 1M context; effort defaults to high, with xhigh for the hardest problems.',
       releaseDate: '2026',
       link: 'https://docs.anthropic.com/en/api/overview',
       variants: [
+        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
         { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
-        { label: 'Claude 4.6 Opus', id: 'claude-opus-4-6' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -184,8 +186,8 @@ export const initialNodes: AINode[] = [
       link: 'https://docs.z.ai/',
       variants: [
         { label: 'GLM-5.1', id: 'glm-5.1' },
-        { label: 'GLM-5.1-Air', id: 'glm-5.1-air' },
-        { label: 'GLM-5.1-Flash', id: 'glm-5.1-flash' }
+        { label: 'GLM-5', id: 'glm-5' },
+        { label: 'GLM-5-Turbo', id: 'glm-5-turbo' }
       ],
       targetHandle: 'bottom'
     },
@@ -212,8 +214,7 @@ export const initialNodes: AINode[] = [
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -222,21 +223,22 @@ export const initialNodes: AINode[] = [
     position: { x: 468, y: -1530 }, // 17°
     data: {
       id: 'model-gemini-3',
-      label: 'Gemini 3.1',
+      label: 'Gemini 3.1 Pro',
       category: 'llm',
       provider: 'Google',
-      description: 'Multimodal flagship leading SWE-bench & ARC-AGI-2. Deep Research preview added Apr 2026.',
+      description: 'Multimodal flagship. Gemini 3.5 Flash (GA May 2026) brings frontier coding at Flash cost; 3.1 Pro leads the hardest tasks; 3.5 Pro coming soon.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/models',
       variants: [
-        { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
-        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
-        { label: 'Gemini Deep Research', id: 'gemini-deep-research-preview' },
-        { label: 'Gemini 3 Pro', id: 'gemini-3-pro' },
-        { label: 'Gemini 3 Flash', id: 'gemini-3-flash' },
-        { label: 'Gemini 3 Deep Think', id: 'gemini-3-deep-think' }
+        { label: 'Gemini 3.5 Flash', id: 'gemini-3.5-flash' },
+        { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
+        { label: 'Gemini 3.1 Deep Think', id: 'gemini-3.1-deep-think' },
+        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3.1-flash-lite' },
+        { label: 'Gemini Deep Research', id: 'deep-research-preview-04-2026' },
+        { label: 'Gemini 3 Flash', id: 'gemini-3-flash-preview' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -248,16 +250,14 @@ export const initialNodes: AINode[] = [
       label: 'DeepSeek V4',
       category: 'llm',
       provider: 'DeepSeek',
-      description: 'Open-source frontier model with Pro + Flash variants.',
+      description: 'Open-source frontier MoE with Pro and Flash variants; 1M context.',
       releaseDate: '2026',
       link: 'https://api-docs.deepseek.com/',
       variants: [
-        { label: 'DeepSeek-V4 Preview', id: 'deepseek-v4-preview' },
         { label: 'DeepSeek-V4 Pro', id: 'deepseek-v4-pro' },
         { label: 'DeepSeek-V4 Flash', id: 'deepseek-v4-flash' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -269,17 +269,13 @@ export const initialNodes: AINode[] = [
       label: 'Kimi K2.6',
       category: 'llm',
       provider: 'Moonshot AI',
-      description: 'Open-source multimodal agentic model with Instant, Thinking, Agent and Agent Swarm modes.',
+      description: 'Open-weights multimodal agentic model; Instant, Thinking, Agent and Agent Swarm are product modes of a single API model.',
       releaseDate: '2026',
-      link: 'https://platform.moonshot.ai/docs',
+      link: 'https://platform.kimi.ai/docs',
       variants: [
-        { label: 'Kimi K2.6 Instant', id: 'kimi-k2.6-instant' },
-        { label: 'Kimi K2.6 Thinking', id: 'kimi-k2.6-thinking' },
-        { label: 'Kimi K2.6 Agent', id: 'kimi-k2.6-agent' },
-        { label: 'Kimi K2.6 Agent Swarm', id: 'kimi-k2.6-agent-swarm' }
+        { label: 'Kimi K2.6', id: 'kimi-k2.6' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
 
@@ -301,8 +297,7 @@ export const initialNodes: AINode[] = [
         { label: 'GPT Image 2 (snapshot)', id: 'gpt-image-2-2026-04-21' },
         { label: 'GPT Image 1.5', id: 'gpt-image-1.5' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -314,11 +309,11 @@ export const initialNodes: AINode[] = [
       label: 'Nano Banana 2',
       category: 'image',
       provider: 'Google',
-      description: 'Next-gen image generation with sharper text + editing.',
+      description: 'Next-gen image generation (GA May 2026) with sharper text, editing, and video-to-image.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/image-generation',
       variants: [
-        { label: 'Nano Banana 2', id: 'gemini-3-1-flash-image' },
+        { label: 'Nano Banana 2', id: 'gemini-3.1-flash-image' },
         { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' }
       ],
       targetHandle: 'left'
@@ -333,14 +328,14 @@ export const initialNodes: AINode[] = [
       label: 'FLUX.2', 
       category: 'image', 
       provider: 'Black Forest Labs', 
-      description: 'State-of-the-art visual intelligence (Pro, Dev, Klein).', 
+      description: 'State-of-the-art visual intelligence (Max, Pro, Flex, Klein).', 
       releaseDate: '2025',
       link: 'https://docs.bfl.ai/flux_2/flux2_overview',
       variants: [
         { label: 'FLUX.2 [max]', id: 'flux-2-max' },
         { label: 'FLUX.2 [pro]', id: 'flux-2-pro' },
         { label: 'FLUX.2 [flex]', id: 'flux-2-flex' },
-        { label: 'FLUX.2 [klein]', id: 'flux-2-klein' }
+        { label: 'FLUX.2 [klein]', id: 'flux-2-klein-9b' }
       ],
       targetHandle: 'left',
       isDarker: true
@@ -357,18 +352,17 @@ export const initialNodes: AINode[] = [
       label: 'Higgsfield',
       category: 'video',
       provider: 'Higgsfield',
-      description: 'Cinematic AI video & image platform with proprietary engines (Soul, DOP, Cinema Studio) and 30+ integrated models.',
+      description: 'Cinematic AI platform; Cinema Studio 3.5 (May 2026) adds optical-physics camera controls. Aggregates Veo 3.1, Kling 3.0, Seedance 2.0, Soul 2.0.',
       releaseDate: '2025',
       link: 'https://higgsfield.ai/',
       variants: [
+        { label: 'Cinema Studio 3.5', id: 'higgsfield-cinema-studio' },
         { label: 'Soul 2.0', id: 'higgsfield-soul-2' },
         { label: 'Soul Cinema', id: 'higgsfield-soul-cinema' },
         { label: 'Higgsfield DOP', id: 'higgsfield-dop' },
-        { label: 'Cinema Studio', id: 'higgsfield-cinema-studio' },
         { label: 'Keyframes', id: 'higgsfield-keyframes' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -412,8 +406,7 @@ export const initialNodes: AINode[] = [
         { label: 'Kling 3.0 API', id: 'kie-kling-3' },
         { label: 'Sora 2 API', id: 'kie-sora-2' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -467,18 +460,18 @@ export const initialNodes: AINode[] = [
       label: 'Cursor',
       category: 'ai-ide',
       icon: { type: 'simple', slug: 'cursor' },
-      description: 'AI Code Editor based on VS Code. Cursor 3.3 (May 2026) adds per-subagent model controls.',
+      description: 'AI Code Editor based on VS Code. Cursor 3.6 (May 2026) adds Auto-review run mode; Composer 2.5 model.',
       defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities.',
       releaseDate: '2023',
       link: 'https://cursor.com/docs',
       variants: [
-        { label: 'Composer 2', id: 'composer-2' },
-        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
+        { label: 'Composer 2.5', id: 'composer-2.5' },
+        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
         { label: 'GPT-5.5', id: 'gpt-5.5' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
-        { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
-        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
+        { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
+        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3.1-flash-lite' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
@@ -496,16 +489,15 @@ export const initialNodes: AINode[] = [
       label: 'Claude app',
       category: 'ai-ide',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's desktop coding environment powered by Claude.",
+      description: "Anthropic's desktop coding environment powered by Claude (Opus 4.8, May 2026).",
       releaseDate: '2026',
       link: 'https://code.claude.com/docs/en/desktop',
       variants: [
-        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
+        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -517,7 +509,7 @@ export const initialNodes: AINode[] = [
       label: 'Antigravity', 
       category: 'ai-ide', 
       icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
-      description: "Google's AI-native IDE.",
+      description: "Google's AI-native IDE. Antigravity 2.0 (May 2026), agent-first; runs Gemini 3.5 Flash / 3.1 Pro.",
       defaultNotes: 'Antigravity is cheap and is used with Gemini 3 for frontend tasks, providing a cost-effective solution for UI development.',
       releaseDate: '2025',
       link: 'https://antigravity.google/',
@@ -537,7 +529,7 @@ export const initialNodes: AINode[] = [
       label: 'Codex App',
       category: 'ai-ide',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's coding environment. Now powered by GPT-5.5 (Apr 2026) with native computer-use and 1M context.",
+      description: "OpenAI's coding environment (Jun 2026). Powered by GPT-5.5 with native computer-use (now on Windows) and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
       variants: [
@@ -561,7 +553,7 @@ export const initialNodes: AINode[] = [
       label: 'OpenCode',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://opencode.ai/favicon.svg' },
-      description: 'Open Source AI Coding Agent CLI (v1.14, May 2026). 75+ model providers, BYO model.',
+      description: 'Open Source AI Coding Agent CLI (v1.15, May 2026). 75+ model providers, BYO model.',
       releaseDate: '2025',
       link: 'https://opencode.ai/docs',
       variants: [
@@ -571,22 +563,22 @@ export const initialNodes: AINode[] = [
     },
   },
   {
-    id: 'tool-gemini-cli',
+    id: 'tool-antigravity-cli',
     type: 'tool',
     position: { x: -1050, y: 1208 }, // 221°
     data: { 
-      id: 'tool-gemini-cli',
-      label: 'Gemini CLI',
+      id: 'tool-antigravity-cli',
+      label: 'Antigravity CLI',
       category: 'cli-agent',
-      icon: { type: 'simple', slug: 'googlegemini' },
-      description: "Google's official terminal agent (v0.41, May 2026). Adds experimental Gemma 4 local model support.",
-      releaseDate: '2025',
-      link: 'https://google-gemini.github.io/gemini-cli/docs/',
+      icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
+      description: "Google's official terminal agent — Antigravity CLI, the GA successor to Gemini CLI (May 2026). Runs Gemini 3.x; legacy Gemini CLI consumer access ends Jun 18, 2026.",
+      releaseDate: '2026',
+      link: 'https://antigravity.google/',
       variants: [
-        { label: 'Gemini 3.1 Pro', id: 'gemini-3-1-pro' },
-        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3-1-flash-lite' },
-        { label: 'Gemma 4 (experimental)', id: 'gemma-4-experimental' },
-        { label: 'Gemini CLI', id: 'gemini-cli' }
+        { label: 'Gemini 3.5 Flash', id: 'gemini-3.5-flash' },
+        { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
+        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3.1-flash-lite' },
+        { label: 'Antigravity CLI', id: 'antigravity-cli' }
       ],
       targetHandle: 'right',
       isDarker: true
@@ -601,7 +593,7 @@ export const initialNodes: AINode[] = [
       label: 'Codex CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's official terminal agent (v0.130, May 2026). Powered by GPT-5.5 with computer-use and 1M context.",
+      description: "OpenAI's official terminal agent (v0.136, Jun 2026). Powered by GPT-5.5 with computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
@@ -624,10 +616,11 @@ export const initialNodes: AINode[] = [
       label: 'Claude Code',
       category: 'cli-agent',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's official terminal agent (v2.1, May 2026). Adds xhigh effort for Opus 4.7 + gateway model discovery.",
+      description: "Anthropic's official terminal agent (v2.1.160, Jun 2026). Opus 4.8 with /effort xhigh and Dynamic Workflows (parallel subagents).",
       releaseDate: '2025',
       link: 'https://code.claude.com/docs',
       variants: [
+        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
         { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
@@ -668,14 +661,13 @@ export const initialNodes: AINode[] = [
       label: 'Hermes',
       category: 'assistant',
       icon: { type: 'url', src: 'https://hermes-agent.nousresearch.com/favicon.ico' },
-      description: 'Autonomous agent for messenger-style task delegation.',
+      description: 'Self-improving autonomous agent (v0.15, May 2026) with persistent memory; messenger-style task delegation. Model-agnostic.',
       releaseDate: '2026',
       link: 'https://hermes-agent.nousresearch.com/',
       variants: [
         { label: 'Hermes Agent', id: 'hermes-agent' }
       ],
-      targetHandle: 'right',
-      isNew: true
+      targetHandle: 'right'
     },
   },
   {
@@ -687,7 +679,7 @@ export const initialNodes: AINode[] = [
       label: 'OpenClaw bot', 
       category: 'assistant', 
       icon: { type: 'url', src: 'https://openclaw.ai/favicon.svg', monochrome: true },
-      description: 'OpenClaw Automated Assistant.', 
+      description: 'Self-hosted multi-channel AI gateway — message your AI agent from Discord, Slack, Telegram, WhatsApp, Signal & more (May 2026).', 
       defaultNotes: 'Openclaw is used for automatization of many repeatable tasks, acting as a reliable assistant for routine operations.',
       link: 'https://docs.openclaw.ai/',
       releaseDate: '2025',
@@ -715,7 +707,7 @@ export const initialEdges: Edge[] = [
 
   // CLI Agents
   { id: 'e-cat-cli-opencode', source: 'category-cli-agent', target: 'tool-opencode', style: { stroke: '#F31260', strokeWidth: 2 } },
-  { id: 'e-cat-cli-gemini', source: 'category-cli-agent', target: 'tool-gemini-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-antigravity-cli', source: 'category-cli-agent', target: 'tool-antigravity-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-codex', source: 'category-cli-agent', target: 'tool-codex-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-claude', source: 'category-cli-agent', target: 'tool-claude-code', style: { stroke: '#F31260', strokeWidth: 2 } },
 
@@ -764,7 +756,7 @@ export const initialEdges: Edge[] = [
   { id: 'e-claudeapp-claude', source: 'tool-claude-app', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
   // Official CLIs
-  { id: 'e-geminicli-gemini', source: 'tool-gemini-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-antigravitycli-gemini', source: 'tool-antigravity-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
   { id: 'e-codexcli-gpt', source: 'tool-codex-cli', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
   { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
