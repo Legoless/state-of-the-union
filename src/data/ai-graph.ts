@@ -96,14 +96,15 @@ export const initialNodes: AINode[] = [
       label: 'Gemma 4',
       category: 'llm',
       provider: 'Google',
-      description: 'Open-weights lightweight model family.',
+      description: 'Open-weights multimodal family (Apache 2.0), E2B to 31B incl. 26B MoE; up to 256K context, 140+ languages.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemma',
       variants: [
-        { label: 'Gemma 4 31B', id: 'gemma-4-31b' },
-        { label: 'Gemma 4 26B MoE', id: 'gemma-4-26b-moe' },
-        { label: 'Gemma 4 E4B', id: 'gemma-4-e4b' },
-        { label: 'Gemma 4 E2B', id: 'gemma-4-e2b' }
+        { label: 'Gemma 4 31B', id: 'gemma-4-31B-it' },
+        { label: 'Gemma 4 26B MoE', id: 'gemma-4-26B-it' },
+        { label: 'Gemma 4 12B', id: 'gemma-4-12B-it' },
+        { label: 'Gemma 4 E4B', id: 'gemma-4-E4B-it' },
+        { label: 'Gemma 4 E2B', id: 'gemma-4-E2B-it' }
       ],
       targetHandle: 'bottom'
     },
@@ -114,18 +115,20 @@ export const initialNodes: AINode[] = [
     position: { x: -941, y: -1294 }, // 324°
     data: {
       id: 'model-qwen-3-6',
-      label: 'Qwen 3.6',
+      label: 'Qwen 3.7',
       category: 'llm',
       provider: 'Alibaba',
-      description: 'Frontier open-weights model with strong coding + reasoning.',
+      description: 'Frontier agent-focused family — Qwen3.7-Max/Plus (proprietary, API-only) plus open-weights Qwen3.6-27B/35B-A3B (Apache-2.0) for self-hosting.',
       releaseDate: '2026',
       link: 'https://qwen.ai/',
       variants: [
-        { label: 'Qwen3.6-Plus', id: 'qwen3.6-plus' },
+        { label: 'Qwen3.7-Max', id: 'qwen3.7-max-preview' },
+        { label: 'Qwen3.7-Plus', id: 'qwen3.7-plus' },
         { label: 'Qwen3.6-27B', id: 'qwen3.6-27b' },
         { label: 'Qwen3.6-35B-A3B', id: 'qwen3.6-35b-a3b' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -137,7 +140,7 @@ export const initialNodes: AINode[] = [
       label: 'MiniMax M3',
       category: 'llm',
       provider: 'MiniMax',
-      description: 'Natively multimodal MoE with Sparse Attention and 1M context; frontier coding/agentic. Open weights releasing mid-June 2026.',
+      description: 'Natively multimodal MoE with Sparse Attention and 1M context; frontier coding/agentic. Open weights released June 2026.',
       releaseDate: '2026',
       link: 'https://www.minimax.io/platform',
       variants: [
@@ -178,18 +181,20 @@ export const initialNodes: AINode[] = [
     position: { x: -330, y: -1871 }, // 350°, r=1900
     data: {
       id: 'model-glm',
-      label: 'GLM 5.1',
+      label: 'GLM 5.2',
       category: 'llm',
       provider: 'Zhipu AI',
-      description: 'Open bilingual flagship with strong tool-use.',
+      description: 'Open MoE flagship with usable 1M-token context and strong agentic coding.',
       releaseDate: '2026',
       link: 'https://docs.z.ai/',
       variants: [
+        { label: 'GLM-5.2', id: 'glm-5.2' },
         { label: 'GLM-5.1', id: 'glm-5.1' },
         { label: 'GLM-5', id: 'glm-5' },
         { label: 'GLM-5-Turbo', id: 'glm-5-turbo' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -211,7 +216,6 @@ export const initialNodes: AINode[] = [
         { label: 'GPT-5.5 Instant', id: 'gpt-5.5-instant' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
       ],
       targetHandle: 'bottom'
@@ -266,16 +270,19 @@ export const initialNodes: AINode[] = [
     position: { x: 895, y: -1326 }, // 34°
     data: {
       id: 'model-kimi-2-5',
-      label: 'Kimi K2.6',
+      label: 'Kimi K2.7-Code',
       category: 'llm',
       provider: 'Moonshot AI',
-      description: 'Open-weights multimodal agentic model; Instant, Thinking, Agent and Agent Swarm are product modes of a single API model.',
+      description: 'Open-weights coding-focused agentic MoE (1T total / 32B active, 256K context); multimodal text/image/video with Thinking mode.',
       releaseDate: '2026',
       link: 'https://platform.kimi.ai/docs',
       variants: [
+        { label: 'Kimi K2.7-Code', id: 'kimi-k2.7-code' },
+        { label: 'Kimi K2.7-Code HighSpeed', id: 'kimi-k2.7-code-highspeed' },
         { label: 'Kimi K2.6', id: 'kimi-k2.6' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
 
@@ -335,7 +342,8 @@ export const initialNodes: AINode[] = [
         { label: 'FLUX.2 [max]', id: 'flux-2-max' },
         { label: 'FLUX.2 [pro]', id: 'flux-2-pro' },
         { label: 'FLUX.2 [flex]', id: 'flux-2-flex' },
-        { label: 'FLUX.2 [klein]', id: 'flux-2-klein-9b' }
+        { label: 'FLUX.2 [klein]', id: 'flux-2-klein-9b' },
+        { label: 'FLUX.2 [dev]', id: 'flux-2-dev' }
       ],
       targetHandle: 'left',
       isDarker: true
@@ -380,8 +388,8 @@ export const initialNodes: AINode[] = [
       variants: [
         { label: 'Kling V3 Pro', id: 'kling-v3-pro' },
         { label: 'Kling V3 Standard', id: 'kling-v3-standard' },
-        { label: 'Kling O3 Pro', id: 'kling-o3-pro' },
-        { label: 'Kling O3 Standard', id: 'kling-o3-standard' }
+        { label: 'Kling V3 Omni Pro', id: 'kling-v3-omni-pro' },
+        { label: 'Kling V3 Omni Standard', id: 'kling-v3-omni-std' }
       ],
       targetHandle: 'left'
     },
@@ -395,18 +403,21 @@ export const initialNodes: AINode[] = [
       label: 'Kie',
       category: 'video',
       provider: 'Kie.ai',
-      description: 'Unified, credit-based API for top video, image, and music models — Veo 3.1, Runway Aleph, Kling 3.0, Sora 2.',
-      releaseDate: '2025',
+      description: 'Unified, credit-based API for top video, image, and music models — Veo 3.1, Runway Aleph, Kling 3.0, Sora 2 Pro, Seedance 2.0 (Jun 2026).',
+      releaseDate: '2026',
       link: 'https://kie.ai/',
       variants: [
         { label: 'Veo 3.1 API', id: 'kie-veo-3-1' },
         { label: 'Veo 3.1 Fast API', id: 'kie-veo-3-1-fast' },
+        { label: 'Veo 3.1 Lite API', id: 'kie-veo-3-1-lite' },
         { label: 'Runway Aleph API', id: 'kie-runway-aleph' },
         { label: 'Runway Gen-4 Turbo API', id: 'kie-runway-gen4-turbo' },
         { label: 'Kling 3.0 API', id: 'kie-kling-3' },
-        { label: 'Sora 2 API', id: 'kie-sora-2' }
+        { label: 'Sora 2 Pro API', id: 'kie-sora-2-pro' },
+        { label: 'Seedance 2.0 Fast API', id: 'kie-seedance-2-fast' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -418,7 +429,7 @@ export const initialNodes: AINode[] = [
       label: 'Veo 3.1',
       category: 'video',
       provider: 'Google',
-      description: 'High-definition 4K video generation. Lite variant launched Apr 2026.',
+      description: 'High-definition 4K video generation. Lite variant launched Apr 2026; Gemini Omni Flash announced May 2026 (not yet in API).',
       defaultNotes: 'Veo3 can create more generic advertising videos, delivering high-quality visuals for commercial use.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/video',
@@ -439,7 +450,7 @@ export const initialNodes: AINode[] = [
       label: 'Seedance 2.0',
       category: 'video',
       provider: 'ByteDance',
-      description: 'Fast, high-fidelity text/image-to-video generation.',
+      description: 'Fast, high-fidelity text/image-to-video with synced stereo audio (up to 15s).',
       releaseDate: '2026',
       link: 'https://seed.bytedance.com/seedance',
       variants: [
@@ -460,7 +471,7 @@ export const initialNodes: AINode[] = [
       label: 'Cursor',
       category: 'ai-ide',
       icon: { type: 'simple', slug: 'cursor' },
-      description: 'AI Code Editor based on VS Code. Cursor 3.6 (May 2026) adds Auto-review run mode; Composer 2.5 model.',
+      description: 'AI Code Editor based on VS Code. Cursor 3.7 (Jun 2026) adds Canvases + Design Mode; Composer 2.5 model.',
       defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities.',
       releaseDate: '2023',
       link: 'https://cursor.com/docs',
@@ -471,11 +482,11 @@ export const initialNodes: AINode[] = [
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
-        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3.1-flash-lite' },
+        { label: 'Gemini 3.5 Flash', id: 'gemini-3.5-flash' },
         { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
-        { label: 'Grok Code', id: 'grok-code' }
+        { label: 'Grok 4.3', id: 'grok-4.3' }
       ],
       targetHandle: 'left'
     },
@@ -535,9 +546,8 @@ export const initialNodes: AINode[] = [
       variants: [
         { label: 'GPT-5.5', id: 'gpt-5.5' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
-        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' },
-        { label: 'Codex', id: 'codex' }
+        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
+        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
       ],
       targetHandle: 'top'
     },
@@ -553,7 +563,7 @@ export const initialNodes: AINode[] = [
       label: 'OpenCode',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://opencode.ai/favicon.svg' },
-      description: 'Open Source AI Coding Agent CLI (v1.15, May 2026). 75+ model providers, BYO model.',
+      description: 'Open Source AI Coding Agent CLI (v1.17.7, Jun 2026). 75+ model providers, BYO model.',
       releaseDate: '2025',
       link: 'https://opencode.ai/docs',
       variants: [
@@ -571,7 +581,7 @@ export const initialNodes: AINode[] = [
       label: 'Antigravity CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
-      description: "Google's official terminal agent — Antigravity CLI, the GA successor to Gemini CLI (May 2026). Runs Gemini 3.x; legacy Gemini CLI consumer access ends Jun 18, 2026.",
+      description: "Google's official terminal agent — Antigravity CLI, the GA successor to Gemini CLI, launched with Antigravity 2.0 at I/O 2026 (May 2026). Runs Gemini 3.x; legacy Gemini CLI consumer access ends Jun 18, 2026.",
       releaseDate: '2026',
       link: 'https://antigravity.google/',
       variants: [
@@ -593,14 +603,13 @@ export const initialNodes: AINode[] = [
       label: 'Codex CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's official terminal agent (v0.136, Jun 2026). Powered by GPT-5.5 with computer-use and 1M context.",
+      description: "OpenAI's official terminal agent (v0.139, Jun 2026). Powered by GPT-5.5 with computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
         { label: 'GPT-5.5', id: 'gpt-5.5' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
         { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' },
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
@@ -616,7 +625,7 @@ export const initialNodes: AINode[] = [
       label: 'Claude Code',
       category: 'cli-agent',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's official terminal agent (v2.1.160, Jun 2026). Opus 4.8 with /effort xhigh and Dynamic Workflows (parallel subagents).",
+      description: "Anthropic's official terminal agent (v2.1.176, Jun 2026). Opus 4.8 with /effort xhigh and Dynamic Workflows (parallel subagents).",
       releaseDate: '2025',
       link: 'https://code.claude.com/docs',
       variants: [
@@ -661,7 +670,7 @@ export const initialNodes: AINode[] = [
       label: 'Hermes',
       category: 'assistant',
       icon: { type: 'url', src: 'https://hermes-agent.nousresearch.com/favicon.ico' },
-      description: 'Self-improving autonomous agent (v0.15, May 2026) with persistent memory; messenger-style task delegation. Model-agnostic.',
+      description: 'Self-improving autonomous agent (v0.16, Jun 2026) with persistent memory and a native desktop app; messenger-style task delegation. Model-agnostic.',
       releaseDate: '2026',
       link: 'https://hermes-agent.nousresearch.com/',
       variants: [
@@ -679,10 +688,10 @@ export const initialNodes: AINode[] = [
       label: 'OpenClaw bot', 
       category: 'assistant', 
       icon: { type: 'url', src: 'https://openclaw.ai/favicon.svg', monochrome: true },
-      description: 'Self-hosted multi-channel AI gateway — message your AI agent from Discord, Slack, Telegram, WhatsApp, Signal & more (May 2026).', 
+      description: 'Self-hosted multi-channel AI gateway — message your AI agent from Discord, Slack, Telegram, WhatsApp, Signal & more (Jun 2026).',
       defaultNotes: 'Openclaw is used for automatization of many repeatable tasks, acting as a reliable assistant for routine operations.',
       link: 'https://docs.openclaw.ai/',
-      releaseDate: '2025',
+      releaseDate: '2026',
       targetHandle: 'right'
     },
   },
