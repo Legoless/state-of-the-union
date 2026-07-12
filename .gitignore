@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Agent tooling
+.omc/
+.omx/
+.omo/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
