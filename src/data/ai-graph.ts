@@ -127,8 +127,7 @@ export const initialNodes: AINode[] = [
         { label: 'Qwen3.6-27B', id: 'qwen3.6-27b' },
         { label: 'Qwen3.6-35B-A3B', id: 'qwen3.6-35b-a3b' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -148,8 +147,7 @@ export const initialNodes: AINode[] = [
         { label: 'MiniMax-M2.7', id: 'minimax-m2.7' },
         { label: 'MiniMax-M2.7-highspeed', id: 'minimax-m2.7-highspeed' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -158,17 +156,17 @@ export const initialNodes: AINode[] = [
     position: { x: -547, y: -1504 }, // 340°
     data: {
       id: 'model-claude-4-6-opus',
-      label: 'Claude 4.8 Opus',
+      label: 'Claude Fable 5',
       category: 'llm',
       provider: 'Anthropic',
-      description: 'Flagship coding & agentic model with 1M context; effort defaults to high.',
-      defaultNotes: 'Opus 4.8 (May 2026) is the smartest model for coding tasks, with 1M context; effort defaults to high, with xhigh for the hardest problems.',
+      description: "Anthropic's most capable model for long-horizon agents and hard reasoning (1M context); Opus 4.8 remains the coding workhorse, effort defaults to high.",
+      defaultNotes: "Claude Fable 5 (redeployed Jul 2026, $10/$50) is Anthropic's most capable widely released model for the hardest reasoning and long-running agents. Opus 4.8 (May 2026) remains the top coding model; effort defaults to high, xhigh for the hardest problems.",
       releaseDate: '2026',
       link: 'https://docs.anthropic.com/en/api/overview',
       variants: [
+        { label: 'Claude Fable 5', id: 'claude-fable-5' },
         { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
-        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
-        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
+        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
       targetHandle: 'bottom',
@@ -193,8 +191,7 @@ export const initialNodes: AINode[] = [
         { label: 'GLM-5', id: 'glm-5' },
         { label: 'GLM-5-Turbo', id: 'glm-5-turbo' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -203,22 +200,23 @@ export const initialNodes: AINode[] = [
     position: { x: 0, y: -1600 }, // 0°
     data: {
       id: 'model-gpt5-2',
-      label: 'GPT-5.5',
+      label: 'GPT-5.6',
       category: 'llm',
       provider: 'OpenAI',
       description: 'Frontier reasoning model for professional work, with computer-use and 1M context.',
-      defaultNotes: 'GPT-5.5 (Apr 2026) is the new frontier model. GPT-5.5 Instant (May 2026) is the fast ChatGPT default for everyday tasks.',
+      defaultNotes: 'GPT-5.6 Sol (Jul 2026) is the new frontier flagship and best coding model; Terra is the balanced, lower-cost tier and Luna the fastest.',
       releaseDate: '2026',
       link: 'https://developers.openai.com/api/docs/models',
       variants: [
+        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
+        { label: 'GPT-5.6 Terra', id: 'gpt-5.6-terra' },
+        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' },
         { label: 'GPT-5.5', id: 'gpt-5.5' },
-        { label: 'GPT-5.5 Pro', id: 'gpt-5.5-pro' },
-        { label: 'GPT-5.5 Instant', id: 'gpt-5.5-instant' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
-        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -241,8 +239,7 @@ export const initialNodes: AINode[] = [
         { label: 'Gemini Deep Research', id: 'deep-research-preview-04-2026' },
         { label: 'Gemini 3 Flash', id: 'gemini-3-flash-preview' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -281,8 +278,7 @@ export const initialNodes: AINode[] = [
         { label: 'Kimi K2.7-Code HighSpeed', id: 'kimi-k2.7-code-highspeed' },
         { label: 'Kimi K2.6', id: 'kimi-k2.6' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
 
@@ -316,14 +312,16 @@ export const initialNodes: AINode[] = [
       label: 'Nano Banana 2',
       category: 'image',
       provider: 'Google',
-      description: 'Next-gen image generation (GA May 2026) with sharper text, editing, and video-to-image.',
+      description: 'Next-gen image generation (GA Feb 2026) with sharper text and editing; low-cost Lite tier added Jun 2026.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/image-generation',
       variants: [
         { label: 'Nano Banana 2', id: 'gemini-3.1-flash-image' },
-        { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' }
+        { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' },
+        { label: 'Nano Banana 2 Lite', id: 'gemini-3.1-flash-lite-image' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -382,16 +380,18 @@ export const initialNodes: AINode[] = [
       label: 'Kling 3.0',
       category: 'video',
       provider: 'Kuaishou',
-      description: 'Cinematic video generation with strong motion coherence. 1080p/720p, native audio modes.',
+      description: 'Cinematic video generation with strong motion coherence. 1080p/720p, native audio modes; fast low-cost Turbo tier added Jun 2026.',
       releaseDate: '2026',
       link: 'https://app.klingai.com/',
       variants: [
         { label: 'Kling V3 Pro', id: 'kling-v3-pro' },
         { label: 'Kling V3 Standard', id: 'kling-v3-standard' },
+        { label: 'Kling V3 Turbo', id: 'kling-v3-turbo' },
         { label: 'Kling V3 Omni Pro', id: 'kling-v3-omni-pro' },
         { label: 'Kling V3 Omni Standard', id: 'kling-v3-omni-std' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -416,8 +416,7 @@ export const initialNodes: AINode[] = [
         { label: 'Sora 2 Pro API', id: 'kie-sora-2-pro' },
         { label: 'Seedance 2.0 Fast API', id: 'kie-seedance-2-fast' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -429,7 +428,7 @@ export const initialNodes: AINode[] = [
       label: 'Veo 3.1',
       category: 'video',
       provider: 'Google',
-      description: 'High-definition 4K video generation. Lite variant launched Apr 2026; Gemini Omni Flash announced May 2026 (not yet in API).',
+      description: 'High-definition 4K video generation; Veo 3.1 with Fast and Lite variants (Lite launched Apr 2026).',
       defaultNotes: 'Veo3 can create more generic advertising videos, delivering high-quality visuals for commercial use.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/video',
@@ -478,15 +477,15 @@ export const initialNodes: AINode[] = [
       variants: [
         { label: 'Composer 2.5', id: 'composer-2.5' },
         { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
-        { label: 'GPT-5.5', id: 'gpt-5.5' },
+        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
         { label: 'Gemini 3.5 Flash', id: 'gemini-3.5-flash' },
-        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
+        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
-        { label: 'Grok 4.3', id: 'grok-4.3' }
+        { label: 'Grok 4.5', id: 'grok-4.5' }
       ],
       targetHandle: 'left'
     },
@@ -500,12 +499,13 @@ export const initialNodes: AINode[] = [
       label: 'Claude app',
       category: 'ai-ide',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's desktop coding environment powered by Claude (Opus 4.8, May 2026).",
+      description: "Anthropic's desktop coding environment powered by Claude — Fable 5 and Opus 4.8 (Jul 2026).",
       releaseDate: '2026',
       link: 'https://code.claude.com/docs/en/desktop',
       variants: [
+        { label: 'Claude Fable 5', id: 'claude-fable-5' },
         { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
-        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
+        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
       targetHandle: 'left'
@@ -520,7 +520,7 @@ export const initialNodes: AINode[] = [
       label: 'Antigravity', 
       category: 'ai-ide', 
       icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
-      description: "Google's AI-native IDE. Antigravity 2.0 (May 2026), agent-first; runs Gemini 3.5 Flash / 3.1 Pro.",
+      description: "Google's AI-native IDE. Antigravity 2.2.1 (Jun 2026), agent-first; runs Gemini 3.5 Flash / 3.1 Pro.",
       defaultNotes: 'Antigravity is cheap and is used with Gemini 3 for frontend tasks, providing a cost-effective solution for UI development.',
       releaseDate: '2025',
       link: 'https://antigravity.google/',
@@ -540,11 +540,11 @@ export const initialNodes: AINode[] = [
       label: 'Codex App',
       category: 'ai-ide',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's coding environment (Jun 2026). Powered by GPT-5.5 with native computer-use (now on Windows) and 1M context.",
+      description: "OpenAI's coding environment (Jul 2026), now merged into the ChatGPT desktop app on macOS & Windows. Powered by GPT-5.6 with native computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
       variants: [
-        { label: 'GPT-5.5', id: 'gpt-5.5' },
+        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
@@ -563,7 +563,7 @@ export const initialNodes: AINode[] = [
       label: 'OpenCode',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://opencode.ai/favicon.svg' },
-      description: 'Open Source AI Coding Agent CLI (v1.17.7, Jun 2026). 75+ model providers, BYO model.',
+      description: 'Open Source AI Coding Agent CLI (v1.17.18, Jul 2026). 75+ model providers, BYO model.',
       releaseDate: '2025',
       link: 'https://opencode.ai/docs',
       variants: [
@@ -581,7 +581,7 @@ export const initialNodes: AINode[] = [
       label: 'Antigravity CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
-      description: "Google's official terminal agent — Antigravity CLI, the GA successor to Gemini CLI, launched with Antigravity 2.0 at I/O 2026 (May 2026). Runs Gemini 3.x; legacy Gemini CLI consumer access ends Jun 18, 2026.",
+      description: "Google's official terminal agent — Antigravity CLI, the GA successor to Gemini CLI, launched with Antigravity 2.0 at I/O 2026 (May 2026). Runs Gemini 3.x; legacy Gemini CLI consumer access ended Jun 18, 2026.",
       releaseDate: '2026',
       link: 'https://antigravity.google/',
       variants: [
@@ -603,11 +603,11 @@ export const initialNodes: AINode[] = [
       label: 'Codex CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's official terminal agent (v0.139, Jun 2026). Powered by GPT-5.5 with computer-use and 1M context.",
+      description: "OpenAI's official terminal agent (v0.144.1, Jul 2026). Powered by GPT-5.6 with computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
-        { label: 'GPT-5.5', id: 'gpt-5.5' },
+        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
         { label: 'GPT-5.4', id: 'gpt-5.4' },
         { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
         { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' },
@@ -625,13 +625,13 @@ export const initialNodes: AINode[] = [
       label: 'Claude Code',
       category: 'cli-agent',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's official terminal agent (v2.1.176, Jun 2026). Opus 4.8 with /effort xhigh and Dynamic Workflows (parallel subagents).",
+      description: "Anthropic's official terminal agent (v2.1.207, Jul 2026). Opus 4.8 with /effort xhigh and Dynamic Workflows (parallel subagents).",
       releaseDate: '2025',
       link: 'https://code.claude.com/docs',
       variants: [
+        { label: 'Claude Fable 5', id: 'claude-fable-5' },
         { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
-        { label: 'Claude 4.7 Opus', id: 'claude-opus-4-7' },
-        { label: 'Claude 4.6 Sonnet', id: 'claude-sonnet-4-6' },
+        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'Claude Code', id: 'claude-code' }
       ],
@@ -670,7 +670,7 @@ export const initialNodes: AINode[] = [
       label: 'Hermes',
       category: 'assistant',
       icon: { type: 'url', src: 'https://hermes-agent.nousresearch.com/favicon.ico' },
-      description: 'Self-improving autonomous agent (v0.16, Jun 2026) with persistent memory and a native desktop app; messenger-style task delegation. Model-agnostic.',
+      description: 'Self-improving autonomous agent (v0.18.2, Jul 2026) with persistent memory and a native desktop app; messenger-style task delegation. Model-agnostic.',
       releaseDate: '2026',
       link: 'https://hermes-agent.nousresearch.com/',
       variants: [
