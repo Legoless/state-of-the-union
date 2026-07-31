@@ -13,6 +13,7 @@ const providerIcons: Record<string, AINodeIcon> = {
   MiniMax: { type: 'simple', slug: 'minimax' },
   'Moonshot AI': { type: 'url', src: 'https://platform.moonshot.ai/favicon.ico' },
   OpenAI: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
+  xAI: { type: 'url', src: 'https://x.ai/favicon.ico' },
   'Zhipu AI': {
     type: 'url',
     src: 'https://docs.z.ai/mintlify-assets/_mintlify/favicons/zhipu-32152247/ksfquWFAc8TQf_Hb/_generated/favicon-dark/favicon-32x32.png',

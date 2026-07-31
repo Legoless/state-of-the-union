@@ -110,7 +110,7 @@ node -e 'const R=1600,deg=17;const t=deg*Math.PI/180;console.log(Math.round(R*Ma
 Rings & rules:
 - **Ring 1 — category hubs**, `R ≈ 900`. Each `category-*` hub sits at the **average angle of
   its children**. (Reference angles in the file: LLMs 0°, Image 68°, Video 110.5°, AI IDEs
-  161.5°, CLI Agents 229.5°, AI Terminals 289°, Assistants 306°.)
+  161.5°, CLI Agents 229.5°, AI Terminals 284.5°, Assistants 306°.)
 - **Ring 2 — leaf nodes**, `R ≈ 1600`, with crowded neighbors **staggered out to `R ≈ 1900`**.
   The data alternates `1600 ↔ 1900` between adjacent leaves so they can sit ~8–9° apart
   without the large cards overlapping. Nodes kept at the **same** radius must stay **≥ 17°

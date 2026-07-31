@@ -69,11 +69,11 @@ export const initialNodes: AINode[] = [
     position: { x: -684, y: 585 },
     data: { id: 'category-cli-agent', label: 'CLI Agents', category: 'cli-agent', description: 'Terminal-based Agents', targetHandle: 'right', sourceHandle: 'left' },
   },
-  // 6. AI Terminals (Top-Left, 289°)
+  // 6. AI Terminals (Top-Left, 284.5°)
   {
     id: 'category-ai-terminal',
     type: 'ai-terminal',
-    position: { x: -851, y: -293 },
+    position: { x: -871, y: -225 },
     data: { id: 'category-ai-terminal', label: 'AI Terminals', category: 'ai-terminal', description: 'AI-Enhanced Terminals', targetHandle: 'right', sourceHandle: 'left' },
   },
   // 7. Assistants (Top-Left, 306°)
@@ -267,18 +267,38 @@ export const initialNodes: AINode[] = [
     position: { x: 895, y: -1326 }, // 34°
     data: {
       id: 'model-kimi-2-5',
-      label: 'Kimi K2.7-Code',
+      label: 'Kimi K3',
       category: 'llm',
       provider: 'Moonshot AI',
-      description: 'Open-weights coding-focused agentic MoE (1T total / 32B active, 256K context); multimodal text/image/video with Thinking mode.',
+      description: 'Open-weights 2.8T-param MoE, multimodal with 1M context; #1 on WebDev Arena. Launched Jul 16, 2026; weights released Jul 27.',
       releaseDate: '2026',
       link: 'https://platform.kimi.ai/docs',
       variants: [
+        { label: 'Kimi K3', id: 'kimi-k3' },
         { label: 'Kimi K2.7-Code', id: 'kimi-k2.7-code' },
-        { label: 'Kimi K2.7-Code HighSpeed', id: 'kimi-k2.7-code-highspeed' },
         { label: 'Kimi K2.6', id: 'kimi-k2.6' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
+    },
+  },
+  {
+    id: 'model-grok-4-5',
+    type: 'model',
+    position: { x: 1271, y: -1412 }, // 42°, r=1900
+    data: {
+      id: 'model-grok-4-5',
+      label: 'Grok 4.5',
+      category: 'llm',
+      provider: 'xAI',
+      description: "xAI's flagship for coding, agentic tasks and knowledge work (Jul 2026); text/image input, 500K context; default model in Grok Build.",
+      releaseDate: '2026',
+      link: 'https://docs.x.ai/',
+      variants: [
+        { label: 'Grok 4.5', id: 'grok-4.5' }
+      ],
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
 
@@ -320,8 +340,7 @@ export const initialNodes: AINode[] = [
         { label: 'Nano Banana Pro', id: 'gemini-3-pro-image' },
         { label: 'Nano Banana 2 Lite', id: 'gemini-3.1-flash-lite-image' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -390,8 +409,7 @@ export const initialNodes: AINode[] = [
         { label: 'Kling V3 Omni Pro', id: 'kling-v3-omni-pro' },
         { label: 'Kling V3 Omni Standard', id: 'kling-v3-omni-std' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -557,7 +575,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-opencode',
     type: 'tool',
-    position: { x: -651, y: 1462 }, // 204°
+    position: { x: -726, y: 1426 }, // 207°
     data: { 
       id: 'tool-opencode',
       label: 'OpenCode',
@@ -575,7 +593,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-antigravity-cli',
     type: 'tool',
-    position: { x: -1050, y: 1208 }, // 221°
+    position: { x: -1117, y: 1537 }, // 216°, r=1900
     data: { 
       id: 'tool-antigravity-cli',
       label: 'Antigravity CLI',
@@ -597,7 +615,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-codex-cli',
     type: 'tool',
-    position: { x: -1357, y: 848 }, // 238°
+    position: { x: -1131, y: 1131 }, // 225°
     data: { 
       id: 'tool-codex-cli',
       label: 'Codex CLI',
@@ -619,7 +637,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-claude-code',
     type: 'tool',
-    position: { x: -1545, y: 414 }, // 255°
+    position: { x: -1537, y: 1117 }, // 234°, r=1900
     data: { 
       id: 'tool-claude-code',
       label: 'Claude Code',
@@ -638,8 +656,69 @@ export const initialNodes: AINode[] = [
       targetHandle: 'right'
     },
   },
+  {
+    id: 'tool-kimi-code',
+    type: 'tool',
+    position: { x: -1426, y: 726 }, // 243°
+    data: {
+      id: 'tool-kimi-code',
+      label: 'Kimi Code',
+      category: 'cli-agent',
+      icon: { type: 'url', src: 'https://platform.moonshot.ai/favicon.ico' },
+      description: "Moonshot AI's official terminal agent — open-source (MIT) successor to Kimi CLI (Jul 2026). Subagents, MCP, video input; ACP for Zed/JetBrains.",
+      releaseDate: '2026',
+      link: 'https://github.com/MoonshotAI/kimi-code',
+      variants: [
+        { label: 'Kimi K3', id: 'kimi-k3' },
+        { label: 'Kimi for Coding', id: 'kimi-for-coding' },
+        { label: 'Kimi K2.7-Code', id: 'kimi-k2.7-code' },
+        { label: 'Kimi Code CLI', id: 'kimi-code-cli' }
+      ],
+      targetHandle: 'right',
+      isNew: true
+    },
+  },
+  {
+    id: 'tool-grok-build',
+    type: 'tool',
+    position: { x: -1807, y: 587 }, // 252°, r=1900
+    data: {
+      id: 'tool-grok-build',
+      label: 'Grok Build',
+      category: 'cli-agent',
+      icon: { type: 'url', src: 'https://x.ai/favicon.ico' },
+      description: "xAI's official terminal agent (Rust; open-sourced Apache-2.0, Jul 2026). Full-screen TUI, up to 8 parallel sub-agents; Grok 4.5 by default.",
+      releaseDate: '2026',
+      link: 'https://github.com/xai-org/grok-build',
+      variants: [
+        { label: 'Grok 4.5', id: 'grok-4.5' },
+        { label: 'Grok Build', id: 'grok-build' }
+      ],
+      targetHandle: 'right',
+      isNew: true
+    },
+  },
 
   // 6. AI Terminals
+  {
+    id: 'tool-cmux',
+    type: 'tool',
+    position: { x: -1871, y: -330 }, // 280°, r=1900
+    data: {
+      id: 'tool-cmux',
+      label: 'Cmux',
+      category: 'ai-terminal',
+      icon: { type: 'url', src: 'https://cmux.com/favicon.ico' },
+      description: 'Ghostty-based macOS terminal built for parallel AI coding agents (Feb 2026) — vertical tabs, notification rings, built-in browser pane. Open source (GPL-3).',
+      releaseDate: '2026',
+      link: 'https://cmux.com/',
+      variants: [
+        { label: 'Cmux', id: 'cmux' }
+      ],
+      targetHandle: 'right',
+      isNew: true
+    },
+  },
   {
     id: 'tool-warp',
     type: 'tool',
@@ -719,8 +798,11 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-cli-antigravity-cli', source: 'category-cli-agent', target: 'tool-antigravity-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-codex', source: 'category-cli-agent', target: 'tool-codex-cli', style: { stroke: '#F31260', strokeWidth: 2 } },
   { id: 'e-cat-cli-claude', source: 'category-cli-agent', target: 'tool-claude-code', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-kimi-code', source: 'category-cli-agent', target: 'tool-kimi-code', style: { stroke: '#F31260', strokeWidth: 2 } },
+  { id: 'e-cat-cli-grok-build', source: 'category-cli-agent', target: 'tool-grok-build', style: { stroke: '#F31260', strokeWidth: 2 } },
 
   // AI Terminals
+  { id: 'e-cat-term-cmux', source: 'category-ai-terminal', target: 'tool-cmux', style: { stroke: '#06B6D4', strokeWidth: 2 } },
   { id: 'e-cat-term-warp', source: 'category-ai-terminal', target: 'tool-warp', style: { stroke: '#06B6D4', strokeWidth: 2 } },
 
   // Assistants
@@ -736,6 +818,7 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-llm-minimax', source: 'category-llm-all', target: 'model-minimax', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-glm', source: 'category-llm-all', target: 'model-glm', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-kimi', source: 'category-llm-all', target: 'model-kimi-2-5', style: { stroke: '#17C964', strokeWidth: 2 } },
+  { id: 'e-cat-llm-grok', source: 'category-llm-all', target: 'model-grok-4-5', style: { stroke: '#17C964', strokeWidth: 2 } },
   { id: 'e-cat-llm-deepseek', source: 'category-llm-all', target: 'model-deepseek-v4', style: { stroke: '#17C964', strokeWidth: 2 } },
 
   // Image Models
@@ -768,6 +851,8 @@ export const initialEdges: Edge[] = [
   { id: 'e-antigravitycli-gemini', source: 'tool-antigravity-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
   { id: 'e-codexcli-gpt', source: 'tool-codex-cli', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
   { id: 'e-claudecode-claude', source: 'tool-claude-code', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-kimicode-kimi', source: 'tool-kimi-code', target: 'model-kimi-2-5', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-grokbuild-grok45', source: 'tool-grok-build', target: 'model-grok-4-5', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
   // Open Agents (Connect to many)
   { id: 'e-opencode-gpt52', source: 'tool-opencode', target: 'model-gpt5-2', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
