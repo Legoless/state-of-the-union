@@ -48,18 +48,18 @@ export const initialNodes: AINode[] = [
     position: { x: 834, y: -337 },
     data: { id: 'category-image-all', label: 'Image Models', category: 'image', description: 'Image Generation Models', targetHandle: 'left', sourceHandle: 'right' },
   },
-  // 3. Video Models (Bottom-Right, 110.5°)
+  // 3. Video Models (Bottom-Right, 115.5°)
   {
     id: 'category-video-all',
     type: 'video',
-    position: { x: 843, y: 315 },
+    position: { x: 812, y: 387 },
     data: { id: 'category-video-all', label: 'Video Models', category: 'video', description: 'Video Generation Models', targetHandle: 'left', sourceHandle: 'right' },
   },
-  // 4. AI Native IDEs (Bottom-Right, 158.5°)
+  // 4. AI Native IDEs (Bottom-Right, 165.2°)
   {
     id: 'category-ai-ide',
     type: 'ai-ide',
-    position: { x: 330, y: 837 },
+    position: { x: 230, y: 870 },
     data: { id: 'category-ai-ide', label: 'AI Native IDEs', category: 'ai-ide', description: 'Standalone Editors', targetHandle: 'top', sourceHandle: 'bottom' },
   },
   // 5. CLI Agents (Bottom-Left, 229.5°)
@@ -380,7 +380,7 @@ export const initialNodes: AINode[] = [
       label: 'Higgsfield',
       category: 'video',
       provider: 'Higgsfield',
-      description: 'Cinematic AI platform; Cinema Studio 3.5 (May 2026) adds optical-physics camera controls. Aggregates Veo 3.1, Kling 3.0, Seedance 2.0, Soul 2.0.',
+      description: 'Cinematic AI platform; Cinema Studio 3.5 (May 2026) adds optical-physics camera controls. Aggregates Veo 3.1, Kling 3.0, Seedance 2.5, Soul 2.0.',
       releaseDate: '2025',
       link: 'https://higgsfield.ai/',
       variants: [
@@ -424,7 +424,7 @@ export const initialNodes: AINode[] = [
       label: 'Kie',
       category: 'video',
       provider: 'Kie.ai',
-      description: 'Unified, credit-based API for top video, image, and music models — Veo 3.1, Runway Aleph, Kling 3.0, Sora 2 Pro, Seedance 2.0 (Jun 2026).',
+      description: 'Unified, credit-based API for top video, image, and music models — Veo 3.1, Runway Aleph, Kling 3.0, Sora 2 Pro, Seedance 2.5 (Jul 2026).',
       releaseDate: '2026',
       link: 'https://kie.ai/',
       variants: [
@@ -467,17 +467,40 @@ export const initialNodes: AINode[] = [
     position: { x: 1518, y: 1143 }, // 127°, r=1900
     data: {
       id: 'model-seedance-2',
-      label: 'Seedance 2.0',
+      label: 'Seedance 2.5',
       category: 'video',
       provider: 'ByteDance',
-      description: 'Fast, high-fidelity text/image-to-video with synced stereo audio (up to 15s).',
+      description: 'One-take audio-video (Jul 2026): 30s per pass with multi-round extend; up to 30 images / 10 videos / 10 audios as references.',
       releaseDate: '2026',
-      link: 'https://seed.bytedance.com/seedance',
+      link: 'https://seed.bytedance.com/seedance2_5',
       variants: [
-        { label: 'Seedance 2.0', id: 'seedance-2-0' },
-        { label: 'Seedance 2.0 Fast', id: 'seedance-2-0-fast' }
+        { label: 'Seedance 2.5', id: 'dreamina-seedance-2-5-260628' },
+        { label: 'Seedance 2.0', id: 'dreamina-seedance-2-0-260128' },
+        { label: 'Seedance 2.0 Fast', id: 'dreamina-seedance-2-0-fast-260128' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
+    },
+  },
+  {
+    id: 'model-minimax-h3',
+    type: 'model',
+    position: { x: 1117, y: 1537 }, // 144°, r=1900
+    data: {
+      id: 'model-minimax-h3',
+      label: 'MiniMax H3',
+      category: 'video',
+      provider: 'MiniMax',
+      description: 'Open multimodal video model (Jul 2026): text/image/video/audio in, native stereo audio out, up to 15s at 2K. Successor to Hailuo 02.',
+      releaseDate: '2026',
+      link: 'https://www.minimax.io/blog/minimax-h3',
+      variants: [
+        { label: 'MiniMax H3', id: 'MiniMax-H3' },
+        { label: 'H3-Base-FL2VA', id: 'H3-Base-FL2VA' },
+        { label: 'H3-Regenerate-2K', id: 'H3-Regenerate-2K' }
+      ],
+      targetHandle: 'left',
+      isNew: true
     },
   },
 
@@ -513,7 +536,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-claude-app',
     type: 'tool',
-    position: { x: 1090, y: 1556 }, // 145°, r=1900
+    position: { x: 726, y: 1426 }, // 153°
     data: {
       id: 'tool-claude-app',
       label: 'Claude app',
@@ -535,7 +558,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-antigravity',
     type: 'tool',
-    position: { x: 701, y: 1438 }, // 154°
+    position: { x: 587, y: 1807 }, // 162°, r=1900
     data: { 
       id: 'tool-antigravity',
       label: 'Antigravity', 
@@ -550,13 +573,13 @@ export const initialNodes: AINode[] = [
         { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
         { label: 'Antigravity', id: 'antigravity' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'top'
     },
   },
   {
     id: 'tool-codex-app',
     type: 'tool',
-    position: { x: 556, y: 1817 }, // 163°, r=1900
+    position: { x: 250, y: 1580 }, // 171°
     data: { 
       id: 'tool-codex-app',
       label: 'Codex App',
@@ -578,7 +601,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-orca',
     type: 'tool',
-    position: { x: 223, y: 1584 }, // 172°
+    position: { x: 0, y: 1900 }, // 180°, r=1900
     data: {
       id: 'tool-orca',
       label: 'Orca',
@@ -603,7 +626,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-paseo',
     type: 'tool',
-    position: { x: -33, y: 1900 }, // 181°, r=1900
+    position: { x: -250, y: 1580 }, // 189°
     data: {
       id: 'tool-paseo',
       label: 'Paseo',
@@ -890,6 +913,7 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-video-kie', source: 'category-video-all', target: 'model-kie', style: { stroke: '#F5A524', strokeWidth: 2 } },
   { id: 'e-cat-video-veo', source: 'category-video-all', target: 'model-veo-3', style: { stroke: '#F5A524', strokeWidth: 2 } },
   { id: 'e-cat-video-seedance', source: 'category-video-all', target: 'model-seedance-2', style: { stroke: '#F5A524', strokeWidth: 2 } },
+  { id: 'e-cat-video-minimax-h3', source: 'category-video-all', target: 'model-minimax-h3', style: { stroke: '#F5A524', strokeWidth: 2 } },
 
   // --- Cross-Link Connections (Optional/Contextual) ---
   // Cursor
