@@ -55,11 +55,11 @@ export const initialNodes: AINode[] = [
     position: { x: 843, y: 315 },
     data: { id: 'category-video-all', label: 'Video Models', category: 'video', description: 'Video Generation Models', targetHandle: 'left', sourceHandle: 'right' },
   },
-  // 4. AI Native IDEs (Bottom-Right, 161.5°)
+  // 4. AI Native IDEs (Bottom-Right, 158.5°)
   {
     id: 'category-ai-ide',
     type: 'ai-ide',
-    position: { x: 286, y: 853 },
+    position: { x: 330, y: 837 },
     data: { id: 'category-ai-ide', label: 'AI Native IDEs', category: 'ai-ide', description: 'Standalone Editors', targetHandle: 'top', sourceHandle: 'bottom' },
   },
   // 5. CLI Agents (Bottom-Left, 229.5°)
@@ -115,19 +115,20 @@ export const initialNodes: AINode[] = [
     position: { x: -941, y: -1294 }, // 324°
     data: {
       id: 'model-qwen-3-6',
-      label: 'Qwen 3.7',
+      label: 'Qwen 3.8',
       category: 'llm',
       provider: 'Alibaba',
-      description: 'Frontier agent-focused family — Qwen3.7-Max/Plus (proprietary, API-only) plus open-weights Qwen3.6-27B/35B-A3B (Apache-2.0) for self-hosting.',
+      description: 'Qwen3.8-Max (Aug 2026) is a 2.4T MoE flagship (95B active, 1M context, native vision); first Max-class open weights, plus dense Qwen3.8-27B.',
       releaseDate: '2026',
       link: 'https://qwen.ai/',
       variants: [
-        { label: 'Qwen3.7-Max', id: 'qwen3.7-max-preview' },
-        { label: 'Qwen3.7-Plus', id: 'qwen3.7-plus' },
-        { label: 'Qwen3.6-27B', id: 'qwen3.6-27b' },
-        { label: 'Qwen3.6-35B-A3B', id: 'qwen3.6-35b-a3b' }
+        { label: 'Qwen3.8-Max', id: 'qwen3.8-max' },
+        { label: 'Qwen3.8-27B', id: 'qwen3.8-27b' },
+        { label: 'Qwen3.7-Max', id: 'qwen3.7-max' },
+        { label: 'Qwen3.7-Plus', id: 'qwen3.7-plus' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -156,16 +157,16 @@ export const initialNodes: AINode[] = [
     position: { x: -547, y: -1504 }, // 340°
     data: {
       id: 'model-claude-4-6-opus',
-      label: 'Claude Fable 5',
+      label: 'Claude Fable 5.1',
       category: 'llm',
       provider: 'Anthropic',
-      description: "Anthropic's most capable model for long-horizon agents and hard reasoning (1M context); Opus 4.8 remains the coding workhorse, effort defaults to high.",
-      defaultNotes: "Claude Fable 5 (redeployed Jul 2026, $10/$50) is Anthropic's most capable widely released model for the hardest reasoning and long-running agents. Opus 4.8 (May 2026) remains the top coding model; effort defaults to high, xhigh for the hardest problems.",
+      description: "Anthropic's most capable widely released model (Sep 2026) for long-horizon agents; Opus 5 is the daily coding/enterprise workhorse at half the price.",
+      defaultNotes: "Claude Fable 5.1 (Sep 1 2026, $10/$50, 1M context) is Anthropic's Mythos-class public flagship. Opus 5 (Jul 24 2026, $5/$25) is the default in Claude Code and on Claude Max; effort defaults to high.",
       releaseDate: '2026',
-      link: 'https://docs.anthropic.com/en/api/overview',
+      link: 'https://platform.claude.com/docs/en/models/overview',
       variants: [
-        { label: 'Claude Fable 5', id: 'claude-fable-5' },
-        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
+        { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
+        { label: 'Claude Opus 5', id: 'claude-opus-5' },
         { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
@@ -179,19 +180,20 @@ export const initialNodes: AINode[] = [
     position: { x: -330, y: -1871 }, // 350°, r=1900
     data: {
       id: 'model-glm',
-      label: 'GLM 5.2',
+      label: 'GLM 5.3',
       category: 'llm',
       provider: 'Zhipu AI',
-      description: 'Open MoE flagship with usable 1M-token context and strong agentic coding.',
+      description: 'Open-weights flagship (Aug 2026) for agentic coding; GLM-5.3-Flash is the natively multimodal, low-cost sibling (FlashX at 200 tok/s, Sep 2026).',
       releaseDate: '2026',
       link: 'https://docs.z.ai/',
       variants: [
-        { label: 'GLM-5.2', id: 'glm-5.2' },
-        { label: 'GLM-5.1', id: 'glm-5.1' },
-        { label: 'GLM-5', id: 'glm-5' },
-        { label: 'GLM-5-Turbo', id: 'glm-5-turbo' }
+        { label: 'GLM-5.3', id: 'glm-5.3' },
+        { label: 'GLM-5.3-Flash', id: 'glm-5.3-flash' },
+        { label: 'GLM-5.3-FlashX', id: 'glm-5.3-flashx' },
+        { label: 'GLM-5.2', id: 'glm-5.2' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -200,20 +202,18 @@ export const initialNodes: AINode[] = [
     position: { x: 0, y: -1600 }, // 0°
     data: {
       id: 'model-gpt5-2',
-      label: 'GPT-5.6',
+      label: 'GPT-6 Astra',
       category: 'llm',
       provider: 'OpenAI',
-      description: 'Frontier reasoning model for professional work, with computer-use and 1M context.',
-      defaultNotes: 'GPT-5.6 Sol (Jul 2026) is the new frontier flagship and best coding model; Terra is the balanced, lower-cost tier and Luna the fastest.',
+      description: 'OpenAI flagship for computer use, coding, and long-horizon agents (Sep 2026); 1M context. GPT-5.6 Sol/Terra/Luna remain the cost tiers.',
+      defaultNotes: 'GPT-6 Astra (Sep 3 2026, gpt-6-astra, $10/$50) is the API flagship for the hardest end-to-end work. GPT-5.6 Sol stays the price-rational coding workhorse; Terra balances intelligence and cost, Luna is the high-volume tier.',
       releaseDate: '2026',
       link: 'https://developers.openai.com/api/docs/models',
       variants: [
+        { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
         { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
         { label: 'GPT-5.6 Terra', id: 'gpt-5.6-terra' },
-        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' },
-        { label: 'GPT-5.5', id: 'gpt-5.5' },
-        { label: 'GPT-5.4', id: 'gpt-5.4' },
-        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
+        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' }
       ],
       targetHandle: 'bottom',
       isNew: true
@@ -225,21 +225,22 @@ export const initialNodes: AINode[] = [
     position: { x: 468, y: -1530 }, // 17°
     data: {
       id: 'model-gemini-3',
-      label: 'Gemini 3.1 Pro',
+      label: 'Gemini 3.8 Flash',
       category: 'llm',
       provider: 'Google',
-      description: 'Multimodal flagship. Gemini 3.5 Flash (GA May 2026) brings frontier coding at Flash cost; 3.1 Pro leads the hardest tasks; 3.5 Pro coming soon.',
+      description: 'Current Gemini workhorse (Sep 2026) for long-horizon coding and agents; 3.1 Pro remains the preview Pro tier. 3.5 Pro has not shipped.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/models',
       variants: [
-        { label: 'Gemini 3.5 Flash', id: 'gemini-3.5-flash' },
+        { label: 'Gemini 3.8 Flash', id: 'gemini-3.8-flash' },
         { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
-        { label: 'Gemini 3.1 Deep Think', id: 'gemini-3.1-deep-think' },
+        { label: 'Gemini 3.7 Flash', id: 'gemini-3.7-flash' },
+        { label: 'Gemini 3.5 Flash-Lite', id: 'gemini-3.5-flash-lite' },
         { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3.1-flash-lite' },
-        { label: 'Gemini Deep Research', id: 'deep-research-preview-04-2026' },
-        { label: 'Gemini 3 Flash', id: 'gemini-3-flash-preview' }
+        { label: 'Gemini Deep Research', id: 'deep-research-preview-04-2026' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -248,17 +249,18 @@ export const initialNodes: AINode[] = [
     position: { x: 803, y: -1722 }, // 25°, r=1900
     data: {
       id: 'model-deepseek-v4',
-      label: 'DeepSeek V4',
+      label: 'DeepSeek V4.1 Flash',
       category: 'llm',
       provider: 'DeepSeek',
-      description: 'Open-source frontier MoE with Pro and Flash variants; 1M context.',
+      description: 'New Causal Encoder–Decoder MoE (Sep 2026) with native vision and 1M context; MIT weights. V4 Pro remains on deepseek-v4-pro.',
       releaseDate: '2026',
       link: 'https://api-docs.deepseek.com/',
       variants: [
-        { label: 'DeepSeek-V4 Pro', id: 'deepseek-v4-pro' },
-        { label: 'DeepSeek-V4 Flash', id: 'deepseek-v4-flash' }
+        { label: 'DeepSeek-V4.1 Flash', id: 'deepseek-flash' },
+        { label: 'DeepSeek-V4 Pro', id: 'deepseek-v4-pro' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -278,8 +280,7 @@ export const initialNodes: AINode[] = [
         { label: 'Kimi K2.7-Code', id: 'kimi-k2.7-code' },
         { label: 'Kimi K2.6', id: 'kimi-k2.6' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -288,13 +289,14 @@ export const initialNodes: AINode[] = [
     position: { x: 1271, y: -1412 }, // 42°, r=1900
     data: {
       id: 'model-grok-4-5',
-      label: 'Grok 4.5',
+      label: 'Grok 4.6',
       category: 'llm',
       provider: 'xAI',
-      description: "xAI's flagship for coding, agentic tasks and knowledge work (Jul 2026); text/image input, 500K context; default model in Grok Build.",
+      description: "xAI's flagship for long-running agents, coding, and visual work (Aug 2026); text/image input, 500K context; default in Grok Build and Cursor.",
       releaseDate: '2026',
-      link: 'https://docs.x.ai/',
+      link: 'https://docs.x.ai/docs/models',
       variants: [
+        { label: 'Grok 4.6', id: 'grok-4.6' },
         { label: 'Grok 4.5', id: 'grok-4.5' }
       ],
       targetHandle: 'bottom',
@@ -309,18 +311,19 @@ export const initialNodes: AINode[] = [
     position: { x: 1243, y: -1007 }, // 51°
     data: {
       id: 'model-gpt-image-1-5',
-      label: 'GPT Image 2',
+      label: 'GPT Image 2.5',
       category: 'image',
       provider: 'OpenAI',
-      description: 'Next-gen photorealistic image generation with sharper text + editing.',
+      description: 'ChatGPT Images 2.5 (Sep 2026): Sunburst for precision edits, Flare for faster everyday generation at ~50% lower latency than Image 2.',
       releaseDate: '2026',
       link: 'https://developers.openai.com/api/docs/guides/image-generation',
       variants: [
-        { label: 'GPT Image 2', id: 'gpt-image-2' },
-        { label: 'GPT Image 2 (snapshot)', id: 'gpt-image-2-2026-04-21' },
-        { label: 'GPT Image 1.5', id: 'gpt-image-1.5' }
+        { label: 'GPT Image 2.5 Sunburst', id: 'gpt-image-2.5-sunburst' },
+        { label: 'GPT Image 2.5 Flare', id: 'gpt-image-2.5-flare' },
+        { label: 'GPT Image 2', id: 'gpt-image-2' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -446,14 +449,14 @@ export const initialNodes: AINode[] = [
       label: 'Veo 3.1',
       category: 'video',
       provider: 'Google',
-      description: 'High-definition 4K video generation; Veo 3.1 with Fast and Lite variants (Lite launched Apr 2026).',
-      defaultNotes: 'Veo3 can create more generic advertising videos, delivering high-quality visuals for commercial use.',
+      description: 'Cinematic 4K video with native audio; Veo 3.1 plus Lite. Gemini Omni Flash (Aug 2026) is the fast generate/edit/extend path.',
+      defaultNotes: 'Veo 3.1 can create more generic advertising videos, delivering high-quality visuals for commercial use. Omni Flash is the lower-latency Gemini video model.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/video',
       variants: [
-        { label: 'Veo 3.1', id: 'veo-3.1-generate-001' },
-        { label: 'Veo 3.1 Fast', id: 'veo-3.1-fast-generate-001' },
-        { label: 'Veo 3.1 Lite', id: 'veo-3.1-lite-generate-001' }
+        { label: 'Veo 3.1', id: 'veo-3.1-generate-preview' },
+        { label: 'Veo 3.1 Lite', id: 'veo-3.1-lite-generate-preview' },
+        { label: 'Gemini Omni Flash', id: 'gemini-omni-1.1-flash' }
       ],
       targetHandle: 'left'
     },
@@ -488,86 +491,138 @@ export const initialNodes: AINode[] = [
       label: 'Cursor',
       category: 'ai-ide',
       icon: { type: 'simple', slug: 'cursor' },
-      description: 'AI Code Editor based on VS Code. Cursor 3.7 (Jun 2026) adds Canvases + Design Mode; Composer 2.5 model.',
-      defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities.',
+      description: 'AI Code Editor based on VS Code. Cursor 3.21 (Sep 2026) adds Projects (coordinator + cloud agents); Composer 2.5 remains the in-house model.',
+      defaultNotes: 'Cursor is used to debug visual issues with its built-in browser, offering integrated preview capabilities. Projects (Sep 10 2026) keep shared context across months of work.',
       releaseDate: '2023',
       link: 'https://cursor.com/docs',
       variants: [
         { label: 'Composer 2.5', id: 'composer-2.5' },
-        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
+        { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
+        { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
+        { label: 'Claude Opus 5', id: 'claude-opus-5' },
         { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
-        { label: 'GPT-5.4', id: 'gpt-5.4' },
-        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
+        { label: 'Gemini 3.8 Flash', id: 'gemini-3.8-flash' },
         { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
-        { label: 'Gemini 3.5 Flash', id: 'gemini-3.5-flash' },
         { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
-        { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
-        { label: 'GPT-5.3-Codex', id: 'gpt-5.3-codex' },
-        { label: 'Grok 4.5', id: 'grok-4.5' }
+        { label: 'Grok 4.6', id: 'grok-4.6' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
     id: 'tool-claude-app',
     type: 'tool',
-    position: { x: 726, y: 1426 }, // 153°
+    position: { x: 1090, y: 1556 }, // 145°, r=1900
     data: {
       id: 'tool-claude-app',
       label: 'Claude app',
       category: 'ai-ide',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's desktop coding environment powered by Claude — Fable 5 and Opus 4.8 (Jul 2026).",
+      description: "Anthropic's desktop coding environment powered by Claude — Fable 5.1 and Opus 5 (Sep 2026).",
       releaseDate: '2026',
       link: 'https://code.claude.com/docs/en/desktop',
       variants: [
-        { label: 'Claude Fable 5', id: 'claude-fable-5' },
-        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
+        { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
+        { label: 'Claude Opus 5', id: 'claude-opus-5' },
         { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
     id: 'tool-antigravity',
     type: 'tool',
-    position: { x: 278, y: 1576 }, // 170°
+    position: { x: 701, y: 1438 }, // 154°
     data: { 
       id: 'tool-antigravity',
       label: 'Antigravity', 
       category: 'ai-ide', 
       icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
-      description: "Google's AI-native IDE. Antigravity 2.2.1 (Jun 2026), agent-first; runs Gemini 3.5 Flash / 3.1 Pro.",
+      description: "Google's AI-native IDE. Agent-first; runs Gemini 3.8 Flash / 3.1 Pro (Sep 2026).",
       defaultNotes: 'Antigravity is cheap and is used with Gemini 3 for frontend tasks, providing a cost-effective solution for UI development.',
       releaseDate: '2025',
       link: 'https://antigravity.google/',
       variants: [
-        { label: 'Antigravity', id: 'antigravity' },
-        { label: 'Gemini Native', id: 'gemini-native' }
+        { label: 'Gemini 3.8 Flash', id: 'gemini-3.8-flash' },
+        { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
+        { label: 'Antigravity', id: 'antigravity' }
       ],
-      targetHandle: 'top'
+      targetHandle: 'left'
     },
   },
   {
     id: 'tool-codex-app',
     type: 'tool',
-    position: { x: -195, y: 1588 }, // 187°
+    position: { x: 556, y: 1817 }, // 163°, r=1900
     data: { 
       id: 'tool-codex-app',
       label: 'Codex App',
       category: 'ai-ide',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's coding environment (Jul 2026), now merged into the ChatGPT desktop app on macOS & Windows. Powered by GPT-5.6 with native computer-use and 1M context.",
+      description: "OpenAI's coding environment, merged into the ChatGPT desktop app on macOS & Windows. Powered by GPT-6 Astra (Sep 2026) with native computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
       variants: [
+        { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
         { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
-        { label: 'GPT-5.4', id: 'gpt-5.4' },
-        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
-        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' }
+        { label: 'GPT-5.6 Terra', id: 'gpt-5.6-terra' },
+        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' }
       ],
-      targetHandle: 'top'
+      targetHandle: 'top',
+      isNew: true
+    },
+  },
+  {
+    id: 'tool-orca',
+    type: 'tool',
+    position: { x: 223, y: 1584 }, // 172°
+    data: {
+      id: 'tool-orca',
+      label: 'Orca',
+      category: 'ai-ide',
+      icon: { type: 'url', src: 'https://www.onorca.dev/favicon.ico' },
+      description: 'Agent development environment (v1.4.205, Sep 2026). Isolated git worktrees for parallel Claude Code, Codex, OpenCode, and other CLIs; desktop, CLI, and mobile.',
+      defaultNotes: 'Orca is used to orchestrate coding agents in parallel worktrees — fan a prompt across agents, review diffs, and merge the winner.',
+      provider: 'Stably',
+      releaseDate: '2026',
+      link: 'https://www.onorca.dev/',
+      variants: [
+        { label: 'Orca Desktop', id: 'orca-desktop' },
+        { label: 'Orca CLI', id: 'orca-cli' },
+        { label: 'Claude Code', id: 'claude-code' },
+        { label: 'Codex CLI', id: 'codex-cli' },
+        { label: 'OpenCode', id: 'opencode-cli' }
+      ],
+      targetHandle: 'top',
+      isNew: true
+    },
+  },
+  {
+    id: 'tool-paseo',
+    type: 'tool',
+    position: { x: -33, y: 1900 }, // 181°, r=1900
+    data: {
+      id: 'tool-paseo',
+      label: 'Paseo',
+      category: 'ai-ide',
+      icon: { type: 'url', src: 'https://paseo.sh/favicon.svg' },
+      description: 'Self-hosted agent workspace (v0.8.0, Sep 2026). Desktop, Neo, mobile, web, and CLI drive Claude Code, Codex, OpenCode, and others on your machine.',
+      defaultNotes: 'Paseo runs a local daemon; desktop/Neo, phone, and web clients connect to it. Agents, terminals, and browsers sit in split panes.',
+      provider: 'Paseo',
+      releaseDate: '2026',
+      link: 'https://paseo.sh/',
+      variants: [
+        { label: 'Paseo Desktop', id: 'paseo-desktop' },
+        { label: 'Paseo Neo', id: 'paseo-neo' },
+        { label: 'Paseo CLI', id: 'paseo-cli' },
+        { label: 'Claude Code', id: 'claude-code' },
+        { label: 'Codex CLI', id: 'codex-cli' }
+      ],
+      targetHandle: 'top',
+      isNew: true
     },
   },
 
@@ -581,7 +636,7 @@ export const initialNodes: AINode[] = [
       label: 'OpenCode',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://opencode.ai/favicon.svg' },
-      description: 'Open Source AI Coding Agent CLI (v1.17.18, Jul 2026). 75+ model providers, BYO model.',
+      description: 'Open Source AI Coding Agent CLI (v1.18.31, Sep 2026). 75+ model providers, BYO model.',
       releaseDate: '2025',
       link: 'https://opencode.ai/docs',
       variants: [
@@ -599,13 +654,13 @@ export const initialNodes: AINode[] = [
       label: 'Antigravity CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
-      description: "Google's official terminal agent — Antigravity CLI, the GA successor to Gemini CLI, launched with Antigravity 2.0 at I/O 2026 (May 2026). Runs Gemini 3.x; legacy Gemini CLI consumer access ended Jun 18, 2026.",
+      description: "Google's official terminal agent — Antigravity CLI, the GA successor to Gemini CLI (I/O 2026). Runs Gemini 3.8 Flash / 3.1 Pro; legacy Gemini CLI consumer access ended Jun 18, 2026.",
       releaseDate: '2026',
       link: 'https://antigravity.google/',
       variants: [
-        { label: 'Gemini 3.5 Flash', id: 'gemini-3.5-flash' },
+        { label: 'Gemini 3.8 Flash', id: 'gemini-3.8-flash' },
         { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
-        { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3.1-flash-lite' },
+        { label: 'Gemini 3.7 Flash', id: 'gemini-3.7-flash' },
         { label: 'Antigravity CLI', id: 'antigravity-cli' }
       ],
       targetHandle: 'right',
@@ -621,17 +676,18 @@ export const initialNodes: AINode[] = [
       label: 'Codex CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's official terminal agent (v0.144.1, Jul 2026). Powered by GPT-5.6 with computer-use and 1M context.",
+      description: "OpenAI's official terminal agent (v0.155.0, Sep 2026). Powered by GPT-6 Astra with computer-use and 1M context.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
+        { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
         { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
-        { label: 'GPT-5.4', id: 'gpt-5.4' },
-        { label: 'GPT-5.4 mini', id: 'gpt-5.4-mini' },
-        { label: 'GPT-5.3-Codex-Spark', id: 'gpt-5.3-codex-spark' },
+        { label: 'GPT-5.6 Terra', id: 'gpt-5.6-terra' },
+        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' },
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
-      targetHandle: 'right'
+      targetHandle: 'right',
+      isNew: true
     },
   },
   {
@@ -643,17 +699,18 @@ export const initialNodes: AINode[] = [
       label: 'Claude Code',
       category: 'cli-agent',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's official terminal agent (v2.1.207, Jul 2026). Opus 4.8 with /effort xhigh and Dynamic Workflows (parallel subagents).",
+      description: "Anthropic's official terminal agent (v2.1.276, Sep 2026). Fable 5.1 / Opus 5 with /effort xhigh; Opus 5 is the default.",
       releaseDate: '2025',
       link: 'https://code.claude.com/docs',
       variants: [
-        { label: 'Claude Fable 5', id: 'claude-fable-5' },
-        { label: 'Claude 4.8 Opus', id: 'claude-opus-4-8' },
+        { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
+        { label: 'Claude Opus 5', id: 'claude-opus-5' },
         { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'Claude Code', id: 'claude-code' }
       ],
-      targetHandle: 'right'
+      targetHandle: 'right',
+      isNew: true
     },
   },
   {
@@ -674,8 +731,7 @@ export const initialNodes: AINode[] = [
         { label: 'Kimi K2.7-Code', id: 'kimi-k2.7-code' },
         { label: 'Kimi Code CLI', id: 'kimi-code-cli' }
       ],
-      targetHandle: 'right',
-      isNew: true
+      targetHandle: 'right'
     },
   },
   {
@@ -687,10 +743,11 @@ export const initialNodes: AINode[] = [
       label: 'Grok Build',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://x.ai/favicon.ico' },
-      description: "xAI's official terminal agent (Rust; open-sourced Apache-2.0, Jul 2026). Full-screen TUI, up to 8 parallel sub-agents; Grok 4.5 by default.",
+      description: "xAI's official terminal agent (Rust; open-sourced Apache-2.0). Full-screen TUI, up to 8 parallel sub-agents; Grok 4.6 by default (Aug 2026).",
       releaseDate: '2026',
       link: 'https://github.com/xai-org/grok-build',
       variants: [
+        { label: 'Grok 4.6', id: 'grok-4.6' },
         { label: 'Grok 4.5', id: 'grok-4.5' },
         { label: 'Grok Build', id: 'grok-build' }
       ],
@@ -715,8 +772,7 @@ export const initialNodes: AINode[] = [
       variants: [
         { label: 'Cmux', id: 'cmux' }
       ],
-      targetHandle: 'right',
-      isNew: true
+      targetHandle: 'right'
     },
   },
   {
@@ -792,6 +848,8 @@ export const initialEdges: Edge[] = [
   { id: 'e-cat-ide-claudeapp', source: 'category-ai-ide', target: 'tool-claude-app', style: { stroke: '#006FEE', strokeWidth: 2 } },
   { id: 'e-cat-ide-antigravity', source: 'category-ai-ide', target: 'tool-antigravity', style: { stroke: '#006FEE', strokeWidth: 2 } },
   { id: 'e-cat-ide-codexapp', source: 'category-ai-ide', target: 'tool-codex-app', style: { stroke: '#006FEE', strokeWidth: 2 } },
+  { id: 'e-cat-ide-orca', source: 'category-ai-ide', target: 'tool-orca', style: { stroke: '#006FEE', strokeWidth: 2 } },
+  { id: 'e-cat-ide-paseo', source: 'category-ai-ide', target: 'tool-paseo', style: { stroke: '#006FEE', strokeWidth: 2 } },
 
   // CLI Agents
   { id: 'e-cat-cli-opencode', source: 'category-cli-agent', target: 'tool-opencode', style: { stroke: '#F31260', strokeWidth: 2 } },
@@ -846,6 +904,12 @@ export const initialEdges: Edge[] = [
 
   // Claude app
   { id: 'e-claudeapp-claude', source: 'tool-claude-app', target: 'model-claude-4-6-opus', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+
+  // Orca / Paseo orchestrate official CLIs
+  { id: 'e-orca-claudecode', source: 'tool-orca', target: 'tool-claude-code', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-orca-codexcli', source: 'tool-orca', target: 'tool-codex-cli', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-paseo-claudecode', source: 'tool-paseo', target: 'tool-claude-code', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
+  { id: 'e-paseo-codexcli', source: 'tool-paseo', target: 'tool-codex-cli', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },
 
   // Official CLIs
   { id: 'e-antigravitycli-gemini', source: 'tool-antigravity-cli', target: 'model-gemini-3', style: { stroke: '#3b82f6', strokeWidth: 1, strokeDasharray: '5,5', opacity: 0.5 } },

@@ -13,6 +13,8 @@ const providerIcons: Record<string, AINodeIcon> = {
   MiniMax: { type: 'simple', slug: 'minimax' },
   'Moonshot AI': { type: 'url', src: 'https://platform.moonshot.ai/favicon.ico' },
   OpenAI: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
+  Paseo: { type: 'url', src: 'https://paseo.sh/favicon.svg' },
+  Stably: { type: 'url', src: 'https://www.onorca.dev/favicon.ico' },
   xAI: { type: 'url', src: 'https://x.ai/favicon.ico' },
   'Zhipu AI': {
     type: 'url',
