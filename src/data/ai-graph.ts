@@ -127,8 +127,7 @@ export const initialNodes: AINode[] = [
         { label: 'Qwen3.7-Max', id: 'qwen3.7-max' },
         { label: 'Qwen3.7-Plus', id: 'qwen3.7-plus' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -140,15 +139,17 @@ export const initialNodes: AINode[] = [
       label: 'MiniMax M3',
       category: 'llm',
       provider: 'MiniMax',
-      description: 'Natively multimodal MoE with Sparse Attention and 1M context; frontier coding/agentic. Open weights released June 2026.',
+      description: 'M3 is the open-weights multimodal MoE (1M context). M3.1-Flash-Preview (Sep 2026) is the newer coding model, on M Plan and MiniMax Code only.',
       releaseDate: '2026',
-      link: 'https://www.minimax.io/platform',
+      link: 'https://platform.minimax.io/docs/guides/models-intro',
       variants: [
+        { label: 'MiniMax-M3.1-Flash-Preview', id: 'MiniMax-M3.1-Flash-Preview' },
         { label: 'MiniMax-M3', id: 'MiniMax-M3' },
         { label: 'MiniMax-M2.7', id: 'minimax-m2.7' },
         { label: 'MiniMax-M2.7-highspeed', id: 'minimax-m2.7-highspeed' }
       ],
-      targetHandle: 'bottom'
+      targetHandle: 'bottom',
+      isNew: true
     },
   },
   {
@@ -160,14 +161,14 @@ export const initialNodes: AINode[] = [
       label: 'Claude Fable 5.1',
       category: 'llm',
       provider: 'Anthropic',
-      description: "Anthropic's most capable widely released model (Sep 2026) for long-horizon agents; Opus 5 is the daily coding/enterprise workhorse at half the price.",
-      defaultNotes: "Claude Fable 5.1 (Sep 1 2026, $10/$50, 1M context) is Anthropic's Mythos-class public flagship. Opus 5 (Jul 24 2026, $5/$25) is the default in Claude Code and on Claude Max; effort defaults to high.",
+      description: "Anthropic's most capable widely released model (Sep 2026) for long-horizon agents. Opus 5.5 (Sep 22, $4/$20) is the recommended default; Sonnet 5.5 (Sep 28, $2/$10) is the fast tier.",
+      defaultNotes: 'Claude Fable 5.1 (Sep 1 2026, claude-fable-5-1, $10/$50, 1M context) is the public flagship. Start with Opus 5.5 (Sep 22, claude-opus-5-5, $4/$20); Sonnet 5.5 (Sep 28, claude-sonnet-5-5, $2/$10) is faster.',
       releaseDate: '2026',
-      link: 'https://platform.claude.com/docs/en/models/overview',
+      link: 'https://platform.claude.com/docs/en/about-claude/models/overview',
       variants: [
         { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
-        { label: 'Claude Opus 5', id: 'claude-opus-5' },
-        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
+        { label: 'Claude Opus 5.5', id: 'claude-opus-5-5' },
+        { label: 'Claude Sonnet 5.5', id: 'claude-sonnet-5-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
       targetHandle: 'bottom',
@@ -192,8 +193,7 @@ export const initialNodes: AINode[] = [
         { label: 'GLM-5.3-FlashX', id: 'glm-5.3-flashx' },
         { label: 'GLM-5.2', id: 'glm-5.2' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -205,15 +205,15 @@ export const initialNodes: AINode[] = [
       label: 'GPT-6 Astra',
       category: 'llm',
       provider: 'OpenAI',
-      description: 'OpenAI flagship for computer use, coding, and long-horizon agents (Sep 2026); 1M context. GPT-5.6 Sol/Terra/Luna remain the cost tiers.',
-      defaultNotes: 'GPT-6 Astra (Sep 3 2026, gpt-6-astra, $10/$50) is the API flagship for the hardest end-to-end work. GPT-5.6 Sol stays the price-rational coding workhorse; Terra balances intelligence and cost, Luna is the high-volume tier.',
+      description: 'OpenAI flagship for computer use, coding, and long-horizon agents; 1.05M context. GPT-6.1 Sol (Sep 29 2026, $2/$10) is near-Astra; GPT-6 Luna is the high-volume tier.',
+      defaultNotes: 'GPT-6 Astra (Sep 3 2026, gpt-6-astra, $10/$50) remains the API flagship; Ultrafast mode landed Sep 29. GPT-6.1 Sol (Sep 29, gpt-6.1-sol, $2/$10) is the cost-balanced tier. GPT-6 Luna (Sep 22, gpt-6-luna, $0.10/$0.50) is high-volume.',
       releaseDate: '2026',
       link: 'https://developers.openai.com/api/docs/models',
       variants: [
         { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
-        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
-        { label: 'GPT-5.6 Terra', id: 'gpt-5.6-terra' },
-        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' }
+        { label: 'GPT-6.1 Sol', id: 'gpt-6.1-sol' },
+        { label: 'GPT-6 Sol', id: 'gpt-6-sol' },
+        { label: 'GPT-6 Luna', id: 'gpt-6-luna' }
       ],
       targetHandle: 'bottom',
       isNew: true
@@ -228,7 +228,7 @@ export const initialNodes: AINode[] = [
       label: 'Gemini 3.8 Flash',
       category: 'llm',
       provider: 'Google',
-      description: 'Current Gemini workhorse (Sep 2026) for long-horizon coding and agents; 3.1 Pro remains the preview Pro tier. 3.5 Pro has not shipped.',
+      description: 'Public API workhorse remains Gemini 3.8 Flash. Gemini 4 Argon (Sep 30 2026) is Fairwind-only, with no public model ID yet. 3.1 Pro stays the preview Pro tier.',
       releaseDate: '2026',
       link: 'https://ai.google.dev/gemini-api/docs/models',
       variants: [
@@ -239,8 +239,7 @@ export const initialNodes: AINode[] = [
         { label: 'Gemini 3.1 Flash-Lite', id: 'gemini-3.1-flash-lite' },
         { label: 'Gemini Deep Research', id: 'deep-research-preview-04-2026' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -259,8 +258,7 @@ export const initialNodes: AINode[] = [
         { label: 'DeepSeek-V4.1 Flash', id: 'deepseek-flash' },
         { label: 'DeepSeek-V4 Pro', id: 'deepseek-v4-pro' }
       ],
-      targetHandle: 'bottom',
-      isNew: true
+      targetHandle: 'bottom'
     },
   },
   {
@@ -289,15 +287,15 @@ export const initialNodes: AINode[] = [
     position: { x: 1271, y: -1412 }, // 42°, r=1900
     data: {
       id: 'model-grok-4-5',
-      label: 'Grok 4.6',
+      label: 'Grok 4.7',
       category: 'llm',
       provider: 'xAI',
-      description: "xAI's flagship for long-running agents, coding, and visual work (Aug 2026); text/image input, 500K context; default in Grok Build and Cursor.",
+      description: "xAI's flagship for coding, agents, and knowledge work (Sep 21 2026); text/image input, 500K context, $2/$6. Default on the API and in Grok Build.",
       releaseDate: '2026',
-      link: 'https://docs.x.ai/docs/models',
+      link: 'https://docs.x.ai/developers/models',
       variants: [
-        { label: 'Grok 4.6', id: 'grok-4.6' },
-        { label: 'Grok 4.5', id: 'grok-4.5' }
+        { label: 'Grok 4.7', id: 'grok-4.7' },
+        { label: 'Grok 4.6', id: 'grok-4.6' }
       ],
       targetHandle: 'bottom',
       isNew: true
@@ -322,8 +320,7 @@ export const initialNodes: AINode[] = [
         { label: 'GPT Image 2.5 Flare', id: 'gpt-image-2.5-flare' },
         { label: 'GPT Image 2', id: 'gpt-image-2' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -402,9 +399,9 @@ export const initialNodes: AINode[] = [
       label: 'Kling 3.0',
       category: 'video',
       provider: 'Kuaishou',
-      description: 'Cinematic video generation with strong motion coherence. 1080p/720p, native audio modes; fast low-cost Turbo tier added Jun 2026.',
+      description: 'Public API is still Kling 3.0 (kling-v3). Kling 4.0 entered early access Sep 28 2026 — native 30s, 10-bit HDR — wider rollout in October; no public API ID yet.',
       releaseDate: '2026',
-      link: 'https://app.klingai.com/',
+      link: 'https://klingai.com/blog/kling40-kling-visual-realism-creative-control-introducing-storytelling',
       variants: [
         { label: 'Kling V3 Pro', id: 'kling-v3-pro' },
         { label: 'Kling V3 Standard', id: 'kling-v3-standard' },
@@ -412,7 +409,8 @@ export const initialNodes: AINode[] = [
         { label: 'Kling V3 Omni Pro', id: 'kling-v3-omni-pro' },
         { label: 'Kling V3 Omni Standard', id: 'kling-v3-omni-std' }
       ],
-      targetHandle: 'left'
+      targetHandle: 'left',
+      isNew: true
     },
   },
   {
@@ -478,8 +476,7 @@ export const initialNodes: AINode[] = [
         { label: 'Seedance 2.0', id: 'dreamina-seedance-2-0-260128' },
         { label: 'Seedance 2.0 Fast', id: 'dreamina-seedance-2-0-fast-260128' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
   {
@@ -491,16 +488,16 @@ export const initialNodes: AINode[] = [
       label: 'MiniMax H3',
       category: 'video',
       provider: 'MiniMax',
-      description: 'Open multimodal video model (Jul 2026): text/image/video/audio in, native stereo audio out, up to 15s at 2K. Successor to Hailuo 02.',
+      description: 'Open multimodal video model (Jul 2026): text/image/video/audio in, native stereo audio out, up to 15s at 2K. H3 Max is the faster fal.ai post-train.',
       releaseDate: '2026',
       link: 'https://www.minimax.io/blog/minimax-h3',
       variants: [
         { label: 'MiniMax H3', id: 'MiniMax-H3' },
+        { label: 'MiniMax H3 Max', id: 'MiniMax-H3-Max' },
         { label: 'H3-Base-FL2VA', id: 'H3-Base-FL2VA' },
         { label: 'H3-Regenerate-2K', id: 'H3-Regenerate-2K' }
       ],
-      targetHandle: 'left',
-      isNew: true
+      targetHandle: 'left'
     },
   },
 
@@ -521,13 +518,13 @@ export const initialNodes: AINode[] = [
       variants: [
         { label: 'Composer 2.5', id: 'composer-2.5' },
         { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
+        { label: 'GPT-6.1 Sol', id: 'gpt-6.1-sol' },
         { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
-        { label: 'Claude Opus 5', id: 'claude-opus-5' },
-        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
+        { label: 'Claude Opus 5.5', id: 'claude-opus-5-5' },
+        { label: 'Claude Sonnet 5.5', id: 'claude-sonnet-5-5' },
         { label: 'Gemini 3.8 Flash', id: 'gemini-3.8-flash' },
         { label: 'Gemini 3.1 Pro', id: 'gemini-3.1-pro-preview' },
-        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
-        { label: 'Grok 4.6', id: 'grok-4.6' }
+        { label: 'Grok 4.7', id: 'grok-4.7' }
       ],
       targetHandle: 'left',
       isNew: true
@@ -542,13 +539,13 @@ export const initialNodes: AINode[] = [
       label: 'Claude app',
       category: 'ai-ide',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's desktop coding environment powered by Claude — Fable 5.1 and Opus 5 (Sep 2026).",
+      description: "Anthropic's desktop coding environment — Fable 5.1, Opus 5.5, and Sonnet 5.5 (Sep 2026).",
       releaseDate: '2026',
       link: 'https://code.claude.com/docs/en/desktop',
       variants: [
         { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
-        { label: 'Claude Opus 5', id: 'claude-opus-5' },
-        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
+        { label: 'Claude Opus 5.5', id: 'claude-opus-5-5' },
+        { label: 'Claude Sonnet 5.5', id: 'claude-sonnet-5-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' }
       ],
       targetHandle: 'left',
@@ -585,14 +582,14 @@ export const initialNodes: AINode[] = [
       label: 'Codex App',
       category: 'ai-ide',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's coding environment, merged into the ChatGPT desktop app on macOS & Windows. Powered by GPT-6 Astra (Sep 2026) with native computer-use and 1M context.",
+      description: "OpenAI's coding environment, merged into the ChatGPT desktop app on macOS & Windows. Powered by GPT-6 Astra, with GPT-6.1 Sol (Sep 29 2026) as the lower-cost tier.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/app',
       variants: [
         { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
-        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
-        { label: 'GPT-5.6 Terra', id: 'gpt-5.6-terra' },
-        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' }
+        { label: 'GPT-6.1 Sol', id: 'gpt-6.1-sol' },
+        { label: 'GPT-6 Sol', id: 'gpt-6-sol' },
+        { label: 'GPT-6 Luna', id: 'gpt-6-luna' }
       ],
       targetHandle: 'top',
       isNew: true
@@ -619,8 +616,7 @@ export const initialNodes: AINode[] = [
         { label: 'Codex CLI', id: 'codex-cli' },
         { label: 'OpenCode', id: 'opencode-cli' }
       ],
-      targetHandle: 'top',
-      isNew: true
+      targetHandle: 'top'
     },
   },
   {
@@ -644,8 +640,7 @@ export const initialNodes: AINode[] = [
         { label: 'Claude Code', id: 'claude-code' },
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
-      targetHandle: 'top',
-      isNew: true
+      targetHandle: 'top'
     },
   },
 
@@ -699,14 +694,14 @@ export const initialNodes: AINode[] = [
       label: 'Codex CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://developers.openai.com/favicon.svg' },
-      description: "OpenAI's official terminal agent (v0.155.0, Sep 2026). Powered by GPT-6 Astra with computer-use and 1M context.",
+      description: "OpenAI's official terminal agent (v0.155.0, Sep 2026). Powered by GPT-6 Astra; GPT-6.1 Sol (Sep 29) is the lower-cost tier.",
       releaseDate: '2026',
       link: 'https://developers.openai.com/codex/cli',
       variants: [
         { label: 'GPT-6 Astra', id: 'gpt-6-astra' },
-        { label: 'GPT-5.6 Sol', id: 'gpt-5.6-sol' },
-        { label: 'GPT-5.6 Terra', id: 'gpt-5.6-terra' },
-        { label: 'GPT-5.6 Luna', id: 'gpt-5.6-luna' },
+        { label: 'GPT-6.1 Sol', id: 'gpt-6.1-sol' },
+        { label: 'GPT-6 Sol', id: 'gpt-6-sol' },
+        { label: 'GPT-6 Luna', id: 'gpt-6-luna' },
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
       targetHandle: 'right',
@@ -722,13 +717,13 @@ export const initialNodes: AINode[] = [
       label: 'Claude Code',
       category: 'cli-agent',
       icon: { type: 'simple', slug: 'claude' },
-      description: "Anthropic's official terminal agent (v2.1.276, Sep 2026). Fable 5.1 / Opus 5 with /effort xhigh; Opus 5 is the default.",
+      description: "Anthropic's official terminal agent (v2.1.276, Sep 2026). Fable 5.1 / Opus 5.5 / Sonnet 5.5; Opus 5.5 is the recommended model for most work.",
       releaseDate: '2025',
       link: 'https://code.claude.com/docs',
       variants: [
         { label: 'Claude Fable 5.1', id: 'claude-fable-5-1' },
-        { label: 'Claude Opus 5', id: 'claude-opus-5' },
-        { label: 'Claude Sonnet 5', id: 'claude-sonnet-5' },
+        { label: 'Claude Opus 5.5', id: 'claude-opus-5-5' },
+        { label: 'Claude Sonnet 5.5', id: 'claude-sonnet-5-5' },
         { label: 'Claude 4.5 Haiku', id: 'claude-haiku-4-5' },
         { label: 'Claude Code', id: 'claude-code' }
       ],
@@ -766,12 +761,12 @@ export const initialNodes: AINode[] = [
       label: 'Grok Build',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://x.ai/favicon.ico' },
-      description: "xAI's official terminal agent (Rust; open-sourced Apache-2.0). Full-screen TUI, up to 8 parallel sub-agents; Grok 4.6 by default (Aug 2026).",
+      description: "xAI's official terminal agent (Rust; open-sourced Apache-2.0). Full-screen TUI, up to 8 parallel sub-agents; Grok 4.7 by default (Sep 2026).",
       releaseDate: '2026',
       link: 'https://github.com/xai-org/grok-build',
       variants: [
+        { label: 'Grok 4.7', id: 'grok-4.7' },
         { label: 'Grok 4.6', id: 'grok-4.6' },
-        { label: 'Grok 4.5', id: 'grok-4.5' },
         { label: 'Grok Build', id: 'grok-build' }
       ],
       targetHandle: 'right',
