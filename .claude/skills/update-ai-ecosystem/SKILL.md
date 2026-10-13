@@ -109,14 +109,15 @@ node -e 'const R=1600,deg=17;const t=deg*Math.PI/180;console.log(Math.round(R*Ma
 
 Rings & rules:
 - **Ring 1 — category hubs**, `R ≈ 900`. Each `category-*` hub sits at the **average angle of
-  its children**. (Reference angles in the file: LLMs 0°, Image 68°, Video 110.5°, AI IDEs
-  161.5°, CLI Agents 229.5°, AI Terminals 284.5°, Assistants 306°.)
-- **Ring 2 — leaf nodes**, `R ≈ 1600`, with crowded neighbors **staggered out to `R ≈ 1900`**.
-  The data alternates `1600 ↔ 1900` between adjacent leaves so they can sit ~8–9° apart
-  without the large cards overlapping. Nodes kept at the **same** radius must stay **≥ 17°
-  apart** (the `AGENTS.md` rule). The `// θ°, r=…` comment on each node documents its slot.
+  its children**. (Reference angles in the file: LLMs 0°, Image 65°, Video 110°, AI IDEs
+  170°, CLI Agents 230°, AI Terminals 270°, Assistants 290°.)
+- **Ring 2 — leaf nodes**, alternating `R = 1600` and `R = 2200` in **10° slots**.
+  The current 35 leaves span −45° through 295°, leaving a 20° wraparound gap.
+  Same-radius neighbors are 20° apart and must stay **≥ 17° apart** (the `AGENTS.md`
+  rule). The earlier 1600/1900 layout overlapped actual cards; preserve the wider stagger.
+  The `// θ°, r=…` comment on each node documents its slot.
 - When you **add** a node: place it at the correct angle for its category arc, pick `1600` or
-  `1900` to stagger against its neighbors, and **re-space the whole arc** if needed so nothing
+  `2200` to stagger against its neighbors, and **re-space the whole arc** if needed so nothing
   overlaps and spacing stays roughly uniform — don't just wedge it into a gap.
 - When you **remove** a node: close the gap by re-spacing that category's remaining leaves.
 - Set `targetHandle` (and `sourceHandle` if needed) to face the hub, following nearby nodes in
@@ -134,19 +135,21 @@ node, add its category edge; when you remove one, delete its category edge **and
 cross-links that reference it.
 
 ### 8. Verify
-Run both — they must pass with no errors:
+Run all three — they must pass with no errors or skipped tests:
 ```bash
+npm test
 npm run lint
 npm run build
 ```
 `build` runs `tsc -b` (catches bad `category` unions, malformed `variants`, etc.) then the Vite
-build. Optionally `npm run dev` and eyeball the graph for overlaps / missing edges / broken icons.
+build. Verify the built graph in a browser at desktop and mobile sizes, including actual card
+bounding boxes, sidebars, edges, and icons. Angular spacing alone does not prove cards fit.
 
 Final checklist:
-- [ ] `build` and `lint` pass.
+- [ ] `test`, `build`, and `lint` pass.
 - [ ] Every leaf node has exactly one `e-cat-*` edge; removed nodes left no dangling edges.
 - [ ] All node `id`s and edge `id`s are unique; `variants[].id` are real API model IDs.
-- [ ] No overlapping nodes (same-radius neighbors ≥17°, or staggered 1600/1900).
+- [ ] No overlapping cards in the browser (same-radius neighbors ≥17°, staggered 1600/2200).
 - [ ] `isNew` set on this cycle's genuine updates and cleared from stale ones.
 - [ ] Inline month stamps in descriptions/notes reflect the refresh date.
 - [ ] New providers have a working icon (valid simpleicons slug or reachable favicon URL).
