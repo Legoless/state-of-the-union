@@ -41,46 +41,46 @@ export const initialNodes: AINode[] = [
     position: { x: 0, y: -900 }, // 0°, r=900
     data: { id: 'category-llm-all', label: 'LLMs', category: 'llm', description: 'All Large Language Models', targetHandle: 'bottom', sourceHandle: 'top' },
   },
-  // 2. Image Models (Top-Right, 65°)
+  // 2. Image Models (Top-Right, 70°)
   {
     id: 'category-image-all',
     type: 'image',
-    position: { x: 816, y: -380 }, // 65°, r=900
+    position: { x: 846, y: -308 }, // 70°, r=900
     data: { id: 'category-image-all', label: 'Image Models', category: 'image', description: 'Image Generation Models', targetHandle: 'left', sourceHandle: 'right' },
   },
-  // 3. Video Models (Bottom-Right, 110°)
+  // 3. Video Models (Bottom-Right, 120°)
   {
     id: 'category-video-all',
     type: 'video',
-    position: { x: 846, y: 308 }, // 110°, r=900
+    position: { x: 779, y: 450 }, // 120°, r=900
     data: { id: 'category-video-all', label: 'Video Models', category: 'video', description: 'Video Generation Models', targetHandle: 'left', sourceHandle: 'right' },
   },
-  // 4. AI Native IDEs (Bottom, 170°)
+  // 4. AI Native IDEs (Bottom, 180°)
   {
     id: 'category-ai-ide',
     type: 'ai-ide',
-    position: { x: 156, y: 886 }, // 170°, r=900
+    position: { x: -0.11, y: 900 }, // 180°, r=900
     data: { id: 'category-ai-ide', label: 'AI Native IDEs', category: 'ai-ide', description: 'Standalone Editors', targetHandle: 'top', sourceHandle: 'bottom' },
   },
-  // 5. CLI Agents (Bottom-Left, 230°)
+  // 5. CLI Agents (Bottom-Left, 240°)
   {
     id: 'category-cli-agent',
     type: 'cli-agent',
-    position: { x: -689, y: 579 }, // 230°, r=900
+    position: { x: -779, y: 450 }, // 240°, r=900
     data: { id: 'category-cli-agent', label: 'CLI Agents', category: 'cli-agent', description: 'Terminal-based Agents', targetHandle: 'right', sourceHandle: 'left' },
   },
-  // 6. AI Terminals (Left, 270°)
+  // 6. AI Terminals (Left, 280°)
   {
     id: 'category-ai-terminal',
     type: 'ai-terminal',
-    position: { x: -900, y: 0 }, // 270°, r=900
+    position: { x: -886, y: -156 }, // 280°, r=900
     data: { id: 'category-ai-terminal', label: 'AI Terminals', category: 'ai-terminal', description: 'AI-Enhanced Terminals', targetHandle: 'right', sourceHandle: 'left' },
   },
-  // 7. Assistants (Top-Left, 290°)
+  // 7. Assistants (Top-Left, 300°)
   {
     id: 'category-assistants',
     type: 'assistant',
-    position: { x: -846, y: -308 }, // 290°, r=900
+    position: { x: -779, y: -450 }, // 300°, r=900
     data: { id: 'category-assistants', label: 'Assistants', category: 'assistant', description: 'AI Assistants', targetHandle: 'right', sourceHandle: 'left' },
   },
 
@@ -371,12 +371,34 @@ export const initialNodes: AINode[] = [
       isNew: true,
     },
   },
+  {
+    id: 'model-seedream-5',
+    type: 'model',
+    position: { x: 2192, y: -192 }, // 85°, r=2200
+    data: {
+      id: 'model-seedream-5',
+      label: 'Seedream 5.0 Pro',
+      category: 'image',
+      provider: 'ByteDance',
+      description: 'Multimodal reasoning for image generation and editing (Pro, Jul 2026), with precise local control and layer decomposition; Flash and Lite round out the 5.0 family.',
+      releaseDate: '2026',
+      link: 'https://seed.bytedance.com/en/seedream5_0_pro',
+      variants: [
+        { label: 'Seedream 5.0 Pro', id: 'doubao-seedream-5-0-pro-260628' },
+        { label: 'Seedream 5.0 Flash', id: 'doubao-seedream-5-0-flash-260915' },
+        { label: 'Seedream 5.0 Lite', id: 'doubao-seedream-5-0-lite-260128' }
+      ],
+      targetHandle: 'left',
+      defaultNotes: 'Model IDs shown are for Volcengine Model Ark; BytePlus uses its dola-* equivalents.',
+      isNew: true,
+    },
+  },
 
   // 3. Video
   {
     id: 'model-higgsfield',
     type: 'model',
-    position: { x: 2192, y: -192 }, // 85°, r=2200
+    position: { x: 1594, y: 139 }, // 95°, r=1600
     data: {
       id: 'model-higgsfield',
       label: 'Higgsfield',
@@ -397,7 +419,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-kling-3',
     type: 'model',
-    position: { x: 1594, y: 139 }, // 95°, r=1600
+    position: { x: 2125, y: 569 }, // 105°, r=2200
     data: {
       id: 'model-kling-3',
       label: 'Kling 3.0',
@@ -418,7 +440,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-kie',
     type: 'model',
-    position: { x: 2125, y: 569 }, // 105°, r=2200
+    position: { x: 1450, y: 676 }, // 115°, r=1600
     data: {
       id: 'model-kie',
       label: 'Kie',
@@ -439,7 +461,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-veo-3',
     type: 'model',
-    position: { x: 1450, y: 676 }, // 115°, r=1600
+    position: { x: 1802, y: 1262 }, // 125°, r=2200
     data: { 
       id: 'model-veo-3',
       label: 'Veo 3.1',
@@ -460,7 +482,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-seedance-2',
     type: 'model',
-    position: { x: 1802, y: 1262 }, // 125°, r=2200
+    position: { x: 1131, y: 1131 }, // 135°, r=1600
     data: {
       id: 'model-seedance-2',
       label: 'Seedance 2.5',
@@ -480,7 +502,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'model-minimax-h3',
     type: 'model',
-    position: { x: 1131, y: 1131 }, // 135°, r=1600
+    position: { x: 1262, y: 1802 }, // 145°, r=2200
     data: {
       id: 'model-minimax-h3',
       label: 'MiniMax H3',
@@ -501,7 +523,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-cursor',
     type: 'tool',
-    position: { x: 1262, y: 1802 }, // 145°, r=2200
+    position: { x: 676, y: 1450 }, // 155°, r=1600
     data: { 
       id: 'tool-cursor',
       label: 'Cursor',
@@ -531,7 +553,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-claude-app',
     type: 'tool',
-    position: { x: 676, y: 1450 }, // 155°, r=1600
+    position: { x: 569, y: 2125 }, // 165°, r=2200
     data: {
       id: 'tool-claude-app',
       label: 'Claude app',
@@ -553,7 +575,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-antigravity',
     type: 'tool',
-    position: { x: 569, y: 2125 }, // 165°, r=2200
+    position: { x: 139, y: 1594 }, // 175°, r=1600
     data: { 
       id: 'tool-antigravity',
       label: 'Antigravity', 
@@ -576,7 +598,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-codex-app',
     type: 'tool',
-    position: { x: 139, y: 1594 }, // 175°, r=1600
+    position: { x: -192, y: 2192 }, // 185°, r=2200
     data: { 
       id: 'tool-codex-app',
       label: 'Codex App',
@@ -598,7 +620,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-orca',
     type: 'tool',
-    position: { x: -192, y: 2192 }, // 185°, r=2200
+    position: { x: -414, y: 1545 }, // 195°, r=1600
     data: {
       id: 'tool-orca',
       label: 'Orca',
@@ -623,7 +645,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-paseo',
     type: 'tool',
-    position: { x: -414, y: 1545 }, // 195°, r=1600
+    position: { x: -930, y: 1994 }, // 205°, r=2200
     data: {
       id: 'tool-paseo',
       label: 'Paseo',
@@ -650,7 +672,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-opencode',
     type: 'tool',
-    position: { x: -930, y: 1994 }, // 205°, r=2200
+    position: { x: -918, y: 1311 }, // 215°, r=1600
     data: { 
       id: 'tool-opencode',
       label: 'OpenCode',
@@ -663,6 +685,7 @@ export const initialNodes: AINode[] = [
         { label: 'OpenCode CLI', id: 'opencode-cli' }
       ],
       targetHandle: 'top',
+      isDarker: true,
       defaultNotes: 'OpenCode 1.19.0 adds the OpenCode 2 major-upgrade path and accepts the OpenAI ultrafast service tier. Updates are now requested explicitly rather than installed automatically.',
       isNew: true,
     },
@@ -670,13 +693,13 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-antigravity-cli',
     type: 'tool',
-    position: { x: -918, y: 1311 }, // 215°, r=1600
+    position: { x: -1556, y: 1556 }, // 225°, r=2200
     data: { 
       id: 'tool-antigravity-cli',
       label: 'Antigravity CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://antigravity.google/favicon.ico' },
-      description: 'Google\'s terminal agent (v1.3.1, Oct 2026), with subagents and enhanced diff navigation. Gemini 4 Argon is available on Ultra/Enterprise; Gemini 3.8 Flash is available on every plan.',
+      description: 'Google\'s terminal agent (agy, v1.4.11, Oct 2026), with subagents, plugins, remote control, and enhanced diff navigation. Gemini 4 Argon is available on Ultra/Enterprise; Gemini 3.8 Flash is available on every plan.',
       releaseDate: '2026',
       link: 'https://antigravity.google/',
       variants: [
@@ -688,7 +711,6 @@ export const initialNodes: AINode[] = [
         { label: 'Antigravity CLI', id: 'antigravity-cli' }
       ],
       targetHandle: 'right',
-      isDarker: true,
       defaultNotes: 'Gemini 3.1 Pro is Enterprise-only. Claude Opus/Sonnet 5.5 require Pro (non-trial), Ultra, or Enterprise. Gemini 3.7 Flash is deprecated and routes to 3.8 Flash.',
       isNew: true,
     },
@@ -696,7 +718,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-codex-cli',
     type: 'tool',
-    position: { x: -1556, y: 1556 }, // 225°, r=2200
+    position: { x: -1311, y: 918 }, // 235°, r=1600
     data: { 
       id: 'tool-codex-cli',
       label: 'Codex CLI',
@@ -713,13 +735,14 @@ export const initialNodes: AINode[] = [
         { label: 'Codex CLI', id: 'codex-cli' }
       ],
       targetHandle: 'right',
+      isDarker: true,
       isNew: true
     },
   },
   {
     id: 'tool-claude-code',
     type: 'tool',
-    position: { x: -1311, y: 918 }, // 235°, r=1600
+    position: { x: -1994, y: 930 }, // 245°, r=2200
     data: { 
       id: 'tool-claude-code',
       label: 'Claude Code',
@@ -736,6 +759,7 @@ export const initialNodes: AINode[] = [
         { label: 'Claude Code', id: 'claude-code' }
       ],
       targetHandle: 'right',
+      isDarker: true,
       isNew: true,
       defaultNotes: 'Haiku 5.5 needs Claude Code 2.1.293 or newer. Anthropic API aliases select the latest models; some third-party providers still resolve Sonnet/Haiku aliases to older versions.',
     },
@@ -743,13 +767,13 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-kimi-code',
     type: 'tool',
-    position: { x: -1994, y: 930 }, // 245°, r=2200
+    position: { x: -1545, y: 414 }, // 255°, r=1600
     data: {
       id: 'tool-kimi-code',
-      label: 'Kimi Code',
+      label: 'Kimi Code CLI',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://platform.moonshot.ai/favicon.ico' },
-      description: 'Moonshot AI\'s open-source terminal agent (v2.1.1, Sep 2026). Subagents, MCP, video input, lifecycle hooks, and ACP integration for editors.',
+      description: 'Moonshot AI\'s open-source terminal agent (kimi, v2.4.0, Oct 2026). Subagents, MCP, video input, Claude Code/Codex session imports, explicit plan review, and ACP integration.',
       releaseDate: '2026',
       link: 'https://github.com/MoonshotAI/kimi-code',
       variants: [
@@ -760,18 +784,19 @@ export const initialNodes: AINode[] = [
       ],
       targetHandle: 'right',
       defaultNotes: 'The managed Coding API uses k3, kimi-for-coding, and kimi-for-coding-highspeed. The public Moonshot API uses kimi-k3; provider/model IDs must match the selected endpoint.',
+      isNew: true,
     },
   },
   {
     id: 'tool-grok-build',
     type: 'tool',
-    position: { x: -1545, y: 414 }, // 255°, r=1600
+    position: { x: -2192, y: 192 }, // 265°, r=2200
     data: {
       id: 'tool-grok-build',
       label: 'Grok Build',
       category: 'cli-agent',
       icon: { type: 'url', src: 'https://x.ai/favicon.ico' },
-      description: 'xAI\'s open-source terminal coding agent (v1.0.52, Oct 2026; Rust, Apache-2.0). Full-screen TUI, parallel subagents, headless workflows, and ACP; Grok 4.7 remains current.',
+      description: 'xAI\'s open-source terminal coding agent (grok, v1.0.70, Oct 2026; Rust, Apache-2.0). Full-screen TUI, parallel subagents, headless workflows, and ACP; Grok 4.7 remains current.',
       releaseDate: '2026',
       link: 'https://github.com/xai-org/grok-build',
       variants: [
@@ -781,7 +806,7 @@ export const initialNodes: AINode[] = [
       ],
       targetHandle: 'right',
       isNew: true,
-      defaultNotes: 'Oct 9 removes CLI session sharing; headless runs wait for background goals to finish. Oct 11 improves hooks, model switching, approvals, and safe managed-worktree cleanup.',
+      defaultNotes: 'The CLI includes session export, cross-session memory, plugins, managed worktrees, and an agent dashboard.',
     },
   },
 
@@ -789,7 +814,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-cmux',
     type: 'tool',
-    position: { x: -2192, y: 192 }, // 265°, r=2200
+    position: { x: -1594, y: -139 }, // 275°, r=1600
     data: {
       id: 'tool-cmux',
       label: 'Cmux',
@@ -808,7 +833,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-warp',
     type: 'tool',
-    position: { x: -1594, y: -139 }, // 275°, r=1600
+    position: { x: -2125, y: -569 }, // 285°, r=2200
     data: { 
       id: 'tool-warp',
       label: 'Warp',
@@ -830,7 +855,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-hermes',
     type: 'tool',
-    position: { x: -2125, y: -569 }, // 285°, r=2200
+    position: { x: -1450, y: -676 }, // 295°, r=1600
     data: {
       id: 'tool-hermes',
       label: 'Hermes',
@@ -850,7 +875,7 @@ export const initialNodes: AINode[] = [
   {
     id: 'tool-openclaw',
     type: 'tool',
-    position: { x: -1450, y: -676 }, // 295°, r=1600
+    position: { x: -1802, y: -1262 }, // 305°, r=2200
     data: { 
       id: 'tool-openclaw',
       label: 'OpenClaw bot', 
@@ -916,6 +941,7 @@ export const initialEdges: Edge[] = [
   // Image Models
   { id: 'e-cat-image-nano', source: 'category-image-all', target: 'model-nano-banana', style: { stroke: '#7828C8', strokeWidth: 2 } },
   { id: 'e-cat-image-flux', source: 'category-image-all', target: 'model-flux-2', style: { stroke: '#7828C8', strokeWidth: 2 } },
+  { id: 'e-cat-image-seedream', source: 'category-image-all', target: 'model-seedream-5', style: { stroke: '#7828C8', strokeWidth: 2 } },
   { id: 'e-cat-image-gpt-image-1-5', source: 'category-image-all', target: 'model-gpt-image-1-5', style: { stroke: '#7828C8', strokeWidth: 2 } },
 
   // Video Models
